@@ -2,21 +2,36 @@
 
 if(isset($_GET['action'])) {
 
-    // Gestion des liens
     if($_GET['action'] == 'link_home') {
-        require('view/home.php');
+
+        require('controller/post.php');
+        $post = new Post;
+        $post->lastThreePosts();
+
     } elseif($_GET['action'] == 'link_about') {
+
         require('view/about.php');
+
     } elseif($_GET['action'] == 'link_novel') {
-        require('view/novel.php');
+
+        require('controller/post.php');
+        $post = new Post;
+        $post->listPosts();
+
     } elseif($_GET['action'] == 'link_contact') {
+
         require('view/contact.php');
+
     } elseif($_GET['action'] == 'link_legal') {
+
         require('view/legal.php');
+        
     }
 
 } else {
 
-    require('view/home.php');
+    require('controller/post.php');
+    $post = new Post;
+    $post->lastThreePosts();
 
 }

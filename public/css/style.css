@@ -44,6 +44,31 @@ nav ul li a {
 
 
 
+/* Home */
+
+#last-posts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: auto;
+}
+
+#last-posts article {
+    width: 30%;
+}
+
+.last-post-date, .last-post-comments {
+    display: flex;
+    align-items: center;
+}
+
+.last-post-icons {
+    margin-right: 0.5rem;
+}
+
+
+
 /* Pied de page */
 
 footer {
