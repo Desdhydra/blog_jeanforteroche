@@ -1,5 +1,9 @@
 <header>
 
+    <div id="header-connection">
+        <a href="index.php?action=link_connection">Se connecter</a>
+    </div>
+
     <div id="header-title">
         <p>Jean</p>
         <p>Forteroche</p>

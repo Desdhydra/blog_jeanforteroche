@@ -9,8 +9,8 @@
     <section>
         
         <?php
-            if(isset($listPosts)) {
-                foreach($listPosts as $post) { ?>
+            if(isset($allPosts)) {
+                foreach($allPosts as $post) { ?>
 
                     <article>
                         <h2><?= $post['title']; ?></h2>
@@ -25,7 +25,7 @@
                                 <p><?= $post['comments_number'] . ' commentaire(s)'; ?></p>
                             </div>
                         </div>
-                        <button>Lire la suite</button>
+                        <a href="index.php?action=link_chapter&amp;post_id=<?= $post['id'] ?>">Lire la suite</a>
                     </article>
 
                 <?php }

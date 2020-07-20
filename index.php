@@ -1,8 +1,15 @@
 <?php
 
-if(isset($_GET['action'])) {
+require('model/database.php');
 
-    if($_GET['action'] == 'link_home') {
+// Gestion des actions des liens
+if(isset($_GET['action'])) {
+    
+    if($_GET['action'] == 'link_connection') {
+
+        require('view/connection.php');
+
+    } elseif($_GET['action'] == 'link_home') {
 
         require('controller/post.php');
         $post = new Post;
@@ -16,7 +23,13 @@ if(isset($_GET['action'])) {
 
         require('controller/post.php');
         $post = new Post;
-        $post->listPosts();
+        $post->allPosts();
+
+    } elseif($_GET['action'] == 'link_chapter') {
+
+        require('controller/post.php');
+        $post = new Post;
+        $post->detailPost($_GET['post_id']);
 
     } elseif($_GET['action'] == 'link_contact') {
 
@@ -28,6 +41,16 @@ if(isset($_GET['action'])) {
         
     }
 
+// Gestion des actions des formulaires
+} elseif(isset($_POST['action'])) {
+
+    if($_POST['action'] == 'send_comment') {
+
+
+
+    }
+
+// S'il n'y a aucune action, afficher la page d'accueil
 } else {
 
     require('controller/post.php');

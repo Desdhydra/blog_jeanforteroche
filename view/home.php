@@ -44,7 +44,7 @@
                                 <p><?= $lastPost['comments_number'] . ' commentaire(s)'; ?></p>
                             </div>
                         </div>
-                        <button>Lire la suite</button>
+                        <a href="index.php?action=link_chapter&amp;post_id=<?= $lastPost['id'] ?>">Lire la suite</a>
                     </article>
 
                 <?php }
