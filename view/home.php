@@ -37,7 +37,7 @@
                         <div>
                             <div class="last-post-date">
                                 <i class="far fa-calendar-alt last-post-icons"></i>
-                                <p><?= Post::formatDate($lastPost['creation_date']); ?></p>
+                                <p><?= Frontend::formatDate($lastPost['creation_date']); ?></p>
                             </div>
                             <div class="last-post-comments">
                                 <i class="fas fa-comment last-post-icons"></i>

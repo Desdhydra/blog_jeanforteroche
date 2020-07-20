@@ -18,7 +18,7 @@
                         <div>
                             <div>
                                 <i class="far fa-calendar-alt"></i>
-                                <p><?= Post::formatDate($post['creation_date']); ?></p>
+                                <p><?= Frontend::formatDate($post['creation_date']); ?></p>
                             </div>
                             <div>
                                 <i class="fas fa-comment"></i>

@@ -5,7 +5,7 @@ require('model/comment_manager.php');
 
 class Post {
 
-    // Affichage d'un chapitre et ses commentaires
+    // Affichage d'un chapitre et de ses commentaires
     public function detailPost($postId) {
 
         $postManager = new PostManager;
@@ -37,13 +37,5 @@ class Post {
         require('view/home.php');
 
     }
-
-    // Méthode qui permet de formater la date pour l'affichage
-    public static function formatDate($date) {
-
-        $formattedDate = date('d/m/Y', strtotime($date));
-        return $formattedDate;
-        
-	}
 
 }

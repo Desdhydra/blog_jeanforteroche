@@ -14,7 +14,7 @@
                 <div>
                     <div>
                         <i class="far fa-calendar-alt"></i>
-                        <p>Publié le <?= Post::formatDate($detailPost['creation_date']); ?></p>
+                        <p>Publié le <?= Frontend::formatDate($detailPost['creation_date']); ?></p>
                     </div>
                     <div>
                         <i class="fas fa-comment"></i>
@@ -32,7 +32,7 @@
                         <?php foreach($allComments as $comment) { ?>
                             <article>
                                 <h4>Commentaire de <?= $comment['visitor_name'] ?></h4>
-                                <p>Posté le <?= Post::formatDate($comment['creation_date']); ?></p>
+                                <p>Posté le <?= Frontend::formatDate($comment['creation_date']); ?></p>
                                 <p><?= $comment['content'] ?></p>
                             </article>
                         <?php } ?>

@@ -35,4 +35,16 @@ class PostManager {
 
     }
 
+    // Mettre à jour le nombre de commentaires
+    public function updateCommentsNumber($commentsNumber, $postId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('UPDATE posts SET comments_number=:comments_number WHERE id=:id');
+        $query->execute(array(
+            'comments_number' => $commentsNumber,
+            'id' => $postId
+        ));
+
+    }
+
 }

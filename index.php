@@ -1,6 +1,7 @@
 <?php
 
 require('model/database.php');
+require('view/frontend.php');
 
 // Gestion des actions des liens
 if(isset($_GET['action'])) {
@@ -39,14 +40,11 @@ if(isset($_GET['action'])) {
 
         require('view/legal.php');
         
-    }
+    } elseif($_GET['action'] == 'send_comment') {
 
-// Gestion des actions des formulaires
-} elseif(isset($_POST['action'])) {
-
-    if($_POST['action'] == 'send_comment') {
-
-
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->addComment($_POST['comment-name'], $_POST['comment-content'], $_GET['post_id']);
 
     }
 
