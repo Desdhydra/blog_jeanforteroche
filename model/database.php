@@ -2,6 +2,7 @@
 
 class Database {
 
+    // Méthode statique qui permet de se connecter à la base de données
     public static function dbConnect() {
 
         try {

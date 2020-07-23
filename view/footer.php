@@ -1,3 +1,4 @@
+<!-- Le pied de page se compose d'un portrait, d'un rappel du menu de navigation, de liens vers les réseaux sociaux et du copyright -->
 <footer>
 
     <div id="footer-content">

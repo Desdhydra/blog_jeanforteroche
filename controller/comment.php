@@ -5,6 +5,7 @@ require('model/comment_manager.php');
 
 class Comment {
 
+    // Méthode qui permet d'ajouter un nouveau commentaire
     public function addComment($commentName, $commentContent, $postId) {
 
         $commentName = htmlspecialchars($commentName);
@@ -14,21 +15,17 @@ class Comment {
         $commentManager = new CommentManager;
         $commentAdded = $commentManager->createComment($commentName, $commentContent, $postId);
 
-        $postManager = new PostManager;
-
         if($commentAdded) {
 
             $post = $postManager->getPost($postId);
             $updatedNumber = $post['comments_number'] + 1;
-            $postManager->updateCommentsNumber($updatedNumber, $postId);
 
-            $commentMessage = 'Votre commentaire a bien été ajouté.';
+            $postManager = new PostManager;
+            $postManager->updateCommentsNumber($updatedNumber, $postId);
 
         }
 
-        $detailPost = $postManager->getPost($postId);
-        $allComments = $commentManager->getAllComments($postId);
-        require('view/chapter.php');
+        header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=ok');
 
     }
 

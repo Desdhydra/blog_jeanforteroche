@@ -1,3 +1,4 @@
+<!-- L'en-tête se compose du lien de connexion, du logo et du menu de navigation -->
 <header>
 
     <div id="header-connection">

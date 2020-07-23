@@ -2,6 +2,7 @@
 
 <?php ob_start(); ?>
 
+<!-- La page de contact présente un formulaire pour contacter l'auteur  -->
 <main>
 
     <section>Formulaire de contact</section>

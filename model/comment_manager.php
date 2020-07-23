@@ -2,7 +2,7 @@
 
 class CommentManager {
 
-    // Récupération des données de tous les commentaires liés à un chapitre
+    // Méthode qui permet de récupérer les commentaires liés à un chapitre
     public function getAllComments($postId) {
 
         $db = Database::dbConnect();
@@ -13,6 +13,7 @@ class CommentManager {
 
     }
 
+    // Méthode qui permet de créer un nouveau commentaire dans la base de données
     public function createComment($commentName, $commentContent, $postId) {
 
         $db = Database::dbConnect();

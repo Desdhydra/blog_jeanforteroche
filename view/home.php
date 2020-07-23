@@ -2,12 +2,15 @@
 
 <?php ob_start(); ?>
 
+<!-- La page d'accueil se découpe en trois sections successives -->
 <main>
 
+    <!-- Première section : l'écran d'accueil -->
     <section>
         <h1>Billet simple pour l'Alaska</h1>
     </section>
 
+    <!-- Deuxième section : la présentation du blog -->
     <section>
         <div>
             <img src="" alt="" />
@@ -24,34 +27,37 @@
         </div>
     </section>
 
+    <!-- Troisième section : les derniers chapitres publiés -->
     <section>
         <h2>Derniers chapitres publiés</h2>
         <div id="last-posts">
-        <?php
-            if(isset($lastThreePosts)) {
-                foreach( $lastThreePosts as $lastPost) { ?>
-                    
-                    <article>
-                        <h3><?= $lastPost['title']; ?></h3>
-                        <p><?= preg_replace('/((\w+\W*){'.(30).'}(\w+))(.*)/', '${1}', $lastPost['content']) . '...'; ?></p>
-                        <div>
-                            <div class="last-post-date">
-                                <i class="far fa-calendar-alt last-post-icons"></i>
-                                <p><?= Frontend::formatDate($lastPost['creation_date']); ?></p>
+
+            <?php if(isset($lastThreePosts)) {
+                foreach($lastThreePosts as $lastPost) { ?>
+                        
+                        <article>
+                            <h3><?= $lastPost['title']; ?></h3>
+                            <p><?= preg_replace('/((\w+\W*){'.(30).'}(\w+))(.*)/', '${1}', $lastPost['content']) . '...'; ?></p>
+                            <div>
+                                <div class="last-post-date">
+                                    <i class="far fa-calendar-alt last-post-icons"></i>
+                                    <p><?= date('d/m/Y', strtotime($lastPost['creation_date'])); ?></p>
+                                </div>
+                                <div class="last-post-comments">
+                                    <i class="fas fa-comment last-post-icons"></i>
+                                    <p><?= $lastPost['comments_number'] . ' commentaire(s)'; ?></p>
+                                </div>
                             </div>
-                            <div class="last-post-comments">
-                                <i class="fas fa-comment last-post-icons"></i>
-                                <p><?= $lastPost['comments_number'] . ' commentaire(s)'; ?></p>
-                            </div>
-                        </div>
-                        <a href="index.php?action=link_chapter&amp;post_id=<?= $lastPost['id'] ?>">Lire la suite</a>
-                    </article>
+                            <a href="index.php?action=link_chapter&amp;post_id=<?= $lastPost['id'] ?>">Lire la suite</a>
+                        </article>
 
                 <?php }
             } else { ?>
+
                 <p>En cours de publication. Revenez bientôt !</p>
-            <?php }
-        ?>
+                
+            <?php } ?>
+
         </div>
     </section>
 

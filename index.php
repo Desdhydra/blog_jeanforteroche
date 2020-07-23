@@ -1,11 +1,11 @@
 <?php
 
 require('model/database.php');
-require('view/frontend.php');
 
-// Gestion des actions des liens
 if(isset($_GET['action'])) {
     
+    // Gestion des actions des liens
+
     if($_GET['action'] == 'link_connection') {
 
         require('view/connection.php');
@@ -22,9 +22,16 @@ if(isset($_GET['action'])) {
 
     } elseif($_GET['action'] == 'link_novel') {
 
+        // Détermination préalable du numéro de la page
+        if(isset($_GET['page'])) {
+            $currentPage = $_GET['page'];
+        } else {
+            $currentPage = 1;
+        }
+
         require('controller/post.php');
         $post = new Post;
-        $post->allPosts();
+        $post->allPosts($currentPage);
 
     } elseif($_GET['action'] == 'link_chapter') {
 
@@ -39,16 +46,23 @@ if(isset($_GET['action'])) {
     } elseif($_GET['action'] == 'link_legal') {
 
         require('view/legal.php');
-        
+    
+    // Gestion des actions des formulaires
+
     } elseif($_GET['action'] == 'send_comment') {
 
         require('controller/comment.php');
         $comment = new Comment;
         $comment->addComment($_POST['comment-name'], $_POST['comment-content'], $_GET['post_id']);
 
+    } elseif($_GET['action'] == 'sign_in') {
+
+
+
     }
 
-// S'il n'y a aucune action, afficher la page d'accueil
+// S'il n'y a aucune action, affiche la page d'accueil
+
 } else {
 
     require('controller/post.php');

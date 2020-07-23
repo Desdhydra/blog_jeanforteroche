@@ -2,7 +2,7 @@
 
 class PostManager {
 
-    // Récupération des données d'un chapitre
+    // Méthode qui permet de récupérer un chapitre
     public function getPost($postId) {
 
         $db = Database::dbConnect();
@@ -13,18 +13,19 @@ class PostManager {
 
     }
 
-    // Récupération des données de tous les chapitres
-    public function getAllPosts() {
+    // Méthode qui permet de récupérer tous les chapitres
+    public function getAllPosts($firstPost, $postsPerPage) {
 
         $db = Database::dbConnect();
-        $query = $db->prepare('SELECT * from posts ORDER BY creation_date');
+        $sql = "SELECT * from posts ORDER BY creation_date LIMIT $firstPost, $postsPerPage";
+        $query = $db->prepare($sql);
         $query->execute();
         $posts = $query->fetchAll();
         return $posts;
 
     }
 
-    // Récupération des données des trois derniers chapitres
+    // Méthode qui permet de récupérer les trois derniers chapitres
     public function getLastThreePosts() {
 
         $db = Database::dbConnect();
@@ -35,7 +36,7 @@ class PostManager {
 
     }
 
-    // Mettre à jour le nombre de commentaires
+    // Méthode qui permet de mettre à jour du nombre de commentaires
     public function updateCommentsNumber($commentsNumber, $postId) {
 
         $db = Database::dbConnect();
@@ -44,6 +45,18 @@ class PostManager {
             'comments_number' => $commentsNumber,
             'id' => $postId
         ));
+
+    }
+
+    // Méthode qui calcule le nombre de chapitres
+    public function numberOfPosts() {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('SELECT COUNT(*) AS numberOfPosts FROM posts');
+        $query->execute();
+        $result = $query->fetch();
+        $numberOfPosts = $result['numberOfPosts'];
+        return $numberOfPosts;
 
     }
 
