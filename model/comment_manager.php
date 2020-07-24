@@ -28,4 +28,17 @@ class CommentManager {
 
     }
 
+    // Méthode qui permet de modifier le statut de signalement d'un commentaire
+    public function getReportedStatus($commentId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('UPDATE comments SET reported_status=:reported_status WHERE id=:id');
+        $statusChanged = $query->execute(array(
+            'reported_status' => 'yes',
+            'id' => $commentId
+        ));
+        return $statusChanged;
+
+    }
+
 }

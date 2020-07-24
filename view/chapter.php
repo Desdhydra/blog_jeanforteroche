@@ -31,15 +31,35 @@
             <section>
                 <h3>Commentaires</h3>
 
-                <?php foreach($allComments as $comment) { ?>
-
-                    <article>
-                        <h4>Commentaire de <?= $comment['visitor_name'] ?></h4>
-                        <p>Posté le <?= date('d/m/Y', strtotime($comment['creation_date'])); ?></p>
-                        <p><?= $comment['content'] ?></p>
-                    </article>
+                <?php if((isset($_GET['message_status'])) && ($_GET['message_status'] == 'ok')) { ?>
+                    <p>Le commentaire a bien été signalé.</p>
+                <?php } elseif((isset($_GET['message_status'])) && ($_GET['message_status'] == 'error')) { ?>
+                    <p>Une erreur est survenu. Le commentaire n'a pas pu être signalé. Veuillez réessayer plus tard.</p>
+                <?php }
                 
-                <?php } ?>
+                foreach($allComments as $comment) { ?>
+
+                    <?php if($comment['reported_status'] == 'no') { ?>
+
+                        <article>
+                            <h4>Commentaire de <?= $comment['visitor_name'] ?></h4>
+                            <p>Posté le <?= date('d/m/Y', strtotime($comment['creation_date'])); ?></p>
+                            <p><?= $comment['content'] ?></p>
+                            <div>
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <a href="index.php?action=comment_reported&amp;post_id=<?= $detailPost['id'] ?>&amp;comment_id=<?= $comment['id'] ?>">Signaler</a>
+                            </div>
+                        </article>
+
+                    <?php } elseif($comment['reported_status'] == 'yes') { ?>
+
+                        <article>
+                            <p>Ce commentaire a été signalé.</p>
+                        </article>
+
+                    <?php }
+                
+                } ?>
 
             </section>
 
@@ -61,9 +81,11 @@
                 </div>
             </form>
 
-            <?php if((isset($_GET['message_comment'])) && ($_GET['message_comment'] == 'ok')) {
-                echo '<p>Votre commentaire a bien été ajouté.</p>';
-            } ?>
+            <?php if((isset($_GET['message_comment'])) && ($_GET['message_comment'] == 'ok')) { ?>
+                <p>Votre commentaire a bien été ajouté.</p>
+            <?php } elseif((isset($_GET['message_comment'])) && ($_GET['message_comment'] == 'error')) { ?>
+                <p>Une erreur est survenu. Le commentaire n'a pas pu être envoyé. Veuillez réessayer plus tard.</p>
+            <?php } ?>
 
         </section>
 

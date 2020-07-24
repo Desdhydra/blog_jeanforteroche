@@ -59,6 +59,14 @@ if(isset($_GET['action'])) {
 
 
 
+    // Gestion des actions de signalement des commentaires
+
+    } elseif($_GET['action'] == 'comment_reported') {
+
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->reportComment($_GET['post_id'], $_GET['comment_id']);
+
     }
 
 // S'il n'y a aucune action, affiche la page d'accueil

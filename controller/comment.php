@@ -23,9 +23,31 @@ class Comment {
             $postManager = new PostManager;
             $postManager->updateCommentsNumber($updatedNumber, $postId);
 
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=ok');
+
+        } else {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=error');
+
         }
 
-        header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=ok');
+    }
+
+    // Méthode qui permet de signaler un commentaire
+    public function reportComment($postId, $commentId) {
+
+        $commentManager = new CommentManager;
+        $statusChanged = $commentManager->getReportedStatus($commentId);
+
+        if($statusChanged) {
+            
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=ok');
+
+        } else {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=error');
+
+        }
 
     }
 
