@@ -24,6 +24,12 @@
         <p>Mot de passe oublié ?</p>
     </div>
 
+    <?php if((isset($_GET['message_connection'])) && ($_GET['message_connection'] == 'error')) { ?>
+        <div>
+            <p>Ces identifiants sont erronés.</p>
+        </div>
+    <?php } ?>
+
 </main>
 
 <?php $content = ob_get_clean(); ?>

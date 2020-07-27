@@ -34,7 +34,7 @@
                 <?php if((isset($_GET['message_status'])) && ($_GET['message_status'] == 'ok')) { ?>
                     <p>Le commentaire a bien été signalé.</p>
                 <?php } elseif((isset($_GET['message_status'])) && ($_GET['message_status'] == 'error')) { ?>
-                    <p>Une erreur est survenu. Le commentaire n'a pas pu être signalé. Veuillez réessayer plus tard.</p>
+                    <p>Une erreur est survenue. Le commentaire n'a pas pu être signalé. Veuillez réessayer plus tard.</p>
                 <?php }
                 
                 foreach($allComments as $comment) { ?>
@@ -84,7 +84,7 @@
             <?php if((isset($_GET['message_comment'])) && ($_GET['message_comment'] == 'ok')) { ?>
                 <p>Votre commentaire a bien été ajouté.</p>
             <?php } elseif((isset($_GET['message_comment'])) && ($_GET['message_comment'] == 'error')) { ?>
-                <p>Une erreur est survenu. Le commentaire n'a pas pu être envoyé. Veuillez réessayer plus tard.</p>
+                <p>Une erreur est survenue. Le commentaire n'a pas pu être envoyé. Veuillez réessayer plus tard.</p>
             <?php } ?>
 
         </section>

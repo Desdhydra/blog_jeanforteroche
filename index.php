@@ -57,7 +57,9 @@ if(isset($_GET['action'])) {
 
     } elseif($_GET['action'] == 'sign_in') {
 
-
+        require('controller/user.php');
+        $user = new User;
+        $user->signIn($_POST['signin-mail'], $_POST['signin-password']);
 
     // Gestion des actions de signalement des commentaires
 
