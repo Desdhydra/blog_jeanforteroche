@@ -13,6 +13,17 @@ class CommentManager {
 
     }
 
+    // Méthode qui permet de récupérer les commentaires signalés
+    public function getReportedComments() {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('SELECT * from comments WHERE reported_status=:reported_status ORDER BY creation_date');
+        $query->execute(array('reported_status' => 'yes'));
+        $comments = $query->fetchAll();
+        return $comments;
+
+    }
+
     // Méthode qui permet de créer un nouveau commentaire dans la base de données
     public function createComment($commentName, $commentContent, $postId) {
 

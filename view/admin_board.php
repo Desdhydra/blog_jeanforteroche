@@ -1,13 +1,11 @@
-<?php $title = 'Jean Forteroche | Panneau d\'administration | Accueil'; ?>
-
 <?php ob_start(); ?>
 
-<main>
+<section>
 
-    <section>Panneau d'administration</section>
+    <h1>Panneau d'administration</h1>
 
-</main>
+</section>
 
-<?php $content = ob_get_clean(); ?>
+<?php $adminContent = ob_get_clean(); ?>
 
 <?php require('admin_template.php'); ?>

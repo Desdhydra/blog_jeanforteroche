@@ -1,16 +1,14 @@
 <?php
 
+session_start();
+
 require('model/database.php');
 
 if(isset($_GET['action'])) {
     
-    // Gestion des actions des liens
+    // Gestion des actions des liens du site
 
-    if($_GET['action'] == 'link_connection') {
-
-        require('view/connection.php');
-
-    } elseif($_GET['action'] == 'link_home') {
+    if($_GET['action'] == 'link_home') {
 
         require('controller/post.php');
         $post = new Post;
@@ -31,7 +29,7 @@ if(isset($_GET['action'])) {
 
         require('controller/post.php');
         $post = new Post;
-        $post->allPosts($currentPage);
+        $post->postsInRange($currentPage);
 
     } elseif($_GET['action'] == 'link_chapter') {
 
@@ -46,6 +44,36 @@ if(isset($_GET['action'])) {
     } elseif($_GET['action'] == 'link_legal') {
 
         require('view/legal.php');
+
+    } elseif($_GET['action'] == 'link_connection') {
+
+        require('view/connection.php');
+
+    } elseif($_GET['action'] == 'link_logout') {
+
+        require('view/logout.php');
+
+    // Gestion des actions des liens du panneau d'administration
+
+    } elseif($_GET['action'] == 'link_admin') {
+
+        require('view/admin_board.php');
+
+    } elseif($_GET['action'] == 'link_admin_chapters') {
+        
+        require('controller/post.php');
+        $post = new Post;
+        $post->allPosts();
+
+    } elseif($_GET['action'] == 'link_admin_comments') {
+    
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->allComments();
+    
+    } elseif($_GET['action'] == 'link_profile') {
+
+        require('view/admin_profile.php');
     
     // Gestion des actions des formulaires
 

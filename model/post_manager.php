@@ -13,8 +13,19 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de récupérer tous les chapitres
-    public function getAllPosts($firstPost, $postsPerPage) {
+    // Méthode qui permet de récupérer les trois derniers chapitres
+    public function getLastThreePosts() {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('SELECT * from posts ORDER BY creation_date DESC LIMIT 3');
+        $query->execute();
+        $posts = $query->fetchAll();
+        return $posts;
+
+    }
+
+    // Méthode qui permet de récupérer une liste de chapitres
+    public function getPostsInRange($firstPost, $postsPerPage) {
 
         $db = Database::dbConnect();
         $sql = "SELECT * from posts ORDER BY creation_date LIMIT $firstPost, $postsPerPage";
@@ -25,11 +36,11 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de récupérer les trois derniers chapitres
-    public function getLastThreePosts() {
+    // Méthode qui permet de récupérer tous les chapitres
+    public function getAllPosts() {
 
         $db = Database::dbConnect();
-        $query = $db->prepare('SELECT * from posts ORDER BY creation_date DESC LIMIT 3');
+        $query = $db->prepare('SELECT * from posts ORDER BY creation_date');
         $query->execute();
         $posts = $query->fetchAll();
         return $posts;

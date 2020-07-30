@@ -14,7 +14,7 @@ class User {
 
         if($checkPassword) {
 
-            // Ajouter les variables de session et de cookies
+            $_SESSION['status'] = 'authenticated'; 
             header('Location: http://localhost/jeanforteroche/index.php?action=link_home');
 
         } else {

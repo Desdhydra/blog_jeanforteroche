@@ -31,9 +31,9 @@
             <section>
                 <h3>Commentaires</h3>
 
-                <?php if((isset($_GET['message_status'])) && ($_GET['message_status'] == 'ok')) { ?>
+                <?php if(isset($_GET['message_status']) && ($_GET['message_status'] == 'ok')) { ?>
                     <p>Le commentaire a bien été signalé.</p>
-                <?php } elseif((isset($_GET['message_status'])) && ($_GET['message_status'] == 'error')) { ?>
+                <?php } elseif(isset($_GET['message_status']) && ($_GET['message_status'] == 'error')) { ?>
                     <p>Une erreur est survenue. Le commentaire n'a pas pu être signalé. Veuillez réessayer plus tard.</p>
                 <?php }
                 
@@ -81,9 +81,9 @@
                 </div>
             </form>
 
-            <?php if((isset($_GET['message_comment'])) && ($_GET['message_comment'] == 'ok')) { ?>
+            <?php if(isset($_GET['message_comment']) && ($_GET['message_comment'] == 'ok')) { ?>
                 <p>Votre commentaire a bien été ajouté.</p>
-            <?php } elseif((isset($_GET['message_comment'])) && ($_GET['message_comment'] == 'error')) { ?>
+            <?php } elseif(isset($_GET['message_comment']) && ($_GET['message_comment'] == 'error')) { ?>
                 <p>Une erreur est survenue. Le commentaire n'a pas pu être envoyé. Veuillez réessayer plus tard.</p>
             <?php } ?>
 

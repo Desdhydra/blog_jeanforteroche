@@ -10,8 +10,8 @@
     <!-- Première section : aperçus des articles -->
     <section>
         
-        <?php if(isset($allPosts)) {
-            foreach($allPosts as $post) { ?>
+        <?php if(isset($postsInRange)) {
+            foreach($postsInRange as $post) { ?>
 
                 <article>
                     <h2><?= $post['title']; ?></h2>

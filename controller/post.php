@@ -5,6 +5,19 @@ require('model/comment_manager.php');
 
 class Post {
 
+    // Méthode qui permet d'afficher un chapitre et ses commentaires
+    public function detailPost($postId) {
+
+        $postManager = new PostManager;
+        $detailPost = $postManager->getPost($postId);
+
+        $commentManager = new CommentManager;
+        $allComments = $commentManager->getAllComments($postId);
+
+        require('view/chapter.php');
+
+    }
+
     // Méthode qui permet d'afficher les trois derniers chapitres
     public function lastThreePosts() {
 
@@ -15,8 +28,8 @@ class Post {
 
     }
 
-    // Méthode qui permet d'afficher tous les chapitres et de gérer la pagination
-    public function allPosts($currentPage) {
+    // Méthode qui permet d'afficher les chapitres et de gérer la pagination
+    public function postsInRange($currentPage) {
 
         // Vérification de la validité du numéro de page (nombre entier)
         if(preg_match('/[0-9]+/', $currentPage)) {
@@ -32,7 +45,7 @@ class Post {
             if($currentPage > 0 && $currentPage <= $numberOfPages) {
                 
                 // Récupération des chapitres correspondants
-                $allPosts = $postManager->getAllPosts((($currentPage-1)*$postsPerPage), $postsPerPage);
+                $postsInRange = $postManager->getPostsInRange((($currentPage-1)*$postsPerPage), $postsPerPage);
                 require('view/novel.php');
 
             } else {
@@ -49,16 +62,13 @@ class Post {
 
     }
 
-    // Méthode qui permet d'afficher un chapitre et ses commentaires
-    public function detailPost($postId) {
+    // Méthode qui permet d'afficher tous les chapitres
+    public function allPosts() {
 
         $postManager = new PostManager;
-        $detailPost = $postManager->getPost($postId);
+        $allPosts = $postManager->getAllPosts();
 
-        $commentManager = new CommentManager;
-        $allComments = $commentManager->getAllComments($postId);
-
-        require('view/chapter.php');
+        require('view/admin_chapters.php');
 
     }
 

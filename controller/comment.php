@@ -51,4 +51,13 @@ class Comment {
 
     }
 
+    public function allComments() {
+
+        $commentManager = new CommentManager;
+        $reportedComments = $commentManager->getReportedComments();
+
+        require('view/admin_comments.php');
+
+    }
+
 }
