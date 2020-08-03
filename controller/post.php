@@ -90,6 +90,34 @@ class Post {
 
     }
 
+    // Méthode qui permet d'éditer et de mettre à jour un chapitre
+    public function editPost($postId, $title, $content) {
+
+        $postManager = new PostManager;
+        $postUpdated = $postManager->updatePost($postId, $title, $content);
+
+        if($postUpdated) {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_updatechapter=ok');
+
+        } else {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_updatechapter=error');
+
+        }
+
+    }
+
+    // Méthode qui permet de récupérer le contenu d'un chapitre
+    public function postContent($postId) {
+
+        $postManager = new PostManager;
+        $postContent = $postManager->getPost($postId);
+
+        require('view/admin_editchapter.php');
+
+    }
+
     // Méthode qui permet de supprimer un chapitre
     public function deletePost($postId) {
 

@@ -16,6 +16,14 @@
             <?php }
         } ?>
 
+        <?php if(isset($_GET['message_updatechapter'])) {
+            if($_GET['message_updatechapter'] == 'ok') { ?>
+                <p>Votre chapitre a bien été publié.</p>
+            <?php } elseif ($_GET['message_updatechapter'] == 'error') { ?>
+                <p>Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+            <?php }
+        } ?>
+
         <?php if(isset($_GET['message_deletechapter'])) {
             if($_GET['message_deletechapter'] == 'ok') { ?>
                 <p>Votre chapitre a bien été supprimé.</p>
@@ -41,12 +49,13 @@
                     <td><?= $post['title']; ?></td>
                     <td><?= date('d/m/Y', strtotime($post['creation_date'])); ?></td>
                     <td><?php if($post['update_date'] == $post['creation_date']) {
-                        echo ' / ';
-                    } else {
-                        date('d/m/Y', strtotime($post['update_date']));
-                    } ?></td>
+                            echo ' / ';
+                        } else {
+                            echo date('d/m/Y', strtotime($post['update_date']));
+                        } ?>
+                    </td>
                     <td>
-                        <a href=""><i class="fas fa-edit"></i></a>
+                        <a href="index.php?action=link_editchapter&amp;post_id=<?= $post['id'] ?>"><i class="fas fa-edit"></i></a>
                         <i class="alert-popup fas fa-trash"></i>
                     </td>
                 </tr>

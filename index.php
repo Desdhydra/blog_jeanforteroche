@@ -67,7 +67,13 @@ if(isset($_GET['action'])) {
 
     } elseif($_GET['action'] == 'link_editchapter') {
         
-        require('view/admin_editchapter.php');
+        if(isset($_GET['post_id'])) {
+            require('controller/post.php');
+            $post = new Post;
+            $post->postContent($_GET['post_id']);
+        } else {
+            require('view/admin_editchapter.php');
+        }
 
     } elseif($_GET['action'] == 'link_deletechapter') {
         
@@ -103,7 +109,12 @@ if(isset($_GET['action'])) {
 
         require('controller/post.php');
         $post = new Post;
-        $post->addPost($_POST['edithapter-title'], $_POST['editchapter-content']);
+
+        if(isset($_GET['post_id'])) {
+            $post->editPost($_GET['post_id'], $_POST['editchapter-title'], $_POST['editchapter-content']);
+        } else {
+            $post->addPost($_POST['editchapter-title'], $_POST['editchapter-content']);
+        }
 
     // Gestion des actions de signalement des commentaires
 
