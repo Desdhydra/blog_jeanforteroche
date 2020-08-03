@@ -71,4 +71,27 @@ class PostManager {
 
     }
 
+    // Méthode qui permet de créer un nouveau chapitre dans la base de données 
+    public function createPost($title, $content) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('INSERT INTO posts(title, content, creation_date, update_date, comments_number) VALUES(:title, :content, NOW(), NOW()), 0');
+        $postCreated = $query->execute(array(
+            'title' => $title,
+            'content' => $content
+        ));
+        return $postCreated;
+
+    }
+
+    // Méthode qui permet de supprimer chapitre dans la base de données
+    public function removePost($postId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('DELETE FROM posts WHERE id=:id');
+        $postRemoved = $query->execute(array('id' => $postId));
+        return $postRemoved;
+
+    }
+
 }

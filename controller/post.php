@@ -72,4 +72,43 @@ class Post {
 
     }
 
+    // Méthode qui permet d'ajouter un nouveau chapitre
+    public function addPost($title, $content) {
+
+        $postManager = new PostManager;
+        $postAdded = $postManager->createPost($title, $content);
+
+        if($postAdded) {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_editchapter=ok');
+
+        } else {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_editchapter=error');
+
+        }
+
+    }
+
+    // Méthode qui permet de supprimer un chapitre
+    public function deletePost($postId) {
+
+        $postManager = new PostManager;
+        $postDeleted = $postManager->removePost($postId);
+
+        $commentManager = new CommentManager;
+        $commentsDeleted = $commentManager->removeComments($postId);
+
+        if($postDeleted && $commentsDeleted) {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_deletechapter=ok');
+
+        } else {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_deletechapter=error');
+
+        }
+
+    }
+
 }

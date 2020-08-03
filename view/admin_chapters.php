@@ -6,8 +6,25 @@
 
     <div>
         
-        <a href=""><i class="fas fa-plus-circle"></i> Nouveau</a>
+        <a href="index.php?action=link_editchapter"><i class="fas fa-plus-circle"></i>Nouveau</a>
         
+        <?php if(isset($_GET['message_editchapter'])) {
+            if($_GET['message_editchapter'] == 'ok') { ?>
+                <p>Votre chapitre a bien été publié.</p>
+            <?php } elseif ($_GET['message_editchapter'] == 'error') { ?>
+                <p>Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+            <?php }
+        } ?>
+
+        <?php if(isset($_GET['message_deletechapter'])) {
+            if($_GET['message_deletechapter'] == 'ok') { ?>
+                <p>Votre chapitre a bien été supprimé.</p>
+            <?php } elseif ($_GET['message_deletechapter'] == 'error') { ?>
+                <p>Une erreur est survenue. Le chapitre n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
+            <?php }
+        } ?>
+
+
         <table>
 
             <tr>
@@ -20,7 +37,7 @@
             <?php if(isset($allPosts)) {
                 foreach($allPosts as $post) { ?>
 
-                <tr>
+                <tr id="<?php echo $post['id']; ?>">
                     <td><?= $post['title']; ?></td>
                     <td><?= date('d/m/Y', strtotime($post['creation_date'])); ?></td>
                     <td><?php if($post['update_date'] == $post['creation_date']) {
@@ -28,14 +45,17 @@
                     } else {
                         date('d/m/Y', strtotime($post['update_date']));
                     } ?></td>
-                    <td><i class="fas fa-edit"></i><i class="fas fa-trash"></i></td>
+                    <td>
+                        <a href=""><i class="fas fa-edit"></i></a>
+                        <i class="alert-popup fas fa-trash"></i>
+                    </td>
                 </tr>
 
                 <?php }
             } ?>
 
         </table>
-
+        
         <div>
             <h2>Légende :</h2>
             <div>
@@ -48,9 +68,25 @@
             </div>
         </div>
 
+        <!-- Pop up d'alerte de suppression -->
+        <div id="alert-deletion">
+            <div>
+                <div>
+                    <p>Souhaitez-vous supprimer définitivement ce chapitre ?</p>
+                </div>
+                <div>
+                    <button id="alert-cancel">Annuler</button>
+                    <a id="alert-url" href="index.php?action=link_deletechapter&amp;post_id=<?= $post['id'] ?>">Confirmer</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </section>
+
+<!-- Liens vers les ressources JavaScript -->
+<script src="public/js/alert.js"></script>
 
 <?php $adminContent = ob_get_clean(); ?>
 

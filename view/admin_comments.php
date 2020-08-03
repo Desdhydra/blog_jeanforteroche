@@ -10,7 +10,7 @@
             <th>Auteur</th>
             <th>Contenu</th>
             <th>Date de création</th>
-            <th>Consulter</th>
+            <th>Actions</th>
         </tr>
 
         <?php if(isset($reportedComments)) {

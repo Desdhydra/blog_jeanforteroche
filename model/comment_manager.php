@@ -39,6 +39,16 @@ class CommentManager {
 
     }
 
+    // Méthode qui permet de supprimer les commentaires liés à un chapitre dans la base de données
+    public function removeComments($postId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('DELETE FROM comments WHERE post_id=:post_id');
+        $commentsRemoved = $query->execute(array('post_id' => $postId));
+        return $commentsRemoved;
+
+    }
+
     // Méthode qui permet de modifier le statut de signalement d'un commentaire
     public function getReportedStatus($commentId) {
 
