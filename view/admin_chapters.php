@@ -6,8 +6,11 @@
 
     <div>
         
+        <!-- Bouton qui permet de créer un nouveau chapitre -->
         <a href="index.php?action=link_editchapter"><i class="fas fa-plus-circle"></i>Nouveau</a>
         
+        <!-- Gestion des messages de confirmation et d'erreur -->
+
         <?php if(isset($_GET['message_editchapter'])) {
             if($_GET['message_editchapter'] == 'ok') { ?>
                 <p>Votre chapitre a bien été publié.</p>
@@ -32,7 +35,7 @@
             <?php }
         } ?>
 
-
+        <!-- Tableau qui liste tous les chapitres publiés -->
         <table>
 
             <tr>
@@ -45,7 +48,7 @@
             <?php if(isset($allPosts)) {
                 foreach($allPosts as $post) { ?>
 
-                <tr id="<?php echo $post['id']; ?>">
+                <tr id="<?php echo $post['id']; ?>" class="type-post">
                     <td><?= $post['title']; ?></td>
                     <td><?= date('d/m/Y', strtotime($post['creation_date'])); ?></td>
                     <td><?php if($post['update_date'] == $post['creation_date']) {
@@ -65,6 +68,7 @@
 
         </table>
         
+        <!-- Légende des icônes du tableau -->
         <div>
             <h2>Légende :</h2>
             <div>
@@ -85,7 +89,7 @@
                 </div>
                 <div>
                     <button id="alert-cancel">Annuler</button>
-                    <a id="alert-url" href="index.php?action=link_deletechapter&amp;post_id=<?= $post['id'] ?>">Confirmer</a>
+                    <a id="alert-url" href="">Confirmer</a>
                 </div>
             </div>
         </div>

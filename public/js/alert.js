@@ -1,6 +1,6 @@
 class Alert {
 
-    deletePost() {
+    deleteElement() {
 
         let deleteButtons = document.getElementsByClassName('alert-popup');
         let alertPopup = document.getElementById('alert-deletion');
@@ -9,9 +9,18 @@ class Alert {
 
         for(let i = 0; i < deleteButtons.length; i++) {
             deleteButtons[i].addEventListener('click', (e) => {
+                
                 alertPopup.style.display = 'block';
-                let postId = e.target.parentElement.parentElement.getAttribute('id');
-                alertURL.setAttribute('href', 'index.php?action=link_deletechapter&post_id=' + postId);
+
+                let elementType = e.target.parentElement.parentElement.getAttribute('class');
+                let elementId = e.target.parentElement.parentElement.getAttribute('id');
+
+                if(elementType == 'type-post') {
+                    alertURL.setAttribute('href', 'index.php?action=link_deletechapter&post_id=' + elementId);
+                } else if(elementType == 'type-comment') {
+                    alertURL.setAttribute('href', 'index.php?action=link_deletecomment&comment_id=' + elementId);
+                }
+
             });
         }
         cancelButton.addEventListener('click', () => alertPopup.style.display = 'none');
@@ -21,4 +30,4 @@ class Alert {
 }
 
 let alert = new Alert();
-window.onload = () => alert.deletePost();
+window.onload = () => alert.deleteElement();

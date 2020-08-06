@@ -2,10 +2,9 @@
 
 <section>
 
-    <h1>Ecrire un nouveau chapitre</h1>
+    <h1>Edition d'un chapitre</h1>
 
     <form method="post" action="index.php?action=add_chapter<?php if(isset($postContent)){ echo '&post_id=' . $postContent['id']; }?>">
-        <div>
         <div>
             <label for="editchapter-title">Titre du chapitre :</label>
             <input type="text" id="editchapter-title" name="editchapter-title" <?php if(isset($postContent)){ echo 'value="' . $postContent['title'] . '"'; }?> >

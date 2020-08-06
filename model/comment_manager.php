@@ -2,6 +2,17 @@
 
 class CommentManager {
 
+    // Méthode qui permet de récupérer un commentaire
+    public function getComment($commentId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('SELECT * from comments WHERE id=:id');
+        $query->execute(array('id' => $commentId));
+        $comment = $query->fetch();
+        return $comment;
+
+    }
+
     // Méthode qui permet de récupérer les commentaires liés à un chapitre
     public function getAllComments($postId) {
 
@@ -39,6 +50,29 @@ class CommentManager {
 
     }
 
+    // Méthode qui permet de mettre à jour un commentaire dans la base de données 
+    public function updateComment($content, $commentId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('UPDATE comments SET content=:content WHERE id=:id');
+        $commentUpdated = $query->execute(array(
+            'content' => $content,
+            'id' => $commentId
+        ));
+        return $commentUpdated;
+
+    }
+
+    // Méthode qui permet de supprimer un commentaire
+    public function removeComment($commentId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('DELETE FROM comments WHERE id=:id');
+        $commentRemoved = $query->execute(array('id' => $commentId));
+        return $commentRemoved;
+
+    }
+
     // Méthode qui permet de supprimer les commentaires liés à un chapitre dans la base de données
     public function removeComments($postId) {
 
@@ -56,6 +90,19 @@ class CommentManager {
         $query = $db->prepare('UPDATE comments SET reported_status=:reported_status WHERE id=:id');
         $statusChanged = $query->execute(array(
             'reported_status' => 'yes',
+            'id' => $commentId
+        ));
+        return $statusChanged;
+
+    }
+
+    // Méthode qui permet de modifier le statut de signalement d'un commentaire
+    public function removeReportedStatus($commentId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('UPDATE comments SET reported_status=:reported_status WHERE id=:id');
+        $statusChanged = $query->execute(array(
+            'reported_status' => 'no',
             'id' => $commentId
         ));
         return $statusChanged;

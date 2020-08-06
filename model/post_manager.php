@@ -84,7 +84,7 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de créer un nouveau chapitre dans la base de données 
+    // Méthode qui permet de mettre à jour un chapitre dans la base de données 
     public function updatePost($postId, $title, $content) {
 
         $db = Database::dbConnect();

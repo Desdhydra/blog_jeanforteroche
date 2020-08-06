@@ -3,7 +3,31 @@
 <section>
 
     <h1>Liste des commentaires signalés</h1>
-        
+
+    <?php if(isset($_GET['message_commentpublished'])) {
+        if($_GET['message_commentpublished'] == 'ok') { ?>
+            <p>Ce commentaire a bien été publié.</p>
+        <?php } elseif ($_GET['message_commentpublished'] == 'error') { ?>
+            <p>Une erreur est survenue. Ce commentaire n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
+
+    <?php if(isset($_GET['message_commentedited'])) {
+        if($_GET['message_commentedited'] == 'ok') { ?>
+            <p>Ce commentaire a bien été édité.</p>
+        <?php } elseif ($_GET['message_commentedited'] == 'error') { ?>
+            <p>Une erreur est survenue. Ce commentaire n'a pas pu être édité. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
+
+    <?php if(isset($_GET['message_commentdeleted'])) {
+        if($_GET['message_commentdeleted'] == 'ok') { ?>
+            <p>Ce commentaire a bien été supprimé.</p>
+        <?php } elseif ($_GET['message_commentdeleted'] == 'error') { ?>
+            <p>Une erreur est survenue. Ce commentaire n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
+
     <table>
 
         <tr>
@@ -14,17 +38,21 @@
         </tr>
 
         <?php if(isset($reportedComments)) {
-                foreach($reportedComments as $comment) { ?>
+            foreach($reportedComments as $comment) { ?>
 
-                <tr>
+                <tr id="<?php echo $comment['id']; ?>" class="type-comment">
                     <td><?= $comment['visitor_name']; ?></td>
                     <td><?= $comment['content']; ?></td>
                     <td><?= date('d/m/Y', strtotime($comment['creation_date'])); ?></td>
-                    <td><i class="fas fa-check"></i><i class="fas fa-edit"></i><i class="fas fa-trash"></i></td>
+                    <td>
+                        <a href="index.php?action=publish_comment&amp;comment_id=<?= $comment['id'] ?>"><i class="fas fa-check"></i></a>
+                        <a href="index.php?action=link_editcomment&amp;comment_id=<?= $comment['id'] ?>"><i class="fas fa-edit"></i></a>
+                        <i class="alert-popup fas fa-trash"></i>
+                    </td>
                 </tr>
 
-                <?php }
-            } ?>
+            <?php }
+        } ?>
 
     </table>
 
@@ -44,7 +72,23 @@
         </div>
     </div>
 
+    <!-- Pop up d'alerte de suppression -->
+    <div id="alert-deletion">
+        <div>
+            <div>
+                <p>Souhaitez-vous supprimer définitivement ce commentaire ?</p>
+            </div>
+            <div>
+                <button id="alert-cancel">Annuler</button>
+                <a id="alert-url" href="">Confirmer</a>
+            </div>
+        </div>
+    </div>
+
 </section>
+
+<!-- Liens vers les ressources JavaScript -->
+<script src="public/js/alert.js"></script>
 
 <?php $adminContent = ob_get_clean(); ?>
 

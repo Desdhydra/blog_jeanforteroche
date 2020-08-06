@@ -124,6 +124,30 @@ if(isset($_GET['action'])) {
         $comment = new Comment;
         $comment->reportComment($_GET['post_id'], $_GET['comment_id']);
 
+    } elseif($_GET['action'] == 'publish_comment') {
+
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->publishComment($_GET['comment_id']);
+
+    } elseif($_GET['action'] == 'link_editcomment') {
+
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->commentContent($_GET['comment_id']);
+
+    } elseif($_GET['action'] == 'edit_comment') {
+
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->editComment($_POST['editcomment-content'], $_GET['comment_id']);
+
+    } elseif($_GET['action'] == 'link_deletecomment') {
+
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->deleteComment($_GET['comment_id']);
+
     }
 
 // S'il n'y a aucune action, affiche la page d'accueil
