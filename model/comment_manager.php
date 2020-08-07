@@ -2,7 +2,7 @@
 
 class CommentManager {
 
-    // Méthode qui permet de récupérer un commentaire
+    // Méthode qui permet de récupérer un commentaire dans la base de données
     public function getComment($commentId) {
 
         $db = Database::dbConnect();
@@ -10,28 +10,6 @@ class CommentManager {
         $query->execute(array('id' => $commentId));
         $comment = $query->fetch();
         return $comment;
-
-    }
-
-    // Méthode qui permet de récupérer les commentaires liés à un chapitre
-    public function getAllComments($postId) {
-
-        $db = Database::dbConnect();
-        $query = $db->prepare('SELECT * from comments WHERE post_id=:post_id ORDER BY creation_date');
-        $query->execute(array('post_id' => $postId));
-        $comments = $query->fetchAll();
-        return $comments;
-
-    }
-
-    // Méthode qui permet de récupérer les commentaires signalés
-    public function getReportedComments() {
-
-        $db = Database::dbConnect();
-        $query = $db->prepare('SELECT * from comments WHERE reported_status=:reported_status ORDER BY creation_date');
-        $query->execute(array('reported_status' => 'yes'));
-        $comments = $query->fetchAll();
-        return $comments;
 
     }
 
@@ -63,13 +41,24 @@ class CommentManager {
 
     }
 
-    // Méthode qui permet de supprimer un commentaire
+    // Méthode qui permet de supprimer un commentaire dans la base de données 
     public function removeComment($commentId) {
 
         $db = Database::dbConnect();
         $query = $db->prepare('DELETE FROM comments WHERE id=:id');
         $commentRemoved = $query->execute(array('id' => $commentId));
         return $commentRemoved;
+
+    }
+
+    // Méthode qui permet de récupérer les commentaires liés à un chapitre dans la base de données
+    public function getAllComments($postId) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('SELECT * from comments WHERE post_id=:post_id ORDER BY creation_date');
+        $query->execute(array('post_id' => $postId));
+        $comments = $query->fetchAll();
+        return $comments;
 
     }
 
@@ -83,7 +72,7 @@ class CommentManager {
 
     }
 
-    // Méthode qui permet de modifier le statut de signalement d'un commentaire
+    // Méthode qui permet de modifier le statut de signalement d'un commentaire (devient signalé)
     public function getReportedStatus($commentId) {
 
         $db = Database::dbConnect();
@@ -96,7 +85,7 @@ class CommentManager {
 
     }
 
-    // Méthode qui permet de modifier le statut de signalement d'un commentaire
+    // Méthode qui permet de modifier le statut de signalement d'un commentaire (n'est plus signalé)
     public function removeReportedStatus($commentId) {
 
         $db = Database::dbConnect();
@@ -106,6 +95,17 @@ class CommentManager {
             'id' => $commentId
         ));
         return $statusChanged;
+
+    }
+
+    // Méthode qui permet de récupérer les commentaires signalés dans la base de données
+    public function getReportedComments() {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('SELECT * from comments WHERE reported_status=:reported_status ORDER BY creation_date');
+        $query->execute(array('reported_status' => 'yes'));
+        $comments = $query->fetchAll();
+        return $comments;
 
     }
 

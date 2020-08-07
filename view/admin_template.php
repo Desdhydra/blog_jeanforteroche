@@ -1,21 +1,30 @@
-<?php $title = 'Jean Forteroche | Panneau d\'administration'; ?>
+<?php if(isset($_SESSION['status']) && ($_SESSION['status'] == 'authenticated')) { ?>
 
-<?php ob_start(); ?>
+    <?php $title = 'Jean Forteroche | Panneau d\'administration'; ?>
 
-<main>
+    <?php ob_start(); ?>
 
-    <nav>
-        </ul>
-            <li><a href="index.php?action=link_admin">Tableau de bord</a></li>
-            <li><a href="index.php?action=link_admin_chapters">Chapitres</a></li>
-            <li><a href="index.php?action=link_admin_comments">Commentaires signalés</a></li>
-        </ul>
-    </nav>
+    <!-- Chaque page du panneau d'administration se compose d'un sous-menu et du contenu (dynamique) -->
+    <main>
 
-    <?= $adminContent ?>
+        <nav>
+            </ul>
+                <li><a href="index.php?action=link_admin">Tableau de bord</a></li>
+                <li><a href="index.php?action=link_admin_chapters">Chapitres</a></li>
+                <li><a href="index.php?action=link_admin_comments">Commentaires signalés</a></li>
+            </ul>
+        </nav>
 
-</main>
+        <?= $adminContent ?>
 
-<?php $content = ob_get_clean(); ?>
+    </main>
 
-<?php require('template.php'); ?>
+    <?php $content = ob_get_clean(); ?>
+
+    <?php require('template.php'); ?>
+
+<?php } else {
+
+require('view/error_forbidden.php');
+
+} ?>

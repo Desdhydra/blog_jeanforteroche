@@ -1,17 +1,11 @@
-<?php $title = 'Jean Forteroche | Profil'; ?>
-
 <?php ob_start(); ?>
 
-<main>
+<section>
 
-    <section>
+    <h1>Profil</h1>
 
-        <h1>Profil</h1>
+</section>
 
-    </section>
+<?php $adminContent = ob_get_clean(); ?>
 
-</main>
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>
+<?php require('admin_template.php'); ?>

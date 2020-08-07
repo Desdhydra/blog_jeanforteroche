@@ -2,6 +2,7 @@
 
 class UserManager {
 
+    // Méthode qui permet de récupérer un utilisateur dans la base de données
     public function getUser($userEmail, $userPassword) {
 
         $db = Database::dbConnect();

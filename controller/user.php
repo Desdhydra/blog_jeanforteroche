@@ -4,6 +4,7 @@ require('model/user_manager.php');
 
 class User {
 
+    // Méthode qui permet d'authentifier un utilisateur enregistré
     public function signIn($userEmail, $userPassword) {
 
         $userEmail = htmlspecialchars($userEmail);

@@ -45,6 +45,8 @@ if(isset($_GET['action'])) {
 
         require('view/legal.php');
 
+    // Gestion des actions de connexion et déconnexion
+
     } elseif($_GET['action'] == 'link_connection') {
 
         require('view/connection.php');
@@ -53,7 +55,17 @@ if(isset($_GET['action'])) {
 
         require('view/logout.php');
 
+    } elseif($_GET['action'] == 'sign_in') {
+
+        require('controller/user.php');
+        $user = new User;
+        $user->signIn($_POST['signin-mail'], $_POST['signin-password']);
+
     // Gestion des actions des liens du panneau d'administration
+
+    } elseif($_GET['action'] == 'link_profile') {
+
+        require('view/admin_profile.php');
 
     } elseif($_GET['action'] == 'link_admin') {
 
@@ -65,6 +77,12 @@ if(isset($_GET['action'])) {
         $post = new Post;
         $post->allPosts();
 
+    } elseif($_GET['action'] == 'link_admin_comments') {
+    
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->allComments();
+
     } elseif($_GET['action'] == 'link_editchapter') {
         
         if(isset($_GET['post_id'])) {
@@ -75,35 +93,13 @@ if(isset($_GET['action'])) {
             require('view/admin_editchapter.php');
         }
 
-    } elseif($_GET['action'] == 'link_deletechapter') {
-        
-        require('controller/post.php');
-        $post = new Post;
-        $post->deletePost($_GET['post_id']);
-
-    } elseif($_GET['action'] == 'link_admin_comments') {
-    
-        require('controller/comment.php');
-        $comment = new Comment;
-        $comment->allComments();
-    
-    } elseif($_GET['action'] == 'link_profile') {
-
-        require('view/admin_profile.php');
-    
-    // Gestion des actions des formulaires
-
-    } elseif($_GET['action'] == 'send_comment') {
+    } elseif($_GET['action'] == 'link_editcomment') {
 
         require('controller/comment.php');
         $comment = new Comment;
-        $comment->addComment($_POST['comment-name'], $_POST['comment-content'], $_GET['post_id']);
+        $comment->commentContent($_GET['comment_id']);
 
-    } elseif($_GET['action'] == 'sign_in') {
-
-        require('controller/user.php');
-        $user = new User;
-        $user->signIn($_POST['signin-mail'], $_POST['signin-password']);
+    // Gestion des chapitres
 
     } elseif($_GET['action'] == 'add_chapter') {
 
@@ -116,7 +112,19 @@ if(isset($_GET['action'])) {
             $post->addPost($_POST['editchapter-title'], $_POST['editchapter-content']);
         }
 
-    // Gestion des actions de signalement des commentaires
+    } elseif($_GET['action'] == 'deletechapter') {
+        
+        require('controller/post.php');
+        $post = new Post;
+        $post->deletePost($_GET['post_id']);
+    
+    // Gestion des commentaires
+
+    } elseif($_GET['action'] == 'send_comment') {
+
+        require('controller/comment.php');
+        $comment = new Comment;
+        $comment->addComment($_POST['comment-name'], $_POST['comment-content'], $_GET['post_id']);
 
     } elseif($_GET['action'] == 'comment_reported') {
 
@@ -130,19 +138,13 @@ if(isset($_GET['action'])) {
         $comment = new Comment;
         $comment->publishComment($_GET['comment_id']);
 
-    } elseif($_GET['action'] == 'link_editcomment') {
-
-        require('controller/comment.php');
-        $comment = new Comment;
-        $comment->commentContent($_GET['comment_id']);
-
     } elseif($_GET['action'] == 'edit_comment') {
 
         require('controller/comment.php');
         $comment = new Comment;
         $comment->editComment($_POST['editcomment-content'], $_GET['comment_id']);
 
-    } elseif($_GET['action'] == 'link_deletecomment') {
+    } elseif($_GET['action'] == 'deletecomment') {
 
         require('controller/comment.php');
         $comment = new Comment;

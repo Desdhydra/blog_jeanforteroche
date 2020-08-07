@@ -5,6 +5,16 @@ require('model/comment_manager.php');
 
 class Post {
 
+    // Méthode qui permet de récupérer le contenu d'un chapitre
+    public function postContent($postId) {
+
+        $postManager = new PostManager;
+        $postContent = $postManager->getPost($postId);
+
+        require('view/admin_editchapter.php');
+
+    }
+
     // Méthode qui permet d'afficher un chapitre et ses commentaires
     public function detailPost($postId) {
 
@@ -50,13 +60,13 @@ class Post {
 
             } else {
 
-                require('view/error.php');
+                require('view/error_notfound.php');
 
             }
 
         } else {
 
-            require('view/error.php');
+            require('view/error_notfound.php');
 
         }
 
@@ -105,16 +115,6 @@ class Post {
             header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_updatechapter=error');
 
         }
-
-    }
-
-    // Méthode qui permet de récupérer le contenu d'un chapitre
-    public function postContent($postId) {
-
-        $postManager = new PostManager;
-        $postContent = $postManager->getPost($postId);
-
-        require('view/admin_editchapter.php');
 
     }
 

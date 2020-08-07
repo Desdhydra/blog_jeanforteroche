@@ -2,7 +2,7 @@
 
 class PostManager {
 
-    // Méthode qui permet de récupérer un chapitre
+    // Méthode qui permet de récupérer un chapitre dans la base de données
     public function getPost($postId) {
 
         $db = Database::dbConnect();
@@ -13,7 +13,7 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de récupérer les trois derniers chapitres
+    // Méthode qui permet de récupérer les trois derniers chapitres dans la base de données
     public function getLastThreePosts() {
 
         $db = Database::dbConnect();
@@ -24,7 +24,7 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de récupérer une liste de chapitres
+    // Méthode qui permet de récupérer une liste de chapitres dans la base de données
     public function getPostsInRange($firstPost, $postsPerPage) {
 
         $db = Database::dbConnect();
@@ -36,7 +36,7 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de récupérer tous les chapitres
+    // Méthode qui permet de récupérer tous les chapitres dans la base de données
     public function getAllPosts() {
 
         $db = Database::dbConnect();
@@ -47,7 +47,7 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de mettre à jour du nombre de commentaires
+    // Méthode qui permet de mettre à jour le nombre de commentaires
     public function updateCommentsNumber($commentsNumber, $postId) {
 
         $db = Database::dbConnect();
@@ -98,7 +98,7 @@ class PostManager {
 
     }
 
-    // Méthode qui permet de supprimer chapitre dans la base de données
+    // Méthode qui permet de supprimer un chapitre dans la base de données
     public function removePost($postId) {
 
         $db = Database::dbConnect();

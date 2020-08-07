@@ -52,24 +52,7 @@ class Comment {
 
     }
 
-    // Méthode qui permet de signaler un commentaire
-    public function reportComment($postId, $commentId) {
-
-        $commentManager = new CommentManager;
-        $statusChanged = $commentManager->getReportedStatus($commentId);
-
-        if($statusChanged) {
-            
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=ok');
-
-        } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=error');
-
-        }
-
-    }
-
+    // Méthode qui permet de publier un commentaire
     public function publishComment($commentId) {
 
         $commentManager = new CommentManager;
@@ -105,7 +88,7 @@ class Comment {
 
     }
 
-    // Méthode qui permet d'éditer un commentaire
+    // Méthode qui permet de supprimer un commentaire
     public function deleteComment($commentId) {
 
         $commentManager = new CommentManager;
@@ -125,6 +108,24 @@ class Comment {
         } else {
 
             header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentdeleted=error');
+
+        }
+
+    }
+
+    // Méthode qui permet de signaler un commentaire
+    public function reportComment($postId, $commentId) {
+
+        $commentManager = new CommentManager;
+        $statusChanged = $commentManager->getReportedStatus($commentId);
+
+        if($statusChanged) {
+            
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=ok');
+
+        } else {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=error');
 
         }
 

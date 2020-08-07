@@ -16,9 +16,9 @@ class Alert {
                 let elementId = e.target.parentElement.parentElement.getAttribute('id');
 
                 if(elementType == 'type-post') {
-                    alertURL.setAttribute('href', 'index.php?action=link_deletechapter&post_id=' + elementId);
+                    alertURL.setAttribute('href', 'index.php?action=deletechapter&post_id=' + elementId);
                 } else if(elementType == 'type-comment') {
-                    alertURL.setAttribute('href', 'index.php?action=link_deletecomment&comment_id=' + elementId);
+                    alertURL.setAttribute('href', 'index.php?action=deletecomment&comment_id=' + elementId);
                 }
 
             });

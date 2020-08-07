@@ -1,8 +1,9 @@
 <?php ob_start(); ?>
 
-<section>
+<h1>Liste des commentaires signalés</h1>
 
-    <h1>Liste des commentaires signalés</h1>
+<!-- Gestion des messages de confirmation et d'erreur -->
+<section>
 
     <?php if(isset($_GET['message_commentpublished'])) {
         if($_GET['message_commentpublished'] == 'ok') { ?>
@@ -27,6 +28,11 @@
             <p>Une erreur est survenue. Ce commentaire n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
         <?php }
     } ?>
+
+</section>
+
+<!-- Tableau qui liste tous les commentaire signalés et sa légende -->
+<section>
 
     <table>
 
