@@ -1,5 +1,6 @@
 <?php
 
+require('mail.php');
 require('model/user_manager.php');
 
 class User {
@@ -11,16 +12,35 @@ class User {
         $userPassword = htmlspecialchars($userPassword);
 
         $userManager = new UserManager;
-        $checkPassword = $userManager->getUser($userEmail, md5($userPassword));
+        $user = $userManager->getUser($userEmail);
 
-        if($checkPassword) {
+        if($userPassword == $user['user_password']) {
 
             $_SESSION['status'] = 'authenticated'; 
             header('Location: http://localhost/jeanforteroche/index.php?action=link_home');
 
         } else {
-
             header('Location: http://localhost/jeanforteroche/index.php?action=link_connection&message_connection=error');
+        }
+
+    }
+
+    public function newPassWord($userEmail) {
+
+        $userEmail = htmlspecialchars($userEmail);
+        $randomPassword = rand(1000000, 999999999);
+
+        $userManager = new UserManager;
+        $passwordChanged = $userManager->newRandomPassword($userEmail, $randomPassword);
+
+        if($passwordChanged) {
+
+            $mail = new Mail;
+            $mail->sendPassword($userEmail, $randomPassword);
+
+        } else {
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_forgotten_password&message_newpassword=error');
 
         }
 

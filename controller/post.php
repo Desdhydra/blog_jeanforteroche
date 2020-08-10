@@ -8,23 +8,44 @@ class Post {
     // Méthode qui permet de récupérer le contenu d'un chapitre
     public function postContent($postId) {
 
-        $postManager = new PostManager;
-        $postContent = $postManager->getPost($postId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $postId)) {
 
-        require('view/admin_editchapter.php');
+            $postManager = new PostManager;
+            $postContent = $postManager->getPost($postId);
+
+            if(empty($postContent)) {
+                require('view/error_notfound.php');
+            } else {
+                require('view/admin_editchapter.php');
+            }
+
+        } else {
+            require('view/error_notfound.php');
+        }
 
     }
 
     // Méthode qui permet d'afficher un chapitre et ses commentaires
     public function detailPost($postId) {
 
-        $postManager = new PostManager;
-        $detailPost = $postManager->getPost($postId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $postId)) {
 
-        $commentManager = new CommentManager;
-        $allComments = $commentManager->getAllComments($postId);
+            $postManager = new PostManager;
+            $detailPost = $postManager->getPost($postId);
 
-        require('view/chapter.php');
+            if(empty($detailPost)) {
+                require('view/error_notfound.php');
+            } else {
+                $commentManager = new CommentManager;
+                $allComments = $commentManager->getAllComments($postId);
+                require('view/chapter.php');
+            }
+
+        } else {
+            require('view/error_notfound.php');
+        }
 
     }
 
@@ -33,7 +54,6 @@ class Post {
 
         $postManager = new PostManager;
         $lastThreePosts = $postManager->getLastThreePosts();
-
         require('view/home.php');
 
     }
@@ -59,15 +79,11 @@ class Post {
                 require('view/novel.php');
 
             } else {
-
                 require('view/error_notfound.php');
-
             }
 
         } else {
-
             require('view/error_notfound.php');
-
         }
 
     }
@@ -77,7 +93,6 @@ class Post {
 
         $postManager = new PostManager;
         $allPosts = $postManager->getAllPosts();
-
         require('view/admin_chapters.php');
 
     }
@@ -85,17 +100,16 @@ class Post {
     // Méthode qui permet d'ajouter un nouveau chapitre
     public function addPost($title, $content) {
 
+        $title = htmlspecialchars($title);
+        $content = htmlspecialchars($content);
+
         $postManager = new PostManager;
         $postAdded = $postManager->createPost($title, $content);
 
         if($postAdded) {
-
             header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_editchapter=ok');
-
         } else {
-
             header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_editchapter=error');
-
         }
 
     }
@@ -103,17 +117,23 @@ class Post {
     // Méthode qui permet d'éditer et de mettre à jour un chapitre
     public function editPost($postId, $title, $content) {
 
-        $postManager = new PostManager;
-        $postUpdated = $postManager->updatePost($postId, $title, $content);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $postId)) {
 
-        if($postUpdated) {
+            $title = htmlspecialchars($title);
+            $content = htmlspecialchars($content);
 
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_updatechapter=ok');
+            $postManager = new PostManager;
+            $postUpdated = $postManager->updatePost($postId, $title, $content);
+
+            if($postUpdated) {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_updatechapter=ok');
+            } else {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_updatechapter=error');
+            }
 
         } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_updatechapter=error');
-
+            require('view/error_notfound.php');
         }
 
     }
@@ -121,20 +141,23 @@ class Post {
     // Méthode qui permet de supprimer un chapitre
     public function deletePost($postId) {
 
-        $postManager = new PostManager;
-        $postDeleted = $postManager->removePost($postId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $postId)) {
 
-        $commentManager = new CommentManager;
-        $commentsDeleted = $commentManager->removeComments($postId);
+            $postManager = new PostManager;
+            $postDeleted = $postManager->removePost($postId);
 
-        if($postDeleted && $commentsDeleted) {
+            $commentManager = new CommentManager;
+            $commentsDeleted = $commentManager->removeComments($postId);
 
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_deletechapter=ok');
+            if($postDeleted && $commentsDeleted) {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_deletechapter=ok');
+            } else {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_deletechapter=error');
+            }
 
         } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_chapters&message_deletechapter=error');
-
+            require('view/error_notfound.php');
         }
 
     }

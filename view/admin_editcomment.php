@@ -8,7 +8,7 @@
 
     <form method="post" action="index.php?action=edit_comment&amp;comment_id=<?= $commentContent['id'] ?>">
         <div>
-            <textarea id="editcomment-content" name="editcomment-content">
+            <textarea id="editcomment-content" name="editcomment-content" required>
                 <?= $commentContent['content'] ?>
             </textarea>
         </div>

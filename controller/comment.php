@@ -8,10 +8,21 @@ class Comment {
     // Méthode qui permet de récupérer le contenu d'un commentaire
     public function commentContent($commentId) {
         
-        $commentManager = new CommentManager;
-        $commentContent = $commentManager->getComment($commentId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $commentId)) {
 
-        require('view/admin_editcomment.php');
+            $commentManager = new CommentManager;
+            $commentContent = $commentManager->getComment($commentId);
+
+            if(empty($commentContent)) {
+                require('view/error_notfound.php');
+            } else {
+                require('view/admin_editcomment.php');
+            }
+
+        } else {
+            require('view/error_notfound.php');
+        }
 
     }
 
@@ -20,7 +31,6 @@ class Comment {
 
         $commentManager = new CommentManager;
         $reportedComments = $commentManager->getReportedComments();
-
         require('view/admin_comments.php');
 
     }
@@ -28,26 +38,30 @@ class Comment {
     // Méthode qui permet d'ajouter un nouveau commentaire
     public function addComment($commentName, $commentContent, $postId) {
 
-        $commentName = htmlspecialchars($commentName);
-        $commentContent = htmlspecialchars($commentContent);
-        $postId = htmlspecialchars($postId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $postId)) {
 
-        $commentManager = new CommentManager;
-        $commentAdded = $commentManager->createComment($commentName, $commentContent, $postId);
+            $commentName = htmlspecialchars($commentName);
+            $commentContent = htmlspecialchars($commentContent);
 
-        if($commentAdded) {
+            $commentManager = new CommentManager;
+            $commentAdded = $commentManager->createComment($commentName, $commentContent, $postId);
 
-            $postManager = new PostManager;
-            $post = $postManager->getPost($postId);
-            $updatedNumber = $post['comments_number'] + 1;
-            $postManager->updateCommentsNumber($updatedNumber, $postId);
+            if($commentAdded) {
 
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=ok');
+                $postManager = new PostManager;
+                $post = $postManager->getPost($postId);
+                $updatedNumber = $post['comments_number'] + 1;
+                $postManager->updateCommentsNumber($updatedNumber, $postId);
+
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=ok');
+
+            } else {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=error');
+            }
 
         } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_comment=error');
-
+            require('view/error_notfound.php');
         }
 
     }
@@ -55,17 +69,20 @@ class Comment {
     // Méthode qui permet de publier un commentaire
     public function publishComment($commentId) {
 
-        $commentManager = new CommentManager;
-        $statusChanged = $commentManager->removeReportedStatus($commentId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $commentId)) {
 
-        if($statusChanged) {
-            
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentpublished=ok');
+            $commentManager = new CommentManager;
+            $statusChanged = $commentManager->removeReportedStatus($commentId);
+
+            if($statusChanged) {  
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentpublished=ok');
+            } else {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentpublished=error');
+            }
 
         } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentpublished=error');
-
+            require('view/error_notfound.php');
         }
 
     }
@@ -73,17 +90,22 @@ class Comment {
     // Méthode qui permet d'éditer un commentaire
     public function editComment($content, $commentId) {
 
-        $commentManager = new CommentManager;
-        $commentUpdated = $commentManager->updateComment($content, $commentId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $commentId)) {
 
-        if($commentUpdated) {
-            
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentedited=ok');
+            $content = htmlspecialchars($content);
+
+            $commentManager = new CommentManager;
+            $commentUpdated = $commentManager->updateComment($content, $commentId);
+
+            if($commentUpdated) {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentedited=ok');
+            } else {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentedited=error');
+            }
 
         } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentedited=error');
-
+            require('view/error_notfound.php');
         }
 
     }
@@ -91,24 +113,29 @@ class Comment {
     // Méthode qui permet de supprimer un commentaire
     public function deleteComment($commentId) {
 
-        $commentManager = new CommentManager;
-        $comment = $commentManager->getComment($commentId);
-        $postId = $comment['post_id'];
-        $commentRemoved = $commentManager->removeComment($commentId);
+        // Vérification préalable de la validité de l'ID (nombre entier)
+        if(preg_match('/[0-9]+/', $commentId)) {
 
-        if($commentRemoved) {
-            
-            $postManager = new PostManager;
-            $post = $postManager->getPost($postId);
-            $updatedNumber = $post['comments_number'] - 1;
-            $postManager->updateCommentsNumber($updatedNumber, $postId);
+            $commentManager = new CommentManager;
+            $comment = $commentManager->getComment($commentId);
+            $postId = $comment['post_id'];
+            $commentRemoved = $commentManager->removeComment($commentId);
 
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentdeleted=ok');
+            if($commentRemoved) {
+                
+                $postManager = new PostManager;
+                $post = $postManager->getPost($postId);
+                $updatedNumber = $post['comments_number'] - 1;
+                $postManager->updateCommentsNumber($updatedNumber, $postId);
+
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentdeleted=ok');
+
+            } else {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentdeleted=error');
+            }
 
         } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentdeleted=error');
-
+            require('view/error_notfound.php');
         }
 
     }
@@ -116,17 +143,20 @@ class Comment {
     // Méthode qui permet de signaler un commentaire
     public function reportComment($postId, $commentId) {
 
-        $commentManager = new CommentManager;
-        $statusChanged = $commentManager->getReportedStatus($commentId);
+        // Vérification préalable de la validité des ID (nombres entiers)
+        if(preg_match('/[0-9]+/', $postId) && preg_match('/[0-9]+/', $commentId)) {
 
-        if($statusChanged) {
-            
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=ok');
+            $commentManager = new CommentManager;
+            $statusChanged = $commentManager->getReportedStatus($commentId);
+
+            if($statusChanged) {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=ok');
+            } else {
+                header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=error');
+            }
 
         } else {
-
-            header('Location: http://localhost/jeanforteroche/index.php?action=link_chapter&post_id=' . $postId . '&message_status=error');
-
+            require('view/error_notfound.php');
         }
 
     }

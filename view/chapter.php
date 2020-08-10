@@ -71,10 +71,10 @@
             <form method="post" action="index.php?action=send_comment&amp;post_id=<?= $detailPost['id'] ?>">
                 <div>
                     <label for="comment-name">Votre nom :</label>
-                    <input type="text" id="comment-name" name="comment-name">
+                    <input type="text" id="comment-name" name="comment-name" required>
                 </div>
                 <div>
-                    <textarea name="comment-content">Votre message</textarea> 
+                    <textarea name="comment-content" required>Votre message</textarea> 
                 </div>
                 <div>
                     <input type="submit" value="Envoyer">

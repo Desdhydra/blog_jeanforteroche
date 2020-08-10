@@ -54,12 +54,22 @@ if(isset($_GET['action'])) {
     } elseif($_GET['action'] == 'link_logout') {
 
         require('view/logout.php');
+    
+    } elseif($_GET['action'] == 'link_forgotten_password') {
+
+        require('view/forgottenpassword.php');
 
     } elseif($_GET['action'] == 'sign_in') {
 
         require('controller/user.php');
         $user = new User;
         $user->signIn($_POST['signin-mail'], $_POST['signin-password']);
+
+    } elseif($_GET['action'] == 'new_password') {
+
+        require('controller/user.php');
+        $user = new User;
+        $user->newPassword($_POST['newpass-mail']);
 
     // Gestion des actions des liens du panneau d'administration
 
