@@ -71,15 +71,33 @@ if(isset($_GET['action'])) {
         $user = new User;
         $user->newPassword($_POST['newpass-mail']);
 
-    // Gestion des actions des liens du panneau d'administration
+    // Gestion du profil
 
     } elseif($_GET['action'] == 'link_profile') {
 
         require('view/admin_profile.php');
 
-    } elseif($_GET['action'] == 'link_admin') {
+    } elseif($_GET['action'] == 'link_changemail') {
 
-        require('view/admin_board.php');
+        require('view/admin_changemail.php');
+    
+    } elseif($_GET['action'] == 'change-mail') {
+
+        require('controller/user.php');
+        $user = new User;
+        $user->changeEmail($_POST['changemail-oldmail'], $_POST['changemail-newmail'], $_POST['changemail-password']);
+
+    } elseif($_GET['action'] == 'link_changepassword') {
+
+        require('view/admin_changepassword.php');
+
+    } elseif($_GET['action'] == 'change-password') {
+
+        require('controller/user.php');
+        $user = new User;
+        $user->changePassword($_POST['changepassword-mail'], $_POST['changepassword-pass'], $_POST['changepassword-repeat']);
+
+    // Gestion des actions des liens du panneau d'administration
 
     } elseif($_GET['action'] == 'link_admin_chapters') {
         
@@ -102,12 +120,6 @@ if(isset($_GET['action'])) {
         } else {
             require('view/admin_editchapter.php');
         }
-
-    } elseif($_GET['action'] == 'link_editcomment') {
-
-        require('controller/comment.php');
-        $comment = new Comment;
-        $comment->commentContent($_GET['comment_id']);
 
     // Gestion des chapitres
 
@@ -147,12 +159,6 @@ if(isset($_GET['action'])) {
         require('controller/comment.php');
         $comment = new Comment;
         $comment->publishComment($_GET['comment_id']);
-
-    } elseif($_GET['action'] == 'edit_comment') {
-
-        require('controller/comment.php');
-        $comment = new Comment;
-        $comment->editComment($_POST['editcomment-content'], $_GET['comment_id']);
 
     } elseif($_GET['action'] == 'deletecomment') {
 

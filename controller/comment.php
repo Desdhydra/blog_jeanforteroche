@@ -87,29 +87,6 @@ class Comment {
 
     }
 
-    // Méthode qui permet d'éditer un commentaire
-    public function editComment($content, $commentId) {
-
-        // Vérification préalable de la validité de l'ID (nombre entier)
-        if(preg_match('/[0-9]+/', $commentId)) {
-
-            $content = htmlspecialchars($content);
-
-            $commentManager = new CommentManager;
-            $commentUpdated = $commentManager->updateComment($content, $commentId);
-
-            if($commentUpdated) {
-                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentedited=ok');
-            } else {
-                header('Location: http://localhost/jeanforteroche/index.php?action=link_admin_comments&message_commentedited=error');
-            }
-
-        } else {
-            require('view/error_notfound.php');
-        }
-
-    }
-
     // Méthode qui permet de supprimer un commentaire
     public function deleteComment($commentId) {
 

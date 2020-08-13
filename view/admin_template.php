@@ -9,7 +9,6 @@
 
         <nav>
             </ul>
-                <li><a href="index.php?action=link_admin">Tableau de bord</a></li>
                 <li><a href="index.php?action=link_admin_chapters">Chapitres</a></li>
                 <li><a href="index.php?action=link_admin_comments">Commentaires signalés</a></li>
             </ul>

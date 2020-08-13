@@ -13,13 +13,26 @@ class UserManager {
 
     }
 
+    // Méthode
+    public function updateEmail($newEmail, $id) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('UPDATE users SET email=:email WHERE id=:id');
+        $emailChanged = $query->execute(array(
+            'email' => $newEmail,
+            'id' => $id
+        ));
+        return $emailChanged;
+
+    }
+
     // Méthode qui permet d'attribuer un nouveau mot de passe généré aléatoirement
-    public function newRandowPassword($userEmail, $randomPassword) {
+    public function updatePassword($userEmail, $userPassword) {
 
         $db = Database::dbConnect();
         $query = $db->prepare('UPDATE users SET user_password=:user_password WHERE email=:email');
         $passwordChanged = $query->execute(array(
-            'user_password' => md5($randomPassword),
+            'user_password' => md5($userPassword),
             'email' => $userEmail
         ));
         return $passwordChanged;

@@ -28,19 +28,6 @@ class CommentManager {
 
     }
 
-    // Méthode qui permet de mettre à jour un commentaire dans la base de données 
-    public function updateComment($content, $commentId) {
-
-        $db = Database::dbConnect();
-        $query = $db->prepare('UPDATE comments SET content=:content WHERE id=:id');
-        $commentUpdated = $query->execute(array(
-            'content' => $content,
-            'id' => $commentId
-        ));
-        return $commentUpdated;
-
-    }
-
     // Méthode qui permet de supprimer un commentaire dans la base de données 
     public function removeComment($commentId) {
 

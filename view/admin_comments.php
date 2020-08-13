@@ -13,14 +13,6 @@
         <?php }
     } ?>
 
-    <?php if(isset($_GET['message_commentedited'])) {
-        if($_GET['message_commentedited'] == 'ok') { ?>
-            <p>Ce commentaire a bien été édité.</p>
-        <?php } elseif ($_GET['message_commentedited'] == 'error') { ?>
-            <p>Une erreur est survenue. Ce commentaire n'a pas pu être édité. Veuillez réessayer plus tard.</p>
-        <?php }
-    } ?>
-
     <?php if(isset($_GET['message_commentdeleted'])) {
         if($_GET['message_commentdeleted'] == 'ok') { ?>
             <p>Ce commentaire a bien été supprimé.</p>
@@ -52,7 +44,6 @@
                     <td><?= date('d/m/Y', strtotime($comment['creation_date'])); ?></td>
                     <td>
                         <a href="index.php?action=publish_comment&amp;comment_id=<?= $comment['id'] ?>"><i class="fas fa-check"></i></a>
-                        <a href="index.php?action=link_editcomment&amp;comment_id=<?= $comment['id'] ?>"><i class="fas fa-edit"></i></a>
                         <i class="alert-popup fas fa-trash"></i>
                     </td>
                 </tr>
