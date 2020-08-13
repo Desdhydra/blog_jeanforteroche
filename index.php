@@ -71,6 +71,12 @@ if(isset($_GET['action'])) {
         $user = new User;
         $user->newPassword($_POST['newpass-mail']);
 
+    } elseif($_GET['action'] == 'send_mail') {
+
+        require('controller/mail.php');
+        $mail = new Mail;
+        $mail->contactMail($_POST['contact-name'], $_POST['contact-mail'], $_POST['contact-subject'], $_POST['contact-message']);
+
     // Gestion du profil
 
     } elseif($_GET['action'] == 'link_profile') {

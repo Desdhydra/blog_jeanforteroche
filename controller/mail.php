@@ -1,5 +1,7 @@
 <?php
 
+require('model/user_manager.php');
+
 // Initialisation de PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -42,6 +44,52 @@ class Mail {
 
             // Gestion des exceptions
             header('Location: http://localhost/jeanforteroche/index.php?action=link_forgotten_password&message_newpassword=error');
+
+        }
+
+    }
+
+    public function contactMail($name, $email, $subject, $message) {
+
+        $name = htmlspecialchars($name);
+        $email = htmlspecialchars($email);
+        $subject = htmlspecialchars($subject);
+        $message = htmlspecialchars($message);
+
+        $userManager = new UserManager;
+        $authorEmail = $userManager->getAuthorEmail();
+
+        // Création d'une instance d'objet PHPMailer (on lui passe l'argument "true" pour la gestion des exceptions)
+        $phpMailer = new PHPMailer(true);
+
+        try {
+
+            // Paramètres du serveur
+            $phpMailer->isSMTP();
+            $phpMailer->Host = 'smtp.ionos.fr';
+            $phpMailer->SMTPAuth = true;
+            $phpMailer->SMTPSecure = 'tls';
+            $phpMailer->Username = '';
+            $phpMailer->Password = '';
+            $phpMailer->Port = 587;
+            
+            // Personnalisation de l'e-mail
+            $phpMailer->setFrom($email, $name);
+            $phpMailer->addAddress($authorEmail, 'Jean Forteroche');
+            $phpMailer->isHTML(true);
+            $phpMailer->Subject = '[Blog - Formulaire de contact] ' . $subject;
+            $phpMailer->Body = 'Bonjour Jean Forteroche,<br />Vous avez reçu un nouveau message, envoyé à partir du formulaire de contact de votre blog :<br /><br />' . $message;
+            $phpMailer->AltBody = $message;
+        
+            // Envoi de l'e-mail
+            $phpMailer->send();
+
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_contact&message_contact=ok');
+
+        } catch (Exception $e) {
+
+            // Gestion des exceptions
+            header('Location: http://localhost/jeanforteroche/index.php?action=link_contact&message_contact=error');
 
         }
 

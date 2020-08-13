@@ -13,7 +13,7 @@ class UserManager {
 
     }
 
-    // Méthode
+    // Méthode qui permet de mettre à jour l'adresse e-mail d'un utilisateur enregistré dans la base de données
     public function updateEmail($newEmail, $id) {
 
         $db = Database::dbConnect();
@@ -26,7 +26,7 @@ class UserManager {
 
     }
 
-    // Méthode qui permet d'attribuer un nouveau mot de passe généré aléatoirement
+    // Méthode qui permet de mettre à jour le mot de passe d'un utilisateur enregistré dans la base de données
     public function updatePassword($userEmail, $userPassword) {
 
         $db = Database::dbConnect();
@@ -36,6 +36,17 @@ class UserManager {
             'email' => $userEmail
         ));
         return $passwordChanged;
+
+    }
+
+    // Méthode qui permet de récupérer l'adresse e-mail de Jean Forteroche
+    public function getAuthorEmail($id) {
+
+        $db = Database::dbConnect();
+        $query = $db->prepare('SELECT email from users WHERE id=:id');
+        $query->execute(array('id' => 1));
+        $result = $query->fetch();
+        return $result;
 
     }
     
