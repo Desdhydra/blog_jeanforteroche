@@ -2,10 +2,10 @@
 
 <?php ob_start(); ?>
 
+<h1>Changement d'adresse e-mail</h1>
+
 <!-- La page de changement d'adresse e-mail contient un formulaire pour définir une nouvelle adresse e-mail -->
 <section>
-
-    <h1>Changement d'adresse e-mail</h1>
 
     <form method="post" action="index.php?action=change-mail">
         <div>
@@ -25,7 +25,11 @@
         </div>
     </form>
 
-    <!-- Gestion des messages de confirmation et d'erreur -->
+</section>
+
+<!-- Gestion des messages de confirmation et d'erreur -->
+<section>
+
     <?php if(isset($_GET['message_changemail'])) {
         
         if($_GET['message_changemail'] == 'no_user') { ?>

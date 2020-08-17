@@ -1,6 +1,5 @@
 <?php
 
-require('mail.php');
 require('model/user_manager.php');
 
 class User {
@@ -36,6 +35,7 @@ class User {
 
         if($passwordChanged) {
 
+            require('mail.php');
             $mail = new Mail;
             $mail->sendPassword($userEmail, $randomPassword);
 

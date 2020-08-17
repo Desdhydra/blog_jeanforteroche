@@ -1,8 +1,8 @@
 <?php ob_start(); ?>
 
-<section>
+<h1>Profil</h1>
 
-    <h1>Profil</h1>
+<section>
 
     <div>
         <p>Modifier mon adresse e-mail</p>

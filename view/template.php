@@ -14,6 +14,7 @@
 
         <!-- Liens vers les ressources externes utilisées : feuilles de style, icônes Font Awesome, polices, favicon (adaptée à différents supports) et TinyMCE -->
         <link rel="stylesheet" href="public/css/style.css" />
+        <link rel="stylesheet" href="public/css/style_responsive.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
         <link rel="icon" href="" />
         <link rel="apple-touch-icon" href="" />
@@ -37,6 +38,11 @@
         <?= $content ?>
 
         <?php require('footer.php'); ?>
+
+        <!-- Liens vers les ressources JavaScript -->
+        <script src="public/js/alert.js"></script>
+        <script src="public/js/menudesign.js"></script>
+        <script src="public/js/main.js"></script>
 
     </body>
 

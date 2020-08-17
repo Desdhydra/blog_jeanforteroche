@@ -2,10 +2,10 @@
 
 <?php ob_start(); ?>
 
+<h1>Changement de mot de passe</h1>
+
 <!-- La page de changement de mot de passe contient un formulaire pour définir un nouveau mot de passe -->
 <section>
-
-    <h1>Changement de mot de passe</h1>
 
     <form method="post" action="index.php?action=change-password">
         <div>
@@ -25,7 +25,11 @@
         </div>
     </form>
 
-    <!-- Gestion des messages de confirmation et d'erreur -->
+</section>
+
+<!-- Gestion des messages de confirmation et d'erreur -->
+<section>
+
     <?php if(isset($_GET['message_changepassword'])) {
         
         if($_GET['message_changepassword'] == 'no_user') { ?>

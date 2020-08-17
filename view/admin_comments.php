@@ -53,19 +53,17 @@
 
     </table>
 
-    <div>
+    <div id="table-caption">
         <h2>Légende :</h2>
         <div>
-            <i class="fas fa-check"></i>
-            <p>Publier</p>
-        </div>
-        <div>
-            <i class="fas fa-edit"></i>
-            <p>Editer</p>
-        </div>
-        <div>
-            <i class="fas fa-trash"></i>
-            <p>Supprimer</p>
+            <div>
+                <i class="fas fa-check"></i>
+                <p>Publier</p>
+            </div>
+            <div>
+                <i class="fas fa-trash"></i>
+                <p>Supprimer</p>
+            </div>
         </div>
     </div>
 
@@ -83,9 +81,6 @@
     </div>
 
 </section>
-
-<!-- Liens vers les ressources JavaScript -->
-<script src="public/js/alert.js"></script>
 
 <?php $adminContent = ob_get_clean(); ?>
 

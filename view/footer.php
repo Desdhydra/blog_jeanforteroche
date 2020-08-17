@@ -10,7 +10,7 @@
                 <ul>
                     <li><a href="index.php?action=link_home">Accueil</a></li>
                     <li><a href="index.php?action=link_about">L'auteur</a></li>
-                    <li><a href="index.php?action=link_novel">La roman</a></li>
+                    <li><a href="index.php?action=link_novel">Le roman</a></li>
                     <li><a href="index.php?action=link_contact">Contact</a></li>
                     <?php if(isset($_SESSION['status']) && ($_SESSION['status'] == 'authenticated')) { ?>
                         <li><a href="index.php?action=link_admin_chapters">Administration</a></li>

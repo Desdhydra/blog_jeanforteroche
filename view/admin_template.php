@@ -5,16 +5,19 @@
     <?php ob_start(); ?>
 
     <!-- Chaque page du panneau d'administration se compose d'un sous-menu et du contenu (dynamique) -->
-    <main>
-
-        <nav>
-            </ul>
+    <main id="main-admin">
+        
+        <nav id="admin-menu">
+            <p>Panneau d'administration</p>
+            <ul>
                 <li><a href="index.php?action=link_admin_chapters">Chapitres</a></li>
                 <li><a href="index.php?action=link_admin_comments">Commentaires signalés</a></li>
             </ul>
         </nav>
 
-        <?= $adminContent ?>
+        <div>
+            <?= $adminContent ?>
+        </div>
 
     </main>
 

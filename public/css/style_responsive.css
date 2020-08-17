@@ -1,0 +1,19 @@
+@media screen and (max-width: 768px) {
+
+    /* Menu de navigation */
+    
+    .menu-nav {
+        display: none;
+    }
+
+    .menu-burger {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #icon-burger {
+        display: block;
+        cursor: pointer;
+    }
+
+}

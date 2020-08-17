@@ -1,8 +1,8 @@
 <?php ob_start(); ?>
 
-<section>
+<h1>Edition d'un chapitre</h1>
 
-    <h1>Edition d'un chapitre</h1>
+<section>
 
     <form method="post" action="index.php?action=add_chapter<?php if(isset($postContent)){ echo '&post_id=' . $postContent['id']; }?>">
         <div>

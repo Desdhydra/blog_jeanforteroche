@@ -1,7 +1,21 @@
-/* Body */
+/* Général */
 
 body {
     margin: 0;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#main-admin {
+    display: flex;
 }
 
 
@@ -12,10 +26,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#header-connection {
-    align-self: flex-end;
+    padding: 1rem;
 }
 
 #header-title {
@@ -30,20 +41,77 @@ header {
 
 
 
+/* Menu de connexion */
+
+#header-connection {
+    align-self: flex-end;
+}
+
+.dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: 0;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+.dropdown:hover .dropdown-button {
+    background-color: #3e8e41;
+}
+
+
+
 /* Menu de navigation */
 
-nav ul {
-    list-style-type: none;
+.menu-nav {
     display: flex;
-    padding: 0;
+    align-items: center;
 }
 
-nav ul li a {
-    margin: 1rem;
+.menu-nav a {
+    padding: 1rem;
 }
 
-#burger-icon {
+#icon-burger {
     display: none;
+}
+
+
+
+/* Menu du panneau d'administration */
+
+#admin-menu {
+    margin-right: 5rem;
 }
 
 
@@ -73,6 +141,27 @@ nav ul li a {
 
 
 
+/* Légendes */
+
+#table-caption > div {
+    display: flex;
+}
+
+#table-caption > div > div {
+    display: flex;
+    align-items: center;
+}
+
+#table-caption > div > div:nth-child(1) {
+    margin-right: 1rem;
+}
+
+#table-caption > div > div > i {
+    margin: 0.5rem;
+}
+
+
+
 /* Pop up d'alerte de suppression */
 
 #alert-deletion {
@@ -95,12 +184,14 @@ nav ul li a {
 footer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 3rem 5% 0 5%;
 }
 
 #footer-content {
     display: flex;
     align-items: center;
+    width: 40rem;
 }
 
 #footer-image {
@@ -125,7 +216,7 @@ footer {
 }
 
 #footer-navigation ul li a {
-    margin: 0.5rem;
+    padding: 0.5rem;
 }
 
 #footer-social ul li a {
