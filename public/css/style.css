@@ -1,6 +1,7 @@
 /* Général */
 
 body {
+    font-family: "Raleway", sans-serif;
     margin: 0;
 }
 
@@ -12,6 +13,10 @@ main {
 ul {
     list-style-type: none;
     padding: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 #main-admin {
@@ -33,6 +38,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
 #header-title p {
@@ -47,12 +55,35 @@ header {
     align-self: flex-end;
 }
 
-.dropdown-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
+#header-connection > a {
+    position: absolute;
+    width: 6.5rem;
+    background-color: rgb(0,98,128);
+    color: rgb(255,255,255);
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    top: 0;
+    right: 0;
+    padding: 1rem;
     border: none;
+}
+
+#header-connection > a:hover {
+    background-color: rgb(0,137,179);
+}
+
+.dropdown-button {
+    width: 11rem;
+    background-color: rgb(39,103,124);
+    color: rgb(255,255,255);
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+}
+
+.dropdown-button > i {
+    margin-left: 0.5rem;
 }
   
 .dropdown {
@@ -63,22 +94,21 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    width: 11rem;
+    text-align: end;
+    background-color: rgb(241,241,241);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     margin: 0;
 }
   
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
     display: block;
+    color: rgb(0,0,0);
+    padding: 0.75rem 1rem;
 }
   
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: rgb(217,217,217);
 }
   
 .dropdown:hover .dropdown-content {
@@ -86,7 +116,7 @@ header {
 }
   
 .dropdown:hover .dropdown-button {
-    background-color: #3e8e41;
+    background-color: rgb(116,170,186);
 }
 
 
@@ -99,7 +129,15 @@ header {
 }
 
 .menu-nav a {
+    color: rgb(0,0,0);
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
     padding: 1rem;
+}
+
+.menu-nav a:hover {
+    color: rgb(0,175,185);
+    font-weight: 600;
 }
 
 #icon-burger {
@@ -118,16 +156,88 @@ header {
 
 /* Home */
 
+#main-home section {
+    padding: 3rem 0 3rem 0;
+}
+
+#section-title img {
+    width: 100%;
+}
+
+#section-title h1 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+#section-book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#section-book > div:nth-child(1) {
+    width: 30%;
+}
+
+#section-book > div:nth-child(1) > img {
+    width: 100%;
+}
+
+#section-book > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 5%;
+}
+
+#section-book > div:nth-child(2) > div:nth-child(1) {
+    align-self: flex-start;
+    width: 60%;
+    text-align: start;
+}
+
+#section-book > div:nth-child(2) > div:nth-child(2) {
+    align-self: flex-end;
+    width: 60%;
+    text-align: end;
+}
+
+#section-last h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0 0 3rem 0;
+}
+
 #last-posts {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 90%;
     margin: auto;
 }
 
 #last-posts article {
-    width: 30%;
+    width: 27%;
+    background-color: rgb(255,242,230);
+    padding: 2%;
+    border: 0.0625rem solid rgb(254,217,183);
+}
+
+#last-posts article:hover {
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.4);
+}
+
+#last-posts article h3 {
+    margin: 0;
+}
+
+.last-post-infos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .last-post-date, .last-post-comments {
@@ -136,7 +246,104 @@ header {
 }
 
 .last-post-icons {
+    color: rgb(240,113,103);
     margin-right: 0.5rem;
+}
+
+#last-posts article a {
+    float: right;
+    color: rgb(255,255,255);
+    background-color: rgb(240,113,103);
+    padding: 0.75rem;
+}
+
+#last-posts article a:hover {
+    background-color: rgb(244,146,139);
+}
+
+
+
+/* Page de connexion */
+
+#main-connection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0 3rem 0;
+}
+
+#main-connection section {
+    width: 50%;
+}
+
+#section-connection-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(204,224,230);
+    padding: 1.5rem;
+}
+
+#section-connection-form h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+#section-connection-form > div {
+    width: 100%;
+}
+
+#section-connection-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#section-connection-form form > div:nth-child(1), #section-connection-form form > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+#section-connection-form label {
+    font-weight: 600;
+}
+
+#signin-mail, #signin-password {
+    height: 2rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    border: none;
+}
+
+#signin-mail:focus, #signin-password:focus {
+    border: 0.1rem solid rgb(0,175,185);
+    outline: none;
+}
+
+#section-connection-form form > div:nth-child(2) > a {
+    color: rgb(0,145,153);
+    margin-top: 1rem;
+}
+
+#section-connection-form form > div:nth-child(2) > a:hover {
+    color: rgb(0,175,185);
+}
+
+#section-connection-form input[type=submit] {
+    cursor: pointer;
+    float: right;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    color: rgb(255,255,255);
+    background-color: rgb(0,175,185);
+    border: none;
+    padding: 0.75rem;
+}
+
+#section-connection-form input[type=submit]:hover {
+    background-color: rgb(101,189,195);
 }
 
 
@@ -185,7 +392,9 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 5% 0 5%;
+    background-color: rgb(0,98,128);
+    margin-top: 4rem;
+    padding: 2rem 5% 0 5%;
 }
 
 #footer-content {
@@ -216,17 +425,39 @@ footer {
 }
 
 #footer-navigation ul li a {
+    color: rgb(255,255,255);
+    letter-spacing: 0.05rem;
     padding: 0.5rem;
 }
 
+#footer-navigation ul li a:hover {
+    color: rgb(0,195,255);
+    font-weight: 600;
+}
+
 #footer-social ul li a {
+    color: rgb(255,255,255);
     font-size: 2.5rem;
     margin: 0.5rem;
+}
+
+#footer-social ul li a:hover {
+    color: rgb(0,195,255);
 }
 
 #footer-copyright {
     display: flex;
     align-items: center;
     align-self: center;
+    color: rgb(179,237,255);
     margin-top: 1rem;
+}
+
+#footer-copyright a {
+    color: rgb(255,255,255);
+}
+
+#footer-copyright a:hover {
+    color: rgb(0,195,255);
+    font-weight: 600;
 }

@@ -3,21 +3,22 @@
 <?php ob_start(); ?>
 
 <!-- La page d'accueil se découpe en trois sections successives -->
-<main>
+<main id="main-home">
 
     <!-- Première section : l'écran d'accueil -->
-    <section>
+    <section id="section-title">
+        <img src="public/images/header.jpg" alt="Paysage d'Alaska" />
         <h1>Billet simple pour l'Alaska</h1>
     </section>
 
     <!-- Deuxième section : la présentation du blog -->
-    <section>
+    <section id="section-book">
         <div>
-            <img src="" alt="" />
+            <img src="public/images/cover-book.png" alt="Couverture du livre" />
         </div>
         <div>
             <div>
-                <h2>Découvrez ce nouveau projet...</h2>
+                <h2>Découvrez ce nouveau projet ...</h2>
                 <p>Texte</p>
             </div>
             <div>
@@ -28,7 +29,7 @@
     </section>
 
     <!-- Troisième section : les derniers chapitres publiés -->
-    <section>
+    <section id="section-last">
         <h2>Derniers chapitres publiés</h2>
         <div id="last-posts">
 
@@ -38,7 +39,7 @@
                         <article>
                             <h3><?= $lastPost['title']; ?></h3>
                             <p><?= preg_replace('/((\w+\W*){'.(30).'}(\w+))(.*)/', '${1}', $lastPost['content']) . '...'; ?></p>
-                            <div>
+                            <div class="last-post-infos">
                                 <div class="last-post-date">
                                     <i class="far fa-calendar-alt last-post-icons"></i>
                                     <p><?= date('d/m/Y', strtotime($lastPost['creation_date'])); ?></p>

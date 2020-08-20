@@ -3,7 +3,7 @@
 
     <div id="header-connection" class="dropdown">
         <?php if(isset($_SESSION['status']) && ($_SESSION['status'] == 'authenticated')) { ?>
-            <button class="dropdown-button">Jean Forteroche <i class="fas fa-caret-down"></i></button>
+            <button class="dropdown-button">Jean Forteroche<i class="fas fa-caret-down"></i></button>
             <ul class="dropdown-content">
                 <li><a href="index.php?action=link_profile">Profil</a></li>
                 <li><a href="index.php?action=link_logout">Se déconnecter</a></li>
@@ -21,7 +21,7 @@
     <nav>
         <div id="icon-burger"><i class="fas fa-bars"></i></div>
         <ul id="main-menu" class="menu-nav">
-            <li><a href="index.php?action=link_home" class="active-nav">Accueil</a></li>
+            <li><a href="index.php?action=link_home">Accueil</a></li>
             <li><a href="index.php?action=link_about">L'auteur</a></li>
             <li><a href="index.php?action=link_novel">Le roman</a></li>
             <li><a href="index.php?action=link_contact">Contact</a></li>

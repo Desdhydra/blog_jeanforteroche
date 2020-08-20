@@ -17,7 +17,7 @@
             <input type="password" id="changepassword-pass" name="changepassword-pass" required>
         </div>
         <div>
-            <label for="changepassword-repeat">Répétez ce nouveau mot de passe :</label>
+            <label for="changepassword-repeat">Confirmez votre mot de passe :</label>
             <input type="password" id="changepassword-repeat" name="changepassword-repeat" required>
         </div>
         <div>
