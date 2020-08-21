@@ -7,7 +7,7 @@
     <!-- La page de connexion contient un formulaire pour introduire ses identifiants afin d'accéder à l'interface d'administration -->
     <section id="section-connection-form">
         
-        <h1>Connexion au panneau d'administration</h1>
+        <h2>Connexion au panneau d'administration</h2>
     
         <div>
             <form method="post" action="index.php?action=sign_in">

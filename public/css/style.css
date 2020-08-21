@@ -123,6 +123,10 @@ header {
 
 /* Menu de navigation */
 
+.active {
+    background-color: red;
+}
+
 .menu-nav {
     display: flex;
     align-items: center;
@@ -263,6 +267,96 @@ header {
 
 
 
+/* Contact */
+
+#main-contact {
+    width: 75%;
+    padding: 3rem 0 28rem 0;
+}
+
+#main-contact h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+#section-contact-informations {
+    width: 30%;
+    background-color: rgb(255,242,230);
+    border: 0.0625rem solid rgb(254,217,183);
+    padding: 1.5rem 10% 1.5rem 1.5rem;
+}
+
+#section-contact-informations p {
+    margin: 0.5rem 0 0 0;
+}
+
+#section-contact-form {
+    position: absolute;
+    top: 25rem;
+    left: 38%;
+    width: 50%;
+}
+
+#section-contact-form > div {
+    background-color: rgb(204,224,230);
+    border: 0.0625rem solid rgb(101,189,195);
+    padding: 1.5rem;
+}
+
+#section-contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#section-contact-form form > div:nth-child(1), #section-contact-form form > div:nth-child(2), #section-contact-form form > div:nth-child(3), #section-contact-form form > div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+#section-contact-form label {
+    font-weight: 600;
+}
+
+#contact-name, #contact-mail, #contact-subject {
+    height: 2rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    border: none;
+}
+
+#contact-message {
+    height: 6rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+#contact-name:focus, #contact-mail:focus, #contact-subject:focus, #contact-message:focus {
+    border: 0.1rem solid rgb(0,175,185);
+    outline: none;
+}
+
+#section-contact-form input[type=submit] {
+    cursor: pointer;
+    float: right;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    color: rgb(255,255,255);
+    background-color: rgb(0,175,185);
+    border: none;
+    padding: 0.75rem;
+}
+
+#section-contact-form input[type=submit]:hover {
+    background-color: rgb(101,189,195);
+}
+
+
+
 /* Page de connexion */
 
 #main-connection {
@@ -281,10 +375,11 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: rgb(204,224,230);
+    border: 0.0625rem solid rgb(101,189,195);
     padding: 1.5rem;
 }
 
-#section-connection-form h1 {
+#section-connection-form h2 {
     font-family: "Playfair Display", serif;
     font-size: 1.8rem;
     font-weight: normal;

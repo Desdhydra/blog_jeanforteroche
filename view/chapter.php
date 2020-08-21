@@ -5,8 +5,6 @@
 <!-- Cette page présente le détail d'un chapitre. Elle comporte trois principales sections successives -->
 <main>
 
-    <h1>Billet simple pour l'Alaska</h1>
-
     <?php if(isset($detailPost)) { ?>
 
         <!-- Première section : détail du chapitre -->

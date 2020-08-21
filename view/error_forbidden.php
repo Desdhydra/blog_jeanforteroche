@@ -5,7 +5,7 @@
 <main>
 
     <section>
-        <h1>Erreur 403 - Forbidden</h1>
+        <h2>Erreur 403 - Forbidden</h2>
         <p>Une erreur est survenue. L'accès à cette page est interdit.<p>
     </section>
 

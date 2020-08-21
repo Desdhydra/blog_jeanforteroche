@@ -3,51 +3,45 @@
 <?php ob_start(); ?>
 
 <!-- La page de contact présente des coordonnées et un formulaire pour contacter l'auteur  -->
-<main>
+<main id="main-contact">
 
-    <h1>Contact</h1>
-
-    <section>
-
-        <h2>Comment contacter Jean Forteroche ?</h2>
-
-        <h3>Vous pouvez adresser vos courriers à l'adresse suivante :</h3>
+    <section id="section-contact-informations">
+        <h2>Par courrier</h2>
         <div>
             <p>Editions Grand Nord</p>
             <p>A l'attention de Jean Forteroche</p>
             <p>12, rue de la Plume</p>
             <p>1234 Ireki</p>
         </div>
-
     </section>
 
-    <section>
+    <section id="section-contact-form">
     
-        <h2>Formulaire de contact</h2>
+        <div>
+            <h2>Formulaire de contact</h2>
 
-        <p></p>
-
-        <form method="post" action="index.php?action=send-mail">
-            <div>
-                <label for="contact-name">Votre nom :</label>
-                <input type="text" id="contact-name" name="contact-name" required>
-            </div>
-            <div>
-                <label for="contact-mail">Votre adresse e-mail :</label>
-                <input type="email" id="contact-mail" name="contact-mail" required>
-            </div>
-            <div>
-                <label for="contact-subject">Sujet de votre message :</label>
-                <input type="text" id="contact-subject" name="contact-subject" required>
-            </div>
-            <div>
-                <label for="contact-message">Votre message :</label>
-                <textarea id="contact-message" name="contact-message" required></textarea> 
-            </div>
-            <div>
-                <input type="submit" value="Envoyer">
-            </div>
-        </form>
+            <form method="post" action="index.php?action=send-mail">
+                <div>
+                    <label for="contact-name">Votre nom :</label>
+                    <input type="text" id="contact-name" name="contact-name" required>
+                </div>
+                <div>
+                    <label for="contact-mail">Votre adresse e-mail :</label>
+                    <input type="email" id="contact-mail" name="contact-mail" required>
+                </div>
+                <div>
+                    <label for="contact-subject">Sujet de votre message :</label>
+                    <input type="text" id="contact-subject" name="contact-subject" required>
+                </div>
+                <div>
+                    <label for="contact-message">Votre message :</label>
+                    <textarea id="contact-message" name="contact-message" required></textarea> 
+                </div>
+                <div>
+                    <input type="submit" value="Envoyer">
+                </div>
+            </form>
+        </div>
 
         <!-- Gestion des messages de confirmation et d'erreur -->
         <?php if(isset($_GET['message_contact'])) {

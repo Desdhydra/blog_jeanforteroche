@@ -21,7 +21,7 @@
     <nav>
         <div id="icon-burger"><i class="fas fa-bars"></i></div>
         <ul id="main-menu" class="menu-nav">
-            <li><a href="index.php?action=link_home">Accueil</a></li>
+            <li><a href="index.php?action=link_home" class="active">Accueil</a></li>
             <li><a href="index.php?action=link_about">L'auteur</a></li>
             <li><a href="index.php?action=link_novel">Le roman</a></li>
             <li><a href="index.php?action=link_contact">Contact</a></li>

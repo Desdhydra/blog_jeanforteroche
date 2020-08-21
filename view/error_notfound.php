@@ -5,7 +5,7 @@
 <main>
 
     <section>
-        <h1>Erreur 404 - Not found</h1>
+        <h2>Erreur 404 - Not found</h2>
         <p>Une erreur est survenue. La page que vous essayez de consulter n'existe pas.<p>
     </section>
 

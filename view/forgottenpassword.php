@@ -5,7 +5,7 @@
 <!-- La page de récupération de mot de passe contient un formulaire pour demander un nouveau mot de passe -->
 <main>
 
-    <h1>Récupération de mot de passe</h1>
+    <h2>Récupération de mot de passe</h2>
 
     <p>Veuillez saisir votre adresse e-mail ci-dessous.</p>
 
