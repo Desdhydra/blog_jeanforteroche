@@ -1,6 +1,8 @@
+<?php $currentActiveAdminPage = 'admin-comments' ?>
+
 <?php ob_start(); ?>
 
-<h1>Liste des commentaires signalés</h1>
+<h2>Liste des commentaires signalés</h2>
 
 <!-- Gestion des messages de confirmation et d'erreur -->
 <section>
@@ -54,7 +56,7 @@
     </table>
 
     <div id="table-caption">
-        <h2>Légende :</h2>
+        <h3>Légende :</h3>
         <div>
             <div>
                 <i class="fas fa-check"></i>

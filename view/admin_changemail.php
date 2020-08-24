@@ -2,11 +2,9 @@
 
 <?php ob_start(); ?>
 
-<h1>Changement d'adresse e-mail</h1>
-
 <!-- La page de changement d'adresse e-mail contient un formulaire pour définir une nouvelle adresse e-mail -->
-<section>
-
+<section class="section-admin-change">
+    <h2>Changement d'adresse e-mail</h2>
     <form method="post" action="index.php?action=change-mail">
         <div>
             <label for="changemail-oldmail">Ancienne adresse e-mail :</label>
@@ -20,11 +18,8 @@
             <label for="changemail-password">Votre mot de passe :</label>
             <input type="password" id="changemail-password" name="changemail-password" required>
         </div>
-        <div>
-            <input type="submit" value="Envoyer">
-        </div>
+        <input type="submit" value="Envoyer">
     </form>
-
 </section>
 
 <!-- Gestion des messages de confirmation et d'erreur -->

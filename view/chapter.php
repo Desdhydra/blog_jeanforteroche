@@ -1,14 +1,16 @@
+<?php $currentActivePage = 'novel' ?>
+
 <?php $title = 'Jean Forteroche | Un billet simple pour l\'Alaska'; ?>
 
 <?php ob_start(); ?>
 
 <!-- Cette page présente le détail d'un chapitre. Elle comporte trois principales sections successives -->
-<main>
+<main class="main">
 
     <?php if(isset($detailPost)) { ?>
 
         <!-- Première section : détail du chapitre -->
-        <section>
+        <section id="section-chapter-details">
             <h2><?= $detailPost['title']; ?></h2>
             <div>
                 <div>
@@ -25,8 +27,8 @@
 
         <?php if($detailPost['comments_number'] != 0) { ?>
 
-            <!-- Deuxième section : commentaires liés au chapitre (s'il y en a) -->
-            <section>
+            <!-- Deuxième section : commentaires liés au chapitre -->
+            <section id="section-chapter-comments">
                 <h3>Commentaires</h3>
 
                 <?php if(isset($_GET['message_status']) && ($_GET['message_status'] == 'ok')) { ?>
@@ -52,7 +54,7 @@
                     <?php } elseif($comment['reported_status'] == 'yes') { ?>
 
                         <article>
-                            <p>Ce commentaire a été signalé.</p>
+                            <p class="comment-reported">Ce commentaire a été signalé.</p>
                         </article>
 
                     <?php }
@@ -64,7 +66,8 @@
         <?php } ?>
 
         <!-- Troisième partie : formulaire de rédaction d'un nouveau commentaire -->
-        <section>
+        <section id="section-chapter-sendcomment">
+            
             <h3>Ecrire un commentaire</h3>
             <form method="post" action="index.php?action=send_comment&amp;post_id=<?= $detailPost['id'] ?>">
                 <div>
@@ -72,7 +75,8 @@
                     <input type="text" id="comment-name" name="comment-name" required>
                 </div>
                 <div>
-                    <textarea name="comment-content" required>Votre message</textarea> 
+                    <label for="comment-content">Votre message :</label>
+                    <textarea id="comment-content" name="comment-content" required></textarea> 
                 </div>
                 <div>
                     <input type="submit" value="Envoyer">

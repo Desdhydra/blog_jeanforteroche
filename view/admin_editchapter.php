@@ -1,8 +1,10 @@
+<?php $currentActiveAdminPage = 'admin-chapters' ?>
+
 <?php ob_start(); ?>
 
-<h1>Edition d'un chapitre</h1>
+<section id="section-adminchapters-edit">
 
-<section>
+    <h2>Edition d'un chapitre</h2>
 
     <form method="post" action="index.php?action=add_chapter<?php if(isset($postContent)){ echo '&post_id=' . $postContent['id']; }?>">
         <div>

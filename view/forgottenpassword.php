@@ -3,28 +3,30 @@
 <?php ob_start(); ?>
 
 <!-- La page de récupération de mot de passe contient un formulaire pour demander un nouveau mot de passe -->
-<main>
+<main class="main">
 
-    <h2>Récupération de mot de passe</h2>
+    <section id="section-forgotten-password">
+        
+        <h2>Récupération de mot de passe</h2>
+        <p>Veuillez saisir votre adresse e-mail ci-dessous afin que nous puissions vous envoyer un nouveau mot de passe</p>
+        <form method="post" action="index.php?action=new_password">
+            <div>
+                <label for="newpass-mail">Votre adresse e-mail :</label>
+                <input type="email" id="newpass-mail" name="newpass-mail" required>
+            </div>
+            <div>
+                <input type="submit" value="Envoyer">
+            </div>
+        </form>
+        
+        <!-- Gestion des messages d'erreur -->
+        <?php if(isset($_GET['message_newpassword']) && ($_GET['message_newpassword'] == 'error')) { ?>
+            <div>
+                <p>Une erreur est survenue. Nous n'avons pas pu vous vous envoyer un nouveau mot de passe. Veuillez réessayer plus tard.</p>
+            </div>
+        <?php } ?>
 
-    <p>Veuillez saisir votre adresse e-mail ci-dessous.</p>
-
-    <form method="post" action="index.php?action=new_password">
-        <div>
-            <label for="newpass-mail">Votre adresse e-mail :</label>
-            <input type="email" id="newpass-mail" name="newpass-mail" required>
-        </div>
-        <div>
-            <input type="submit" value="Envoyer">
-        </div>
-    </form>
-
-    <!-- Gestion des messages d'erreur -->
-    <?php if(isset($_GET['message_newpassword']) && ($_GET['message_newpassword'] == 'error')) { ?>
-        <div>
-            <p>Une erreur est survenue. Nous n'avons pas pu vous vous envoyer un nouveau mot de passe. Veuillez réessayer plus tard.</p>
-        </div>
-    <?php } ?>
+    </section>
 
 </main>
 

@@ -26,7 +26,6 @@
         <script src="https://cdn.tiny.cloud/1/6200rruof6cd1pzghnq3dep45cohha6ahhliqp973mynzm3q/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
         <script> tinymce.init({
             selector: 'textarea#editchapter-content',
-            selector: 'textarea#editcomment-content'
         }); </script>
 
     </head>

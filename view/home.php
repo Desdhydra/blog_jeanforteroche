@@ -1,35 +1,37 @@
+<?php $currentActivePage = 'home' ?>
+
 <?php $title = 'Jean Forteroche | Accueil'; ?>
 
 <?php ob_start(); ?>
 
 <!-- La page d'accueil se découpe en trois sections successives -->
-<main id="main-home">
+<main class="main">
 
     <!-- Première section : l'écran d'accueil -->
-    <section id="section-title">
+    <section id="home-title">
         <img src="public/images/header.jpg" alt="Paysage d'Alaska" />
         <h1>Billet simple pour l'Alaska</h1>
     </section>
 
     <!-- Deuxième section : la présentation du blog -->
-    <section id="section-book">
+    <section id="home-book">
         <div>
             <img src="public/images/cover-book.png" alt="Couverture du livre" />
         </div>
         <div>
             <div>
                 <h2>Découvrez ce nouveau projet ...</h2>
-                <p>Texte</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
             <div>
                 <h2>... et interagissez !</h2>
-                <p>Texte</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
     </section>
 
     <!-- Troisième section : les derniers chapitres publiés -->
-    <section id="section-last">
+    <section id="home-last">
         <h2>Derniers chapitres publiés</h2>
         <div id="last-posts">
 

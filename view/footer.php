@@ -1,6 +1,5 @@
 <!-- Le pied de page se compose d'un portrait, d'un rappel du menu de navigation, de liens vers les réseaux sociaux et du copyright -->
 <footer>
-
     <div id="footer-content">
         <div id="footer-image">
             <img src="public/images/portrait.png" alt="Portrait de Jean Forteroche" />
@@ -29,5 +28,4 @@
     <div id="footer-copyright">
         <p>2020 © Jean Forteroche | <a href="index.php?action=link_legal">Mentions légales</a></p>
     <div>
-
 </footer>

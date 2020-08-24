@@ -2,13 +2,11 @@
 
 <?php ob_start(); ?>
 
-<main id="main-connection">
+<main class="main">
 
     <!-- La page de connexion contient un formulaire pour introduire ses identifiants afin d'accéder à l'interface d'administration -->
     <section id="section-connection-form">
-        
         <h2>Connexion au panneau d'administration</h2>
-    
         <div>
             <form method="post" action="index.php?action=sign_in">
                 <div>
@@ -25,7 +23,6 @@
                 </div>
             </form>
         </div>
-
     </section>
 
     <!-- Gestion des messages d'erreur -->

@@ -2,9 +2,9 @@
 
 <?php ob_start(); ?>
 
-<main>
+<main class="main">
 
-    <section>
+    <section class="section-errors">
         <h2>Erreur 404 - Not found</h2>
         <p>Une erreur est survenue. La page que vous essayez de consulter n'existe pas.<p>
     </section>

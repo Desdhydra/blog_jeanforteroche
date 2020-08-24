@@ -5,27 +5,6 @@ require('model/comment_manager.php');
 
 class Comment {
 
-    // Méthode qui permet de récupérer le contenu d'un commentaire
-    public function commentContent($commentId) {
-        
-        // Vérification préalable de la validité de l'ID (nombre entier)
-        if(preg_match('/[0-9]+/', $commentId)) {
-
-            $commentManager = new CommentManager;
-            $commentContent = $commentManager->getComment($commentId);
-
-            if(empty($commentContent)) {
-                require('view/error_notfound.php');
-            } else {
-                require('view/admin_editcomment.php');
-            }
-
-        } else {
-            require('view/error_notfound.php');
-        }
-
-    }
-
     // Méthode qui permet d'afficher tous les commentaires
     public function allComments() {
 

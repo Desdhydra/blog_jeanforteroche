@@ -5,9 +5,33 @@ body {
     margin: 0;
 }
 
-main {
-    width: 90%;
+main.main {
+    width: 75%;
     margin: auto;
+    padding: 3rem 0 3rem 0;
+}
+
+main.main-admin {
+    display: flex;
+    justify-content: flex-start;
+    width: 75%;
+    margin: auto;
+    padding: 3rem 0 3rem 0;
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+main.main h2 {
+    text-align: center;
+}
+
+main.main-admin h2 {
+    text-align: start;
 }
 
 ul {
@@ -19,8 +43,13 @@ a {
     text-decoration: none;
 }
 
-#main-admin {
-    display: flex;
+input[type=text], input[type=email], input[type=password], input[type=submit], textarea {
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+}
+
+label {
+    font-weight: 600;
 }
 
 
@@ -31,7 +60,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 12.5% 1rem 12.5%;
 }
 
 #header-title {
@@ -58,14 +87,14 @@ header {
 #header-connection > a {
     position: absolute;
     width: 6.5rem;
-    background-color: rgb(0,98,128);
-    color: rgb(255,255,255);
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
-    top: 0;
-    right: 0;
-    padding: 1rem;
+    color: rgb(255,255,255);
+    background-color: rgb(0,98,128);
     border: none;
+    top: 1rem;
+    right: 12.5%;
+    padding: 1rem;
 }
 
 #header-connection > a:hover {
@@ -74,12 +103,13 @@ header {
 
 .dropdown-button {
     width: 11rem;
-    background-color: rgb(39,103,124);
-    color: rgb(255,255,255);
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
-    padding: 1rem;
+    color: rgb(255,255,255);
+    background-color: rgb(39,103,124);
     border: none;
+    padding: 1rem;
+    outline: none;
 }
 
 .dropdown-button > i {
@@ -92,8 +122,8 @@ header {
 }
   
 .dropdown-content {
-    display: none;
     position: absolute;
+    display: none;
     width: 11rem;
     text-align: end;
     background-color: rgb(241,241,241);
@@ -104,7 +134,7 @@ header {
 .dropdown-content a {
     display: block;
     color: rgb(0,0,0);
-    padding: 0.75rem 1rem;
+    padding: 0.75rem;
 }
   
 .dropdown-content a:hover {
@@ -124,7 +154,7 @@ header {
 /* Menu de navigation */
 
 .active {
-    background-color: red;
+    border-bottom: 0.2rem solid rgb(204,224,230);
 }
 
 .menu-nav {
@@ -133,15 +163,16 @@ header {
 }
 
 .menu-nav a {
-    color: rgb(0,0,0);
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
-    padding: 1rem;
+    color: rgb(0,0,0);
+    margin: 0.75rem;
+    padding: 0.25rem;
 }
 
 .menu-nav a:hover {
-    color: rgb(0,175,185);
     font-weight: 600;
+    color: rgb(0,175,185);
 }
 
 #icon-burger {
@@ -150,80 +181,148 @@ header {
 
 
 
-/* Menu du panneau d'administration */
+/* Pied de page */
 
-#admin-menu {
-    margin-right: 5rem;
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0,98,128);
+    margin-top: 4rem;
+    padding: 2rem 12.5% 0 12.5%;
 }
 
-
-
-/* Home */
-
-#main-home section {
-    padding: 3rem 0 3rem 0;
+#footer-content {
+    display: flex;
+    align-items: center;
 }
 
-#section-title img {
+#footer-image {
+    width: 8rem;
+    margin-right: 3rem;
+}
+
+#footer-image img {
     width: 100%;
 }
 
-#section-title h1 {
+#footer-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer-infos ul {
+    display: flex;
+}
+
+#footer-navigation ul li a {
+    letter-spacing: 0.05rem;
+    color: rgb(255,255,255);
+    padding: 0.5rem;
+}
+
+#footer-navigation ul li a:hover {
+    font-weight: 600;
+    color: rgb(0,195,255);
+}
+
+#footer-social ul li a {
+    font-size: 2.5rem;
+    color: rgb(255,255,255);
+    margin: 0.5rem;
+}
+
+#footer-social ul li a:hover {
+    color: rgb(0,195,255);
+}
+
+#footer-copyright {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    color: rgb(179,237,255);
+    margin-top: 1rem;
+}
+
+#footer-copyright a {
+    color: rgb(255,255,255);
+}
+
+#footer-copyright a:hover {
+    font-weight: 600;
+    color: rgb(0,195,255);
+}
+
+
+
+/* Page d'accueil */
+
+h1 {
     text-align: center;
     font-family: "Playfair Display", serif;
     font-size: 3rem;
     font-weight: normal;
 }
 
-#section-book {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#section-book > div:nth-child(1) {
-    width: 30%;
-}
-
-#section-book > div:nth-child(1) > img {
+#home-title img {
     width: 100%;
 }
 
-#section-book > div:nth-child(2) {
+#home-book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0 5rem 0;
+}
+
+#home-book > div:nth-child(1) {
+    width: 30%;
+}
+
+#home-book > div:nth-child(1) > img {
+    width: 100%;
+}
+
+#home-book > div:nth-child(2) {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
     margin-left: 5%;
 }
 
-#section-book > div:nth-child(2) > div:nth-child(1) {
-    align-self: flex-start;
+#home-book > div:nth-child(2) > div:nth-child(1) {
     width: 60%;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+#home-book > div:nth-child(2) > div:nth-child(2) {
+    width: 60%;
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+#home-book > div:nth-child(2) > div:nth-child(1) h2, #home-book > div:nth-child(2) > div:nth-child(1) p {
     text-align: start;
 }
 
-#section-book > div:nth-child(2) > div:nth-child(2) {
-    align-self: flex-end;
-    width: 60%;
+#home-book > div:nth-child(2) > div:nth-child(2) h2, #home-book > div:nth-child(2) > div:nth-child(2) p {
     text-align: end;
-}
-
-#section-last h2 {
-    text-align: center;
-    font-family: "Playfair Display", serif;
-    font-size: 2.5rem;
-    font-weight: normal;
-    margin: 0 0 3rem 0;
 }
 
 #last-posts {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin: auto;
+    align-items: stretch;
+}
+
+#last-posts > p {
+    text-align: center;
 }
 
 #last-posts article {
+    position: relative;
     width: 27%;
     background-color: rgb(255,242,230);
     padding: 2%;
@@ -240,13 +339,17 @@ header {
 
 .last-post-infos {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    margin: 1rem 0 4rem 0;
 }
 
 .last-post-date, .last-post-comments {
     display: flex;
     align-items: center;
+}
+
+.last-post-date p, .last-post-comments p {
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 .last-post-icons {
@@ -255,7 +358,9 @@ header {
 }
 
 #last-posts article a {
-    float: right;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
     color: rgb(255,255,255);
     background-color: rgb(240,113,103);
     padding: 0.75rem;
@@ -267,18 +372,272 @@ header {
 
 
 
+/* L'auteur */
+
+#section-about {
+    display: flex;
+    justify-content: space-between;
+}
+
+#section-about figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    margin: 0;
+}
+
+#section-about figure img {
+    width: 100%;
+}
+
+#section-about figcaption {
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+}
+
+#section-about > div {
+    width: 55%;
+}
+
+#section-about h2 {
+    text-align: start;
+}
+
+
+
+/* Le roman */
+
+#section-novel-nopost p {
+    text-align: center;
+}
+
+#section-novel-posts {
+    display: flex;
+    flex-direction: column;
+}
+
+#section-novel-posts article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+#section-novel-posts h2 {
+    z-index: 1;
+    align-self: flex-start;
+    width: 85%;
+    text-align: start;
+    font-size: 1.5rem;
+    background-color: rgb(254,217,183);
+    padding: 1rem;
+}
+
+div.post-content {
+    align-self: flex-end;
+    width: 93%;
+    background-color: rgb(255,242,230);
+    border: 0.0625rem solid rgb(254,217,183);
+    margin-top: -3rem;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+div.post-content:hover {
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.4);
+}
+
+div.post-content > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.post-content > div > div {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+div.post-content > div > div i {
+    color: rgb(240,113,103);
+    margin-right: 0.5rem;
+}
+
+div.post-content a {
+    float: right;
+    color: rgb(255,255,255);
+    background-color: rgb(240,113,103);
+    padding: 0.75rem;
+}
+
+div.post-content a:hover {
+    background-color: rgb(244,146,139);
+}
+
+#section-novel-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+
+#section-novel-pagination span, #section-novel-pagination a {
+    width: 1.75rem;
+    height: 1.75rem;
+    text-align: center;
+    color: rgb(255,255,255);
+    background-color: rgb(204,224,230);
+    margin: 0.5rem;
+}
+
+#section-novel-pagination a {
+    width: 1.75rem;
+    height: 1.75rem;
+    text-align: center;
+    color: rgb(255,255,255);
+    background-color: rgb(101,189,195);
+    margin: 0.5rem;
+}
+
+#section-novel-pagination span:hover, #section-novel-pagination a:hover {
+    background-color: rgb(0,175,185);
+}
+
+
+
+/* Détail de chapitre */
+
+#section-chapter-details h2 {
+    text-align: start;
+    margin-bottom: 1rem;
+}
+
+#section-chapter-details > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+}
+
+#section-chapter-details > div:nth-child(2) > div {
+    display: flex;
+    align-items: center;
+}
+
+#section-chapter-details > div:nth-child(2) > div:nth-child(1) {
+    margin-right: 3rem;
+}
+
+#section-chapter-details > div:nth-child(2) > div > i {
+    margin-right: 0.5rem;
+}
+
+#section-chapter-details > div:nth-child(3) {
+    margin: 1rem 0 1rem 0;
+}
+
+#section-chapter-comments {
+    width: 60%;
+    margin: 4rem auto 0 auto;
+}
+
+#section-chapter-comments h3, #section-chapter-sendcomment h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+#section-chapter-comments article {
+    background-color: rgb(255,242,230);
+    border: 0.0625rem solid rgb(254,217,183);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+}
+
+#section-chapter-comments article:hover {
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.4);
+}
+
+#section-chapter-comments article h4 {
+    margin: 0;
+}
+
+#section-chapter-comments article p:nth-child(2) {
+    margin: 0.5rem 0 1rem 0;
+}
+
+#section-chapter-comments article div {
+    float: right;
+    color: rgb(240,113,103);
+}
+
+#section-chapter-comments article div a {
+    color: rgb(240,113,103);
+}
+
+#section-chapter-comments article div a:hover {
+    color: rgb(244,146,139);
+}
+
+#section-chapter-comments article p.comment-reported {
+    margin: 1rem 0 0 0;
+}
+
+#section-chapter-sendcomment {
+    width: 60%;
+    margin: 4rem auto 0 auto;
+}
+
+#section-chapter-sendcomment form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(204,224,230);
+    border: 0.0625rem solid rgb(101,189,195);
+    padding: 1.5rem;
+}
+
+#section-chapter-sendcomment form > div:nth-child(1), #section-chapter-sendcomment form > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-name {
+    height: 2rem;
+    border: 0.1rem solid rgb(255,255,255);
+    margin-bottom: 1rem;
+}
+
+#section-chapter-sendcomment form textarea {
+    resize: none;
+    height: 6rem;
+    border: 0.1rem solid rgb(255,255,255);
+    margin-bottom: 1rem;
+}
+
+#comment-name:focus, #section-chapter-sendcomment form textarea:focus {
+    border: 0.1rem solid rgb(0,175,185);
+    outline: none;
+}
+
+#section-chapter-sendcomment input[type=submit] {
+    cursor: pointer;
+    float: right;
+    color: rgb(255,255,255);
+    background-color: rgb(0,175,185);
+    border: none;
+    padding: 0.75rem;
+    outline: none;
+}
+
+#section-chapter-sendcomment input[type=submit]:hover {
+    background-color: rgb(101,189,195);
+}
+
+
+
 /* Contact */
 
 #main-contact {
-    width: 75%;
     padding: 3rem 0 28rem 0;
-}
-
-#main-contact h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.8rem;
-    font-weight: normal;
-    margin-top: 0;
 }
 
 #section-contact-informations {
@@ -316,22 +675,15 @@ header {
     padding: 0.5rem 0 0.5rem 0;
 }
 
-#section-contact-form label {
-    font-weight: 600;
-}
-
 #contact-name, #contact-mail, #contact-subject {
     height: 2rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 1rem;
-    border: none;
+    border: 0.1rem solid rgb(255,255,255);
 }
 
 #contact-message {
+    resize: none;
     height: 6rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 1rem;
-    border: none;
+    border: 0.1rem solid rgb(255,255,255);
     margin-bottom: 1rem;
 }
 
@@ -343,12 +695,11 @@ header {
 #section-contact-form input[type=submit] {
     cursor: pointer;
     float: right;
-    font-family: "Raleway", sans-serif;
-    font-size: 1rem;
     color: rgb(255,255,255);
     background-color: rgb(0,175,185);
     border: none;
     padding: 0.75rem;
+    outline: none;
 }
 
 #section-contact-form input[type=submit]:hover {
@@ -359,40 +710,19 @@ header {
 
 /* Page de connexion */
 
-#main-connection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 0 3rem 0;
-}
-
-#main-connection section {
-    width: 50%;
-}
-
 #section-connection-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 40%;
     background-color: rgb(204,224,230);
     border: 0.0625rem solid rgb(101,189,195);
+    margin: auto;
     padding: 1.5rem;
-}
-
-#section-connection-form h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.8rem;
-    font-weight: normal;
-    margin-top: 0;
 }
 
 #section-connection-form > div {
     width: 100%;
-}
-
-#section-connection-form form {
-    display: flex;
-    flex-direction: column;
 }
 
 #section-connection-form form > div:nth-child(1), #section-connection-form form > div:nth-child(2) {
@@ -401,15 +731,9 @@ header {
     padding: 0.5rem 0 0.5rem 0;
 }
 
-#section-connection-form label {
-    font-weight: 600;
-}
-
 #signin-mail, #signin-password {
     height: 2rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 1rem;
-    border: none;
+    border: 0.1rem solid rgb(255,255,255);
 }
 
 #signin-mail:focus, #signin-password:focus {
@@ -429,12 +753,11 @@ header {
 #section-connection-form input[type=submit] {
     cursor: pointer;
     float: right;
-    font-family: "Raleway", sans-serif;
-    font-size: 1rem;
     color: rgb(255,255,255);
     background-color: rgb(0,175,185);
     border: none;
     padding: 0.75rem;
+    outline: none;
 }
 
 #section-connection-form input[type=submit]:hover {
@@ -443,7 +766,157 @@ header {
 
 
 
+/* Oubli de mot de passe */
+
+#section-forgotten-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    background-color: rgb(204,224,230);
+    border: 0.0625rem solid rgb(101,189,195);
+    margin: auto;
+    padding: 1.5rem;
+}
+
+#section-forgotten-password > p {
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+#section-forgotten-password form {
+    width: 100%;
+}
+
+#section-forgotten-password form > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+#newpass-mail {
+    height: 2rem;
+    border: 0.1rem solid rgb(255,255,255);
+}
+
+#newpass-mail:focus {
+    border: 0.1rem solid rgb(0,175,185);
+    outline: none;
+}
+
+#section-forgotten-password form input[type=submit] {
+    cursor: pointer;
+    float: right;
+    color: rgb(255,255,255);
+    background-color: rgb(0,175,185);
+    border: none;
+    padding: 0.75rem;
+    outline: none;
+}
+
+#section-forgotten-password form input[type=submit]:hover {
+    background-color: rgb(101,189,195);
+}
+
+
+
+/* Pages d'erreurs */
+
+section.section-errors {
+    text-align: center;
+}
+
+
+
+/* Panneau d'administration */
+
+#admin-menu {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    margin-right: 5rem;
+}
+
+#admin-menu p {
+    font-weight: 600;
+    margin: 0;
+}
+
+#admin-menu li a {
+    display: block;
+    color: rgb(0,0,0);
+    background-color: rgb(241,241,241);
+    border-radius: 0 2rem 2rem 0;
+    padding: 0.75rem;
+}
+
+#admin-menu li a.admin-active {
+    background-color: rgb(204,224,230);
+}
+
+#admin-menu li a:hover {
+    background-color: rgb(101,189,195);
+}
+
+#admin-content {
+    width: 100%;
+}
+
+
+
+/* Panneau d'administration : chapitres et commentaires */
+
+#admin-content table {
+    border-collapse: collapse;
+}
+
+#admin-content table th {
+    background-color: rgb(254,217,183);
+    padding: 0.5rem;
+}
+
+#admin-content table td {
+    text-align: center;
+    background-color: rgb(255,242,230);
+    border: 0.0625rem solid rgb(254,217,183);
+    padding: 0.25rem;
+}
+
+#admin-content table td i {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: rgb(240,113,103);
+}
+
+#admin-content table td i:hover {
+    color: rgb(244,146,139);
+}
+
+#section-adminchapters-content > a {
+    display: flex;
+    align-items: center;
+    color: rgb(240,113,103);
+    margin-bottom: 1rem;
+}
+
+#section-adminchapters-content > a:hover {
+    color: rgb(244,146,139);
+}
+
+#section-adminchapters-content > a > i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+
+
 /* Légendes */
+
+#table-caption h3 {
+    font-size: 1rem;
+    margin: 2rem 0 0 0;
+}
 
 #table-caption > div {
     display: flex;
@@ -479,80 +952,143 @@ header {
     overflow: auto;
 }
 
-
-
-/* Pied de page */
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(0,98,128);
-    margin-top: 4rem;
-    padding: 2rem 5% 0 5%;
+#alert-deletion > div {
+    width: 18rem;
+    height: 7rem;
+    background-color: rgb(255,255,255);
+    border: 0.0625rem solid rgb(254,217,183);
+    margin: auto;
+    padding: 2rem;
 }
 
-#footer-content {
-    display: flex;
-    align-items: center;
-    width: 40rem;
+#alert-deletion > div > div:nth-child(1) > p {
+    text-align: center;
+    font-weight: 600;
+    margin: 0 0 2rem 0;
 }
 
-#footer-image {
+#alert-cancel, #alert-url {
+    cursor: pointer;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    color: rgb(255,255,255);
+    background-color: rgb(240,113,103);
+    border: none;
+    padding: 0.75rem;
+    outline: none;
+}
+
+#alert-cancel:hover, #alert-url:hover {
+    background-color: rgb(244,146,139);
+}
+
+#alert-cancel {
     float: left;
-    width: 10rem;
 }
 
-#footer-image img {
-    width: 100%;
+#alert-url {
+    float: right;
 }
 
-#footer-infos {
+
+
+/* Panneau d'administration : édition des chapitres */
+
+#section-adminchapters-edit form {
+    background-color: rgb(204,224,230);
+    border: 0.0625rem solid rgb(101,189,195);
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+}
+
+#section-adminchapters-edit form > div:nth-child(1) {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
 }
 
-#footer-infos ul {
-    list-style-type: none;
+#section-adminchapters-edit form > div:nth-child(1), #section-adminchapters-edit form > div:nth-child(2) {
+    margin-bottom: 1rem;
+}
+
+#editchapter-title {
+    height: 2rem;
+    border: 0.1rem solid rgb(255,255,255);
+}
+
+#editchapter-title:focus {
+    border: 0.1rem solid rgb(0,175,185);
+    outline: none;
+}
+
+#section-adminchapters-edit form input[type=submit] {
+    cursor: pointer;
+    float: right;
+    color: rgb(255,255,255);
+    background-color: rgb(0,175,185);
+    border: none;
+    padding: 0.75rem;
+    outline: none;
+}
+
+#section-adminchapters-edit form input[type=submit]:hover {
+    background-color: rgb(101,189,195);
+}
+
+
+
+/* Panneau d'administration : profil */
+
+#section-profile > div:nth-child(2) {
+    margin-bottom: 2rem;
+}
+
+#section-profile a {
+    color: rgb(255,255,255);
+    background-color: rgb(0,175,185);
+    border: none;
+    padding: 0.75rem;
+}
+
+#section-profile a:hover {
+    background-color: rgb(101,189,195);
+}
+
+
+
+/* Panneau d'administration : changements d'e-mail et de mot de passe */
+
+section.section-admin-change form {
+    width: 50%;
+    background-color: rgb(204,224,230);
+    border: 0.0625rem solid rgb(101,189,195);
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+}
+
+section.section-admin-change form div {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
 
-#footer-navigation ul li a {
+section.section-admin-change form input[type=email], section.section-admin-change form input[type=password] {
+    height: 2rem;
+    border: 0.1rem solid rgb(255,255,255);
+}
+
+section.section-admin-change form input[type=email]:focus, section.section-admin-change form input[type=password]:focus {
+    border: 0.1rem solid rgb(0,175,185);
+    outline: none;
+}
+
+section.section-admin-change form input[type=submit] {
+    cursor: pointer;
+    float: right;
     color: rgb(255,255,255);
-    letter-spacing: 0.05rem;
-    padding: 0.5rem;
+    background-color: rgb(0,175,185);
+    border: none;
+    padding: 0.75rem;
+    outline: none;
 }
 
-#footer-navigation ul li a:hover {
-    color: rgb(0,195,255);
-    font-weight: 600;
-}
-
-#footer-social ul li a {
-    color: rgb(255,255,255);
-    font-size: 2.5rem;
-    margin: 0.5rem;
-}
-
-#footer-social ul li a:hover {
-    color: rgb(0,195,255);
-}
-
-#footer-copyright {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    color: rgb(179,237,255);
-    margin-top: 1rem;
-}
-
-#footer-copyright a {
-    color: rgb(255,255,255);
-}
-
-#footer-copyright a:hover {
-    color: rgb(0,195,255);
-    font-weight: 600;
+section.section-admin-change form input[type=submit]:hover {
+    background-color: rgb(101,189,195);
 }

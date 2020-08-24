@@ -2,9 +2,9 @@
 
 <?php ob_start(); ?>
 
-<main>
+<main class="main">
 
-    <section>
+    <section class="section-errors">
         <h2>Erreur 403 - Forbidden</h2>
         <p>Une erreur est survenue. L'accès à cette page est interdit.<p>
     </section>

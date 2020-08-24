@@ -2,11 +2,9 @@
 
 <?php ob_start(); ?>
 
-<h1>Changement de mot de passe</h1>
-
 <!-- La page de changement de mot de passe contient un formulaire pour définir un nouveau mot de passe -->
-<section>
-
+<section class="section-admin-change">
+    <h2>Changement de mot de passe</h2>
     <form method="post" action="index.php?action=change-password">
         <div>
             <label for="changepassword-mail">Votre adresse e-mail :</label>
@@ -20,11 +18,8 @@
             <label for="changepassword-repeat">Confirmez votre mot de passe :</label>
             <input type="password" id="changepassword-repeat" name="changepassword-repeat" required>
         </div>
-        <div>
-            <input type="submit" value="Envoyer">
-        </div>
+        <input type="submit" value="Envoyer">
     </form>
-
 </section>
 
 <!-- Gestion des messages de confirmation et d'erreur -->

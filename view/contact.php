@@ -1,9 +1,11 @@
+<?php $currentActivePage = 'contact' ?>
+
 <?php $title = 'Jean Forteroche | Contact'; ?>
 
 <?php ob_start(); ?>
 
 <!-- La page de contact présente des coordonnées et un formulaire pour contacter l'auteur  -->
-<main id="main-contact">
+<main id="main-contact" class="main">
 
     <section id="section-contact-informations">
         <h2>Par courrier</h2>

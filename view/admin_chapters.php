@@ -1,9 +1,11 @@
+<?php $currentActiveAdminPage = 'admin-chapters' ?>
+
 <?php ob_start(); ?>
 
-<h1>Liste des chapitres</h1>
+<h2>Liste des chapitres</h2>
 
 <!-- Gestion des messages de confirmation et d'erreur -->
-<section>
+<section id="section-adminchapters-messages">
 
     <?php if(isset($_GET['message_editchapter'])) {
         if($_GET['message_editchapter'] == 'ok') { ?>
@@ -32,7 +34,7 @@
 </section>
 
 <!-- Tableau qui liste tous les chapitres publiés et sa légende -->
-<section>
+<section id="section-adminchapters-content">
 
     <!-- Bouton qui permet de créer un nouveau chapitre -->
     <a href="index.php?action=link_editchapter"><i class="fas fa-plus-circle"></i>Nouveau</a>
@@ -70,7 +72,7 @@
     </table>
 
     <div id="table-caption">
-        <h2>Légende :</h2>
+        <h3>Légende :</h3>
         <div>
             <div>
                 <i class="fas fa-edit"></i>
