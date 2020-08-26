@@ -18,11 +18,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"> 
-        <link rel="icon" href="" />
-        <link rel="apple-touch-icon" href="" />
-        <link rel="apple-touch-icon" sizes="72x72" href="" />
-        <link rel="apple-touch-icon" sizes="114x114" href="" />
-        <link rel="apple-touch-icon" sizes="144x144" href="" />
+        <link rel="icon" href="public/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="public/images/favicon57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="public/images/favicon72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="public/images/favicon114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="public/images/favicon144.png" />
         <script src="https://cdn.tiny.cloud/1/6200rruof6cd1pzghnq3dep45cohha6ahhliqp973mynzm3q/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
         <script> tinymce.init({
             selector: 'textarea#editchapter-content',

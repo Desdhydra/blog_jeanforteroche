@@ -39,28 +39,28 @@
                 
                 foreach($allComments as $comment) { ?>
 
-                    <?php if($comment['reported_status'] == 'no') { ?>
-
-                        <article>
-                            <h4>Commentaire de <?= $comment['visitor_name'] ?></h4>
-                            <p>Posté le <?= date('d/m/Y', strtotime($comment['creation_date'])); ?></p>
+                    <article>
+                        <h4>Commentaire de <?= $comment['visitor_name'] ?></h4>
+                        <p>Posté le <?= date('d/m/Y', strtotime($comment['creation_date'])); ?></p>
+                        
+                        <?php if($comment['reported_status'] == 'no') { ?>
+                            
                             <p><?= $comment['content'] ?></p>
                             <div>
                                 <i class="fas fa-exclamation-triangle"></i>
                                 <a href="index.php?action=comment_reported&amp;post_id=<?= $detailPost['id'] ?>&amp;comment_id=<?= $comment['id'] ?>">Signaler</a>
                             </div>
-                        </article>
 
-                    <?php } elseif($comment['reported_status'] == 'yes') { ?>
-
-                        <article>
+                        <?php } elseif($comment['reported_status'] == 'yes') { ?>
+                        
                             <p class="comment-reported">Ce commentaire a été signalé.</p>
-                        </article>
 
-                    <?php }
+                        <?php } ?>
+
+                    </article>
                 
-                } ?>
-
+                <?php } ?>
+                
             </section>
 
         <?php } ?>

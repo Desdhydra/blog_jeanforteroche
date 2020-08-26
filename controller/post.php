@@ -101,7 +101,6 @@ class Post {
     public function addPost($title, $content) {
 
         $title = htmlspecialchars($title);
-        $content = htmlspecialchars($content);
 
         $postManager = new PostManager;
         $postAdded = $postManager->createPost($title, $content);
@@ -121,7 +120,6 @@ class Post {
         if(preg_match('/[0-9]+/', $postId)) {
 
             $title = htmlspecialchars($title);
-            $content = htmlspecialchars($content);
 
             $postManager = new PostManager;
             $postUpdated = $postManager->updatePost($postId, $title, $content);
