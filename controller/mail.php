@@ -57,7 +57,7 @@ class Mail {
         $message = htmlspecialchars($message);
 
         $userManager = new UserManager;
-        $authorEmail = $userManager->getAuthorEmail();
+        $authorEmail = $userManager->getAuthorEmail(1);
 
         // Création d'une instance d'objet PHPMailer (on lui passe l'argument "true" pour la gestion des exceptions)
         $phpMailer = new PHPMailer(true);
@@ -75,12 +75,12 @@ class Mail {
             
             // Personnalisation de l'e-mail
             $phpMailer->setFrom($email, $name);
-            $phpMailer->addAddress($authorEmail, 'Jean Forteroche');
+            $phpMailer->addAddress($authorEmail['email'], 'Jean Forteroche');
             $phpMailer->isHTML(true);
             $phpMailer->Subject = '[Blog - Formulaire de contact] ' . $subject;
             $phpMailer->Body = 'Bonjour Jean Forteroche,<br />Vous avez reçu un nouveau message, envoyé à partir du formulaire de contact de votre blog :<br /><br />' . $message;
             $phpMailer->AltBody = $message;
-        
+
             // Envoi de l'e-mail
             $phpMailer->send();
 

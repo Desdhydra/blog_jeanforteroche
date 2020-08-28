@@ -2,9 +2,29 @@
 
 <?php ob_start(); ?>
 
+<h2>Changement de mot de passe</h2>
+
+<!-- Gestion des messages de confirmation et d'erreur -->
+<section class="section-action-change-messages">
+
+    <?php if(isset($_GET['message_changepassword'])) {
+        
+        if($_GET['message_changepassword'] == 'no_user') { ?>
+            <p class="message-error">Il n'y a pas d'utilisateur correspondant à cette adresse e-mail.</p>
+        <?php } elseif($_GET['message_changepassword'] == 'no_match') { ?>
+            <p class="message-error">Les deux mots de passe saisis sont différents.</p>
+        <?php } elseif($_GET['message_changepassword'] == 'error') { ?>
+            <p class="message-error">Une erreur est survenue. Votre mot de passe n'a pas pu être modifié. Veuillez réessayer plus tard.</p>
+        <?php } elseif($_GET['message_changepassword'] == 'ok') { ?>
+            <p class="message-success">Votre mot de passe a été modifié avec succés.</p>
+        <?php }
+
+    } ?>
+
+</section>
+
 <!-- La page de changement de mot de passe contient un formulaire pour définir un nouveau mot de passe -->
 <section class="section-admin-change">
-    <h2>Changement de mot de passe</h2>
     <form method="post" action="index.php?action=change-password">
         <div>
             <label for="changepassword-mail">Votre adresse e-mail :</label>
@@ -20,25 +40,6 @@
         </div>
         <input type="submit" value="Envoyer">
     </form>
-</section>
-
-<!-- Gestion des messages de confirmation et d'erreur -->
-<section>
-
-    <?php if(isset($_GET['message_changepassword'])) {
-        
-        if($_GET['message_changepassword'] == 'no_user') { ?>
-            <p>Il n'y a pas d'utilisateur correspondant à cette adresse e-mail.</p>
-        <?php } elseif($_GET['message_changepassword'] == 'no_match') { ?>
-            <p>Les deux mots de passe saisis sont différents.</p>
-        <?php } elseif($_GET['message_changepassword'] == 'error') { ?>
-            <p>Une erreur est survenue. Votre mot de passe n'a pas pu être modifié. Veuillez réessayer plus tard.</p>
-        <?php } elseif($_GET['message_changepassword'] == 'ok') { ?>
-            <p>Votre mot de passe a été modifié avec succés.</p>
-        <?php }
-
-    } ?>
-
 </section>
 
 <?php $adminContent = ob_get_clean(); ?>

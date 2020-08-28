@@ -22,7 +22,7 @@
         <!-- Gestion des messages d'erreur -->
         <?php if(isset($_GET['message_newpassword']) && ($_GET['message_newpassword'] == 'error')) { ?>
             <div>
-                <p>Une erreur est survenue. Nous n'avons pas pu vous vous envoyer un nouveau mot de passe. Veuillez réessayer plus tard.</p>
+                <p class="message-error">Une erreur est survenue. Nous n'avons pas pu vous vous envoyer un nouveau mot de passe. Veuillez réessayer plus tard.</p>
             </div>
         <?php } ?>
 

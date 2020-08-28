@@ -44,7 +44,7 @@ class UserManager {
 
         $db = Database::dbConnect();
         $query = $db->prepare('SELECT email from users WHERE id=:id');
-        $query->execute(array('id' => 1));
+        $query->execute(array('id' => $id));
         $result = $query->fetch();
         return $result;
 

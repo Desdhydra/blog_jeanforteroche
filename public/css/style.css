@@ -53,6 +53,18 @@ label {
     font-weight: 600;
 }
 
+p.message-success {
+    background-color: rgb(204,255,230);
+    border: 0.0625rem solid rgb(0,204,102);
+    padding: 0.5rem;
+}
+
+p.message-error {
+    background-color: rgb(255,204,204);
+    border: 0.0625rem solid rgb(255,0,0);
+    padding: 0.5rem;
+}
+
 
 
 /* En-tête */
@@ -62,6 +74,15 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 1rem 12.5% 1rem 12.5%;
+}
+
+#header-logo {
+    display: none;
+    width: 8rem;
+}
+
+#header-logo img {
+    width: 100%;
 }
 
 #header-title {
@@ -639,7 +660,7 @@ div.post-content a:hover {
 /* Contact */
 
 #main-contact {
-    padding: 3rem 0 28rem 0;
+    padding: 3rem 0 32rem 0;
 }
 
 #section-contact-informations {
@@ -764,6 +785,11 @@ div.post-content a:hover {
 
 #section-connection-form input[type=submit]:hover {
     background-color: rgb(101,189,195);
+}
+
+#section-connection-message {
+    width: 45%;
+    margin: auto;
 }
 
 
@@ -893,6 +919,10 @@ section.section-errors {
 
 #admin-content table td i:hover {
     color: rgb(244,146,139);
+}
+
+#section-adminchapters-content table tr > th:nth-child(1), #section-adminchapters-content table tr > td:nth-child(1) {
+    min-width: 5.4rem;
 }
 
 #section-adminchapters-content > a {
@@ -1057,6 +1087,10 @@ section.section-errors {
 
 
 /* Panneau d'administration : changements d'e-mail et de mot de passe */
+
+section.section-action-change-messages {
+    width: 55%;
+}
 
 section.section-admin-change form {
     width: 50%;

@@ -21,8 +21,7 @@
     
         <div>
             <h2>Formulaire de contact</h2>
-
-            <form method="post" action="index.php?action=send-mail">
+            <form method="post" action="index.php?action=send_mail">
                 <div>
                     <label for="contact-name">Votre nom :</label>
                     <input type="text" id="contact-name" name="contact-name" required>
@@ -49,9 +48,9 @@
         <?php if(isset($_GET['message_contact'])) {
 
             if($_GET['message_contact'] == 'ok') { ?>
-                <p>Votre message a bien été envoyé.</p>
+                <p class="message-success">Votre message a bien été envoyé.</p>
             <?php } elseif($_GET['message_contact'] == 'error') { ?>
-                <p>Une erreur est survenue. Votre message n'a pas pu être envoyé. Veuillez réessayer plus tard.</p>
+                <p class="message-error">Une erreur est survenue. Votre message n'a pas pu être envoyé. Veuillez réessayer plus tard.</p>
             <?php }
 
         } ?>

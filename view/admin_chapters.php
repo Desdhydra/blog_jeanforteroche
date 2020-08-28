@@ -9,25 +9,25 @@
 
     <?php if(isset($_GET['message_editchapter'])) {
         if($_GET['message_editchapter'] == 'ok') { ?>
-            <p>Votre chapitre a bien été publié.</p>
+            <p class="message-success">Votre chapitre a bien été publié.</p>
         <?php } elseif ($_GET['message_editchapter'] == 'error') { ?>
-            <p>Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
         <?php }
     } ?>
 
     <?php if(isset($_GET['message_updatechapter'])) {
         if($_GET['message_updatechapter'] == 'ok') { ?>
-            <p>Votre chapitre a bien été publié.</p>
+            <p class="message-success">Votre chapitre a bien été publié.</p>
         <?php } elseif ($_GET['message_updatechapter'] == 'error') { ?>
-            <p>Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
         <?php }
     } ?>
 
     <?php if(isset($_GET['message_deletechapter'])) {
         if($_GET['message_deletechapter'] == 'ok') { ?>
-            <p>Votre chapitre a bien été supprimé.</p>
+            <p class="message-success">Votre chapitre a bien été supprimé.</p>
         <?php } elseif ($_GET['message_deletechapter'] == 'error') { ?>
-            <p>Une erreur est survenue. Le chapitre n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
+            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
         <?php }
     } ?>
 

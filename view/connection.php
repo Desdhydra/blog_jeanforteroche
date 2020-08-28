@@ -29,11 +29,11 @@
     <section id="section-connection-message">
 
         <?php if(isset($_GET['message_connection']) && ($_GET['message_connection'] == 'error')) { ?>
-            <p>Ces identifiants sont erronés.</p>
+            <p class="message-error">Ces identifiants sont erronés.</p>
         <?php } ?>
 
         <?php if(isset($_GET['message_newpassword']) && ($_GET['message_newpassword'] == 'ok')) { ?>
-            <p>Un nouveau mot de passe vous a été envoyé par e-mail.</p>
+            <p class="message-success">Un nouveau mot de passe vous a été envoyé par e-mail.</p>
         <?php } ?>
 
     </section>

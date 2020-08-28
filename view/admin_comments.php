@@ -9,17 +9,17 @@
 
     <?php if(isset($_GET['message_commentpublished'])) {
         if($_GET['message_commentpublished'] == 'ok') { ?>
-            <p>Ce commentaire a bien été publié.</p>
+            <p class="message-success">Ce commentaire a bien été publié.</p>
         <?php } elseif ($_GET['message_commentpublished'] == 'error') { ?>
-            <p>Une erreur est survenue. Ce commentaire n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+            <p class="message-error">Une erreur est survenue. Ce commentaire n'a pas pu être publié. Veuillez réessayer plus tard.</p>
         <?php }
     } ?>
 
     <?php if(isset($_GET['message_commentdeleted'])) {
         if($_GET['message_commentdeleted'] == 'ok') { ?>
-            <p>Ce commentaire a bien été supprimé.</p>
+            <p class="message-success">Ce commentaire a bien été supprimé.</p>
         <?php } elseif ($_GET['message_commentdeleted'] == 'error') { ?>
-            <p>Une erreur est survenue. Ce commentaire n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
+            <p class="message-error">Une erreur est survenue. Ce commentaire n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
         <?php }
     } ?>
 

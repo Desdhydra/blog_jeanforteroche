@@ -1,7 +1,48 @@
+@media screen and (max-width: 1280px) {
+
+    /* Général */
+
+    main.main {
+        width: 90%;
+    }
+    
+    main.main-admin {
+        width: 90%;
+    }
+
+    /* En-tête */
+
+    header {
+        padding: 1rem 5% 1rem 5%;
+    }
+
+    /* Pas d'accueil */
+
+    #home-book > div:nth-child(2) > div:nth-child(1) {
+        width: 80%;
+    }
+    
+    #home-book > div:nth-child(2) > div:nth-child(2) {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    /* Panneau d'administration */
+
+    #admin-menu {
+        min-width: 13rem;
+        margin-right: 4rem;
+    }
+
+}
+
 @media screen and (max-width: 768px) {
 
     /* Menu de navigation */
-    
+
     .menu-nav {
         display: none;
     }
