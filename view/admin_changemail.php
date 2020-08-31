@@ -5,7 +5,7 @@
 <h2>Changement d'adresse e-mail</h2>
 
 <!-- Gestion des messages de confirmation et d'erreur -->
-<section class="section-action-change-messages">
+<section>
 
     <?php if(isset($_GET['message_changemail'])) {
         

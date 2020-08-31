@@ -1,7 +1,6 @@
 /* Général */
 
 body {
-    /*background: url("../images/background.jpg") repeat;*/
     font-family: "Raleway", sans-serif;
     margin: 0;
 }
@@ -9,7 +8,7 @@ body {
 main.main {
     width: 75%;
     margin: auto;
-    padding: 3rem 0 3rem 0;
+    padding: 6rem 0 6rem 0;
 }
 
 main.main-admin {
@@ -17,7 +16,7 @@ main.main-admin {
     justify-content: flex-start;
     width: 75%;
     margin: auto;
-    padding: 3rem 0 3rem 0;
+    padding: 6rem 0 6rem 0;
 }
 
 h2 {
@@ -54,12 +53,14 @@ label {
 }
 
 p.message-success {
+    width: fit-content;
     background-color: rgb(204,255,230);
     border: 0.0625rem solid rgb(0,204,102);
     padding: 0.5rem;
 }
 
 p.message-error {
+    width: fit-content;
     background-color: rgb(255,204,204);
     border: 0.0625rem solid rgb(255,0,0);
     padding: 0.5rem;
@@ -73,16 +74,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 12.5% 1rem 12.5%;
-}
-
-#header-logo {
-    display: none;
-    width: 8rem;
-}
-
-#header-logo img {
-    width: 100%;
+    background-color: rgb(0,98,128);
+    padding: 2rem 12.5% 2rem 12.5%;
 }
 
 #header-title {
@@ -91,6 +84,7 @@ header {
     align-items: center;
     font-family: "Playfair Display", serif;
     font-size: 3rem;
+    color: rgb(255,255,255);
     margin-bottom: 2rem;
 }
 
@@ -112,7 +106,7 @@ header {
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
     color: rgb(255,255,255);
-    background-color: rgb(0,98,128);
+    background-color: rgb(0,195,255);
     border: none;
     top: 1rem;
     right: 12.5%;
@@ -120,7 +114,8 @@ header {
 }
 
 #header-connection > a:hover {
-    background-color: rgb(0,137,179);
+    color: rgb(0,0,0);
+    background-color: rgb(128,225,255);
 }
 
 .dropdown-button {
@@ -128,7 +123,7 @@ header {
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
     color: rgb(255,255,255);
-    background-color: rgb(39,103,124);
+    background-color: rgb(0,195,255);
     border: none;
     padding: 1rem;
     outline: none;
@@ -168,7 +163,8 @@ header {
 }
   
 .dropdown:hover .dropdown-button {
-    background-color: rgb(116,170,186);
+    color: rgb(0,0,0);
+    background-color: rgb(128,225,255);
 }
 
 
@@ -176,7 +172,7 @@ header {
 /* Menu de navigation */
 
 .active {
-    border-bottom: 0.2rem solid rgb(204,224,230);
+    border-bottom: 0.2rem solid rgb(128,225,255);
 }
 
 .menu-nav {
@@ -187,14 +183,14 @@ header {
 .menu-nav a {
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
-    color: rgb(0,0,0);
+    color: rgb(255,255,255);
     margin: 0.75rem;
     padding: 0.25rem;
 }
 
 .menu-nav a:hover {
     font-weight: 600;
-    color: rgb(0,175,185);
+    color: rgb(0,195,255);
 }
 
 #icon-burger {
@@ -210,7 +206,6 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: rgb(0,98,128);
-    margin-top: 4rem;
     padding: 2rem 12.5% 0 12.5%;
 }
 
@@ -263,12 +258,13 @@ footer {
     display: flex;
     align-items: center;
     align-self: center;
-    color: rgb(179,237,255);
+    color: rgb(128,225,255);
     margin-top: 1rem;
 }
 
 #footer-copyright a {
     color: rgb(255,255,255);
+    margin-left: 0.5rem;
 }
 
 #footer-copyright a:hover {
@@ -414,6 +410,7 @@ h1 {
 }
 
 #section-about figcaption {
+    text-align: center;
     font-family: "Playfair Display", serif;
     font-size: 1.2rem;
 }
@@ -766,7 +763,7 @@ div.post-content a:hover {
 
 #section-connection-form form > div:nth-child(2) > a {
     color: rgb(0,145,153);
-    margin-top: 1rem;
+    margin: 1rem 0 1rem 0;
 }
 
 #section-connection-form form > div:nth-child(2) > a:hover {
@@ -1087,10 +1084,6 @@ section.section-errors {
 
 
 /* Panneau d'administration : changements d'e-mail et de mot de passe */
-
-section.section-action-change-messages {
-    width: 55%;
-}
 
 section.section-admin-change form {
     width: 50%;

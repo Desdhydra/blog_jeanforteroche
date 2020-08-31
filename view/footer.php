@@ -26,6 +26,6 @@
         </div>
     </div>
     <div id="footer-copyright">
-        <p>2020 © Jean Forteroche | <a href="index.php?action=link_legal">Mentions légales</a></p>
+        <p>2020 © Jean Forteroche |<p><a href="index.php?action=link_legal">Mentions légales</a>
     </div>
 </footer>

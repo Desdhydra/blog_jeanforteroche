@@ -1,7 +1,5 @@
 <?php
 
-require('model/user_manager.php');
-
 // Initialisation de PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -31,7 +29,7 @@ class Mail {
             $phpMailer->setFrom('blog-admin@audrey-joachim.com', 'Blog - Billet simple pour l\'Alaska');
             $phpMailer->addAddress($userEmail, 'Jean Forteroche');
             $phpMailer->isHTML(true);
-            $phpMailer->Subject = '[Blog - Billet simple pour l\'Alaska] Votre nouveau mot de passe';
+            $phpMailer->Subject = '[Blog - Connexion] Votre nouveau mot de passe';
             $phpMailer->Body = 'Bonjour Jean Forteroche,<br />Voici votre nouveau mot de passe : ' . $randomPassword . '<br />Pour des raisons de sécurité, nous vous conseillons vivement de modifier ce mot de passe lors de votre prochaine connexion.<br />Cordialement, l\'administration du blog';
             $phpMailer->AltBody = 'Bonjour Jean Forteroche. Voici, entre crochets, votre nouveau mot de passe : [' . $randomPassword . ']. Pour des raisons de sécurité, nous vous conseillons vivement de modifier ce mot de passe lors de votre prochaine connexion. Cordialement, l\'administration du blog';
         
@@ -56,6 +54,7 @@ class Mail {
         $subject = htmlspecialchars($subject);
         $message = htmlspecialchars($message);
 
+        require('model/user_manager.php');
         $userManager = new UserManager;
         $authorEmail = $userManager->getAuthorEmail(1);
 

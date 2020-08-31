@@ -68,7 +68,7 @@ class Post {
 
             // Définition du nombre de chapitres, du nombre de chapitres par page et du nombre de pages
             $numberOfPosts = $postManager->numberOfPosts();
-            $postsPerPage = 2;
+            $postsPerPage = 5;
             $numberOfPages = ceil($numberOfPosts / $postsPerPage);
 
             // Vérification de la validité du numéro de page (page existante)

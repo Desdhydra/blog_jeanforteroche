@@ -25,7 +25,7 @@ class User {
     }
 
     // Méthode qui permet de créer un nouveau mot de passe aléatoire
-    public function newPassWord($userEmail) {
+    public function newPassword($userEmail) {
 
         $userEmail = htmlspecialchars($userEmail);
         $randomPassword = rand(1000000, 999999999);

@@ -5,7 +5,7 @@
 <h2>Liste des chapitres</h2>
 
 <!-- Gestion des messages de confirmation et d'erreur -->
-<section id="section-adminchapters-messages">
+<section>
 
     <?php if(isset($_GET['message_editchapter'])) {
         if($_GET['message_editchapter'] == 'ok') { ?>
