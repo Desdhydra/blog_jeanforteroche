@@ -11,7 +11,7 @@
         
         <!-- Première section : aperçus des articles -->
         <section id="section-novel-posts">
-            
+        
             <?php foreach($postsInRange as $post) { ?>
 
                 <article>

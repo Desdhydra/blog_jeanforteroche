@@ -12,12 +12,14 @@
         <?php } ?>
     </div>
     <div id="header-title">
-        <p>Jean</p>
-        <p>Forteroche</p>
+        <a href="index.php?action=link_home">
+            <span>Jean</span>
+            <span>Forteroche</span>
+        </a>
     </div>
     <nav>
         <div id="icon-burger"><i class="fas fa-bars"></i></div>
-        <ul id="main-menu" class="menu-nav">
+        <ul id="main-menu" class="menu-nav <?php if(isset($_SESSION['status']) && $_SESSION['status'] == 'authenticated') { echo 'menu-margin-small'; } else { echo 'menu-margin-large'; } ?>">
             <li><a href="index.php?action=link_home" <?php if(isset($currentActivePage) && ($currentActivePage == 'home')) { echo 'class="active"'; } ?>>Accueil</a></li>
             <li><a href="index.php?action=link_about" <?php if(isset($currentActivePage) && ($currentActivePage == 'about')) { echo 'class="active"'; } ?>>L'auteur</a></li>
             <li><a href="index.php?action=link_novel" <?php if(isset($currentActivePage) && ($currentActivePage == 'novel')) { echo 'class="active"'; } ?>>Le roman</a></li>

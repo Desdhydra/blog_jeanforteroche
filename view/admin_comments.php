@@ -5,7 +5,7 @@
 <h2>Liste des commentaires signalés</h2>
 
 <!-- Gestion des messages de confirmation et d'erreur -->
-<section>
+<section id="section-admincomments-content">
 
     <?php if(isset($_GET['message_commentpublished'])) {
         if($_GET['message_commentpublished'] == 'ok') { ?>

@@ -92,11 +92,15 @@
     h2 {
         font-size: 1.25rem
     }
+    main.main-admin h2 {
+        text-align: center;
+    }
     input[type=text], input[type=email], input[type=password], input[type=submit], textarea {
         font-size: 0.9rem;
     }
     p.message-success, p.message-error {
         font-size: 0.9rem;
+        margin: 1rem auto 1rem auto;
         padding: 0.25rem;
     }
     label {
@@ -107,12 +111,12 @@
     header {
         align-items: flex-start;
         height: 5rem;
-        padding: 1rem;
+        padding: 1rem 5% 1rem 5%;
     }
     header.header-burger {
         height: fit-content;
     }
-    #header-title {
+    #header-title a {
         position: absolute;
         font-size: 1.5rem;
         margin: 0;
@@ -123,9 +127,15 @@
     }
 
     /* Menu de connexion */
-
+    .menu-margin-small {
+        margin-top: 4rem;
+    }
+    .menu-margin-large {
+        margin-top: 6rem;
+    }
     #header-connection > a {
-        width: 5rem;
+        width: 5.5rem;
+        text-align: center;
         font-size: 0.8rem;
         top: 0rem;
         right: 0rem;
@@ -154,7 +164,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin-top: 6rem;
     }
     .menu-nav li {
         margin: 0.5rem;
@@ -177,7 +186,7 @@
         background-color: rgb(0,195,255);
         border-radius: 50%;
         top: 4rem;
-        right: 1rem;
+        right: 5%;
     }
 
     /* Pied de page */
@@ -427,6 +436,11 @@
     }
 
     /* Panneau d'administration : chapitres et commentaires */
+    #section-adminchapters-content, #section-admincomments-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     #section-adminchapters-content a {
         font-size: 0.9rem;
     }
@@ -465,6 +479,16 @@
     }
 
     /* Panneau d'administration : profil */
+    #section-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #section-profile > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     #section-profile p {
         font-size: 0.9rem;
     }
