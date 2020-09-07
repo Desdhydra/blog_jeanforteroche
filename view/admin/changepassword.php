@@ -44,4 +44,4 @@
 
 <?php $adminContent = ob_get_clean(); ?>
 
-<?php require('admin_template.php'); ?>
+<?php require('view/admin/template.php'); ?>

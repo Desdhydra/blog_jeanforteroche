@@ -10,7 +10,7 @@ class Comment {
 
         $commentManager = new CommentManager;
         $reportedComments = $commentManager->getReportedComments();
-        require('view/admin_comments.php');
+        require('view/admin/comments.php');
 
     }
 

@@ -17,7 +17,7 @@ class Post {
             if(empty($postContent)) {
                 require('view/error_notfound.php');
             } else {
-                require('view/admin_editchapter.php');
+                require('view/admin/editchapter.php');
             }
 
         } else {
@@ -93,7 +93,7 @@ class Post {
 
         $postManager = new PostManager;
         $allPosts = $postManager->getAllPosts();
-        require('view/admin_chapters.php');
+        require('view/admin/chapters.php');
 
     }
 

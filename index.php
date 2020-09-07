@@ -82,11 +82,11 @@ if(isset($_GET['action'])) {
 
     } elseif($_GET['action'] == 'link_profile') {
 
-        require('view/admin_profile.php');
+        require('view/admin/profile.php');
 
     } elseif($_GET['action'] == 'link_changemail') {
 
-        require('view/admin_changemail.php');
+        require('view/admin/changemail.php');
     
     } elseif($_GET['action'] == 'change-mail') {
 
@@ -96,7 +96,7 @@ if(isset($_GET['action'])) {
 
     } elseif($_GET['action'] == 'link_changepassword') {
 
-        require('view/admin_changepassword.php');
+        require('view/admin/changepassword.php');
 
     } elseif($_GET['action'] == 'change-password') {
 
@@ -125,7 +125,7 @@ if(isset($_GET['action'])) {
             $post = new Post;
             $post->postContent($_GET['post_id']);
         } else {
-            require('view/admin_editchapter.php');
+            require('view/admin/editchapter.php');
         }
 
     // Gestion des chapitres
