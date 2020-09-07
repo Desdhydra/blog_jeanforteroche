@@ -1,14 +1,423 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
+
+    /* Page d'accueil */
+    #home-book > div > div:nth-child(2) > div:nth-child(1), #home-book > div > div:nth-child(2) > div:nth-child(2) {
+        width: 85%;
+    }
+
+    /* L'auteur */
+    div.books-detail > div:nth-child(1) {
+        width: 14rem;
+        height: 22.375rem;
+    }
+    div.books-detail > div:nth-child(1) > div {
+        top: 20.375rem;
+    }
+    div.books-detail > div:nth-child(1) > div > h3 {
+        font-family: "Lora", serif;
+        font-size: 1.1rem;
+        font-weight: normal;
+        margin: 0 0 1rem 0;
+    }
+    div.books-detail > div:nth-child(1) > div > p {
+        font-size: 0.85rem;
+    }
+
+    /* Panneau d'administration */
+    #admin-menu {
+        width: 13rem;
+    }
+
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    /* Général */
+    .section-design {
+        padding: 2rem
+    }
+    main.main-admin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* En-tête */
+    #header-title {
+        align-self: flex-start;
+    }
 
     /* Menu de navigation */
     #icon-burger {
+        cursor: pointer;
+        position: absolute;
         display: block;
+        font-size: 1.5rem;
+        top: 2rem;
+        right: 10%;
     }
     .menu-nav {
         display: none;
     }
     .menu-burger {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 4rem;
+        padding-bottom: 1rem;
+    }
+    .menu-burger li a {
+        margin: 0.5rem 0 0.5rem 0.5rem;
+    }
+
+    /* Page d'accueil */
+    #home-book > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    #home-book > div > div:nth-child(1) {
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+    #home-book > div > div:nth-child(2) {
+        width: 100%;
+    }
+    #home-last > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #home-last article {
+        width: 90%;
+        background-color: rgb(255,255,255);
+        margin-bottom: 1rem;
+        padding: 2rem;
+    }
+    #home-last article > div {
+        margin: 1rem 0 1rem 0;
+    }
+    #home-last article div.last-post-infos {
+        padding-bottom: 3rem;
+    }
+
+    /* L'auteur */
+    #section-books > div {
+        flex-direction: column;
+    }
+    div.books-detail > div:nth-child(2) {
+        margin: 0.25rem 0 2rem 0;
+    }
+
+    /* Détail de chapitre */
+    #section-chapter-comments {
+        width: 90%;
+    }
+    #section-chapter-sendcomment {
+        width: 90%;
+    }
+
+    /* Contact */
+    #section-contact-informations {
+        width: 100%;
+    }
+    #section-contact-form {
+        width: 100%;
+        margin: auto;
+    }
+
+    /* Connexion */
+    #section-connection-form, #section-connection-message {
+        width: 100%;
+    }
+
+    /* Mot de passe oublié */
+    #section-forgotten-password {
+        width: 100%;
+    }
+
+    /* Panneau d'administration */
+    #admin-menu {
+        width: 100%;
+        margin: 0;
+    }
+    #admin-menu ul {
+        display: flex;
+        justify-content: center;
+    }
+    #admin-menu ul li {
+        margin: 0.25rem;
+    }
+
+    /* Administration : chapitres et commentaires */
+    #section-admin-chapters > div:nth-child(1) {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    #admin-content table {
+        margin: auto;
+    }
+    
+    /* Administration : légendes */
+    #table-caption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #table-caption h3 {
+        font-size: 0.9rem;
+        margin-top: 1.5rem
+    }
+
+    /* Profile */
+    #section-profile, #section-profile > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #section-profile > div:nth-child(2) {
+        margin-bottom: 1rem;
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* Général */
+    body {
+        font-size: 0.9rem;
+    }
+    main {
+        padding: 4.625rem 5% 1.5rem 5%;
+    }
+    .section-design {
+        padding: 1rem
+    }
+    h1, h2 {
+        font-size: 1rem;
+    }
+    input[type=text], input[type=email], input[type=password], textarea {
+        height: 1.5rem;
+        font-size: 0.9rem;
+    }
+    input[type=submit] {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem 0.4rem 0.75rem;
+    }
+    p.message-success {
+        padding: 0.25rem;
+    }
+    p.message-error {
+        padding: 0.25rem;
+    }
+
+    /* En-tête */
+    header {
+        width: 90%;
+        padding: 0.5rem 5% 0.5rem 5%;
+    }
+    #header-title a {
+        font-size: 1.2rem;
+    }
+
+    /* Menu de navigation */
+    #icon-burger {
+        top: 1rem;
+        right: 5%;
+    }
+    .menu-burger li a {
+        margin: 0.5rem 0 0.5rem 0.5rem;
+    }
+
+    /* Pied de page */
+    footer {
+        padding: 1rem 5% 0.75rem 5%;
+    }
+    #footer-content {
+        flex-direction: column;
+        width: 90%;
+    }
+    #footer-image {
+        width: 6rem;
+    }
+    #footer-links ul li a {
+        font-size: 2.5rem;
+    }
+
+    /* Page d'accueil */
+    #home-book {
+        margin-bottom: 2rem;
+    }
+    #home-book > div > div:nth-child(1) {
+        width: 75%;
+        margin-bottom: 1rem;
+    }
+    #home-book > div > div:nth-child(2) > div:nth-child(1) {
+        width: 95%;
+    }
+    #home-book > div > div:nth-child(2) > div:nth-child(2) {
+        width: 95%;
+    }
+    #home-book > div > div:nth-child(2) > div > h2 {
+        font-size: 1.2rem;
+    }
+    #home-last > div {
+        width: 90%;
+        margin: auto;
+    }
+    #home-last article {
+        width: 100%;
+        padding: 1rem;
+    }
+    #home-last article h3 {
+        font-size: 1.2rem;
+    }
+    #home-last article > div {
+        margin: 1rem 0 1rem 0;
+    }
+    #home-last article div.last-post-infos {
+        font-size: 0.85rem;
+        margin: 0.5rem 0 1rem 0;
+        padding-bottom: 2.5rem;
+    }
+    #home-last article a {
+        font-size: 0.8rem;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.4rem 0.75rem 0.4rem 0.75rem;
+    }
+
+    /* L'auteur */
+    #section-about > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    #section-about > div > figure {
+        width: 75%;
+        margin-bottom: 2rem;
+    }
+    #section-about > div > div {
+        width: 100%;
+    }
+
+    /* Le roman */
+    #section-novel-posts article {
+        width: 90%;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    #section-novel-posts article h3 {
+        font-size: 1.2rem;
+    }
+    #section-novel-posts article div.post-infos {
+        flex-direction: column;
+        font-size: 0.85rem;
+        margin: 1rem 0 1rem 0;
+    }
+    #section-novel-posts article div.post-date p, #section-novel-posts article div.post-comments p {
+        margin: 0.25rem;
+    }
+    #section-novel-posts article > div:nth-child(2) > div:nth-child(2) {
+        padding-bottom: 3rem;
+    }
+    #section-novel-posts article a {
+        font-size: 0.8rem;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.4rem 0.75rem 0.4rem 0.75rem;
+    }
+
+    /* Détail de chapitre */
+    #section-chapter-details > h2 {
+        font-size: 0.9rem;
+        margin: 0 0 1rem 0;
+    }
+    #section-chapter-details > h3 {
+        font-size: 1.2rem;
+    }
+    #section-chapter-details > div:nth-child(3) {
+        flex-direction: column;
+        font-size: 0.85rem;
+        margin: 1rem 0 1rem 0;
+    }
+    #section-chapter-details > div:nth-child(3) > div:nth-child(1) p, #section-chapter-details > div:nth-child(3) > div:nth-child(2) p {
+        margin: 0.25rem;
+    }
+    #section-chapter-comments h3, #section-chapter-sendcomment h3 {
+        font-size: 1rem;
+    }
+    #section-chapter-comments article {
+        margin-bottom: 0.75rem;
+        padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+    }
+    #section-chapter-sendcomment form {
+        padding: 1rem;
+    }
+
+    /* Contact */
+    #section-contact-informations {
+        margin-bottom: 2rem;
+    }
+
+    /* Connexion */
+    #section-connection-form form > div:nth-child(2) {
+        margin: 1rem 0 1rem;
+    }
+    #section-connection-form form > div:nth-child(3) {
+        padding-bottom: 3rem;
+    }
+
+    /* Mot de passe oublié */
+    #section-forgotten-password form > div:nth-child(1) {
+        padding-bottom: 3rem;
+    }
+
+    /* Panneau d'administration */
+    #admin-menu ul {
+        flex-direction: column;
+        width: 15rem;
+        margin: auto;
+    }
+
+    /* Administration : profile */
+    #section-profile > div:nth-child(1) {
+        margin-bottom: 1rem;
+    }
+    #section-profile > div > a {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem 0.4rem 0.75rem;
+    }
+
+}
+
+
+
+@media screen and (max-width: 535px) {
+
+    /* Administration : chapitres et commentaires */
+    #admin-content table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Administration : pop up d'alerte de suppression */
+    #alert-deletion {
+        padding-top: 20%;
+    }
+    #alert-deletion > div {
+        width: 15rem;
+        height: 5rem;
+        padding: 1rem;
+    }
+    #alert-deletion > div > div:nth-child(1) > p {
+        margin-bottom: 1rem;
+    }
+    #alert-cancel, #alert-url {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem 0.4rem 0.75rem;
     }
 
 }

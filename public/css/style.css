@@ -450,14 +450,14 @@ div.books-detail > div:nth-child(2) > a:hover {
 #section-chapter-details > div:nth-child(3) > div:nth-child(1) p, #section-chapter-details > div:nth-child(3) > div:nth-child(2) p {
     margin: 0;
 }
+#section-chapter-comments {
+    width: 55%;
+    margin: 0 auto 3rem auto;
+}
 #section-chapter-comments h3, #section-chapter-sendcomment h3 {
     font-size: 1.2rem;
     font-weight: 600;
     text-transform: uppercase;
-}
-#section-chapter-comments {
-    width: 55%;
-    margin: 0 auto 3rem auto;
 }
 #section-chapter-comments article {
     background-color: rgb(191,191,191);
@@ -578,8 +578,6 @@ div.books-detail > div:nth-child(2) > a:hover {
 
 /* Panneau d'administration */
 #admin-menu {
-    display: flex;
-    flex-direction: column;
     width: 19rem;
     margin: 2.5rem 3rem 0 0;
 }
