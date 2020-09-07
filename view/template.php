@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="public/css/style.css" />
         <link rel="stylesheet" href="public/css/style_responsive.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&display=swap"> 
         <link rel="icon" href="public/images/favicon.ico" />
         <link rel="apple-touch-icon" href="public/images/favicon57.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="public/images/favicon72.png" />

@@ -1,7 +1,10 @@
+<?php $currentActiveAdminPage = 'admin-profile' ?>
+
+<?php $adminTitle = 'Profil' ?>
+
 <?php ob_start(); ?>
 
-<section id="section-profile">
-    <h2>Profil</h2>
+<section id="section-profile" class="section-design">
     <div>
         <p>Modifier mon adresse e-mail</p>
         <a href="index.php?action=link_changemail">Modifier</a>

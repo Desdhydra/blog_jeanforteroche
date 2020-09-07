@@ -1,14 +1,16 @@
+<?php $currentActivePage = 'connection' ?>
+
 <?php $title = 'Jean Forteroche | Connexion'; ?>
 
 <?php ob_start(); ?>
 
-<main class="main">
+<main>
 
     <!-- La page de connexion contient un formulaire pour introduire ses identifiants afin d'accéder à l'interface d'administration -->
     <section id="section-connection-form">
         <h2>Connexion au panneau d'administration</h2>
         <div>
-            <form method="post" action="index.php?action=sign_in">
+            <form method="post" action="index.php?action=sign_in" class="section-design">
                 <div>
                     <label for="signin-mail">Votre adresse e-mail :</label>
                     <input type="email" id="signin-mail" name="signin-mail" required>
@@ -16,6 +18,8 @@
                 <div>
                     <label for="signin-password">Votre mot de passe :</label>
                     <input type="password" id="signin-password" name="signin-password" required>
+                </div>
+                <div>
                     <a href="index.php?action=link_forgotten_password">Mot de passe oublié ?</a>
                 </div>
                 <div>

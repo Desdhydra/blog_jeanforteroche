@@ -1,32 +1,11 @@
 <?php $currentActiveAdminPage = 'admin-comments' ?>
 
+<?php $adminTitle = 'Liste des commentaires signalés' ?>
+
 <?php ob_start(); ?>
 
-<h2>Liste des commentaires signalés</h2>
-
-<!-- Gestion des messages de confirmation et d'erreur -->
-<section id="section-admincomments-content">
-
-    <?php if(isset($_GET['message_commentpublished'])) {
-        if($_GET['message_commentpublished'] == 'ok') { ?>
-            <p class="message-success">Ce commentaire a bien été publié.</p>
-        <?php } elseif ($_GET['message_commentpublished'] == 'error') { ?>
-            <p class="message-error">Une erreur est survenue. Ce commentaire n'a pas pu être publié. Veuillez réessayer plus tard.</p>
-        <?php }
-    } ?>
-
-    <?php if(isset($_GET['message_commentdeleted'])) {
-        if($_GET['message_commentdeleted'] == 'ok') { ?>
-            <p class="message-success">Ce commentaire a bien été supprimé.</p>
-        <?php } elseif ($_GET['message_commentdeleted'] == 'error') { ?>
-            <p class="message-error">Une erreur est survenue. Ce commentaire n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
-        <?php }
-    } ?>
-
-</section>
-
 <!-- Tableau qui liste tous les commentaire signalés et sa légende -->
-<section>
+<section class="section-design">
 
     <table>
 
@@ -82,6 +61,25 @@
         </div>
     </div>
 
+</section>
+
+<!-- Gestion des messages de confirmation et d'erreur -->
+<section class="section-admin-messages">
+    <?php if(isset($_GET['message_commentpublished'])) {
+        if($_GET['message_commentpublished'] == 'ok') { ?>
+            <p class="message-success">Ce commentaire a bien été publié.</p>
+        <?php } elseif ($_GET['message_commentpublished'] == 'error') { ?>
+            <p class="message-error">Une erreur est survenue. Ce commentaire n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
+
+    <?php if(isset($_GET['message_commentdeleted'])) {
+        if($_GET['message_commentdeleted'] == 'ok') { ?>
+            <p class="message-success">Ce commentaire a bien été supprimé.</p>
+        <?php } elseif ($_GET['message_commentdeleted'] == 'error') { ?>
+            <p class="message-error">Une erreur est survenue. Ce commentaire n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
 </section>
 
 <?php $adminContent = ob_get_clean(); ?>

@@ -1,30 +1,11 @@
-<?php $title = 'Jean Forteroche | Changement de mot de passe'; ?>
+<?php $currentActiveAdminPage = 'admin-profile' ?>
+
+<?php $adminTitle = 'Changement de mot de passe' ?>
 
 <?php ob_start(); ?>
 
-<h2>Changement de mot de passe</h2>
-
-<!-- Gestion des messages de confirmation et d'erreur -->
-<section>
-
-    <?php if(isset($_GET['message_changepassword'])) {
-        
-        if($_GET['message_changepassword'] == 'no_user') { ?>
-            <p class="message-error">Il n'y a pas d'utilisateur correspondant à cette adresse e-mail.</p>
-        <?php } elseif($_GET['message_changepassword'] == 'no_match') { ?>
-            <p class="message-error">Les deux mots de passe saisis sont différents.</p>
-        <?php } elseif($_GET['message_changepassword'] == 'error') { ?>
-            <p class="message-error">Une erreur est survenue. Votre mot de passe n'a pas pu être modifié. Veuillez réessayer plus tard.</p>
-        <?php } elseif($_GET['message_changepassword'] == 'ok') { ?>
-            <p class="message-success">Votre mot de passe a été modifié avec succés.</p>
-        <?php }
-
-    } ?>
-
-</section>
-
 <!-- La page de changement de mot de passe contient un formulaire pour définir un nouveau mot de passe -->
-<section class="section-admin-change">
+<section class="section-admin-change section-design">
     <form method="post" action="index.php?action=change-password">
         <div>
             <label for="changepassword-mail">Votre adresse e-mail :</label>
@@ -38,8 +19,27 @@
             <label for="changepassword-repeat">Confirmez votre mot de passe :</label>
             <input type="password" id="changepassword-repeat" name="changepassword-repeat" required>
         </div>
-        <input type="submit" value="Envoyer">
+        <div>
+            <input type="submit" value="Envoyer">
+        </div>
     </form>
+</section>
+
+<!-- Gestion des messages de confirmation et d'erreur -->
+<section>
+    <?php if(isset($_GET['message_changepassword'])) {
+        
+        if($_GET['message_changepassword'] == 'no_user') { ?>
+            <p class="message-error">Il n'y a pas d'utilisateur correspondant à cette adresse e-mail.</p>
+        <?php } elseif($_GET['message_changepassword'] == 'no_match') { ?>
+            <p class="message-error">Les deux mots de passe saisis sont différents.</p>
+        <?php } elseif($_GET['message_changepassword'] == 'error') { ?>
+            <p class="message-error">Une erreur est survenue. Votre mot de passe n'a pas pu être modifié. Veuillez réessayer plus tard.</p>
+        <?php } elseif($_GET['message_changepassword'] == 'ok') { ?>
+            <p class="message-success">Votre mot de passe a été modifié avec succés.</p>
+        <?php }
+
+    } ?>
 </section>
 
 <?php $adminContent = ob_get_clean(); ?>

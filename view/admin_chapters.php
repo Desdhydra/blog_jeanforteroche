@@ -1,46 +1,19 @@
 <?php $currentActiveAdminPage = 'admin-chapters' ?>
 
+<?php $adminTitle = 'Liste des chapitres' ?>
+
 <?php ob_start(); ?>
 
-<h2>Liste des chapitres</h2>
-
-<!-- Gestion des messages de confirmation et d'erreur -->
-<section>
-
-    <?php if(isset($_GET['message_editchapter'])) {
-        if($_GET['message_editchapter'] == 'ok') { ?>
-            <p class="message-success">Votre chapitre a bien été publié.</p>
-        <?php } elseif ($_GET['message_editchapter'] == 'error') { ?>
-            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
-        <?php }
-    } ?>
-
-    <?php if(isset($_GET['message_updatechapter'])) {
-        if($_GET['message_updatechapter'] == 'ok') { ?>
-            <p class="message-success">Votre chapitre a bien été publié.</p>
-        <?php } elseif ($_GET['message_updatechapter'] == 'error') { ?>
-            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
-        <?php }
-    } ?>
-
-    <?php if(isset($_GET['message_deletechapter'])) {
-        if($_GET['message_deletechapter'] == 'ok') { ?>
-            <p class="message-success">Votre chapitre a bien été supprimé.</p>
-        <?php } elseif ($_GET['message_deletechapter'] == 'error') { ?>
-            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
-        <?php }
-    } ?>
-
-</section>
-
 <!-- Tableau qui liste tous les chapitres publiés et sa légende -->
-<section id="section-adminchapters-content">
+<section id="section-admin-chapters" class="section-design">
 
     <!-- Bouton qui permet de créer un nouveau chapitre -->
-    <a href="index.php?action=link_editchapter"><i class="fas fa-plus-circle"></i>Nouveau</a>
+    <div>
+        <i class="fas fa-plus-circle"></i>
+        <a href="index.php?action=link_editchapter">Nouveau</a>
+    </div>
 
     <table>
-
         <tr>
             <th>Titre</th>
             <th>Date de création</th>
@@ -68,7 +41,6 @@
 
             <?php }
         } ?>
-
     </table>
 
     <div id="table-caption">
@@ -98,6 +70,33 @@
         </div>
     </div>
 
+</section>
+
+<!-- Gestion des messages de confirmation et d'erreur -->
+<section class="section-admin-messages">
+    <?php if(isset($_GET['message_editchapter'])) {
+        if($_GET['message_editchapter'] == 'ok') { ?>
+            <p class="message-success">Votre chapitre a bien été publié.</p>
+        <?php } elseif ($_GET['message_editchapter'] == 'error') { ?>
+            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
+
+    <?php if(isset($_GET['message_updatechapter'])) {
+        if($_GET['message_updatechapter'] == 'ok') { ?>
+            <p class="message-success">Votre chapitre a bien été publié.</p>
+        <?php } elseif ($_GET['message_updatechapter'] == 'error') { ?>
+            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être publié. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
+
+    <?php if(isset($_GET['message_deletechapter'])) {
+        if($_GET['message_deletechapter'] == 'ok') { ?>
+            <p class="message-success">Votre chapitre a bien été supprimé.</p>
+        <?php } elseif ($_GET['message_deletechapter'] == 'error') { ?>
+            <p class="message-error">Une erreur est survenue. Le chapitre n'a pas pu être supprimé. Veuillez réessayer plus tard.</p>
+        <?php }
+    } ?>
 </section>
 
 <?php $adminContent = ob_get_clean(); ?>

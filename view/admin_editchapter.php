@@ -1,11 +1,10 @@
 <?php $currentActiveAdminPage = 'admin-chapters' ?>
 
+<?php $adminTitle = 'Edition d\'un chapitre' ?>
+
 <?php ob_start(); ?>
 
-<section id="section-adminchapters-edit">
-
-    <h2>Edition d'un chapitre</h2>
-
+<section id="section-adminchapters-edit" class="section-design">
     <form method="post" action="index.php?action=add_chapter<?php if(isset($postContent)){ echo '&post_id=' . $postContent['id']; }?>">
         <div>
             <label for="editchapter-title">Titre du chapitre :</label>
@@ -20,7 +19,6 @@
             <input type="submit" value="Publier">
         </div>
     </form>
-
 </section>
 
 <?php $adminContent = ob_get_clean(); ?>

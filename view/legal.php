@@ -2,13 +2,15 @@
 
 <?php ob_start(); ?>
 
-<main class="main">
+<main>
 
     <section>
         <h2>Mentions légales</h2>
-        <p>Paragraphe 1</p>
-        <p>Paragraphe 2</p>
-        <p>Paragraphe 3</p>
+        <div class="section-design">
+            <p>Paragraphe 1</p>
+            <p>Paragraphe 2</p>
+            <p>Paragraphe 3</p>
+        </div>
     </section>
 
 </main>

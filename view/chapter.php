@@ -5,17 +5,18 @@
 <?php ob_start(); ?>
 
 <!-- Cette page présente le détail d'un chapitre. Elle comporte trois principales sections successives -->
-<main class="main">
+<main>
 
     <?php if(isset($detailPost)) { ?>
 
         <!-- Première section : détail du chapitre -->
-        <section id="section-chapter-details">
-            <h2><?= $detailPost['title']; ?></h2>
+        <section id="section-chapter-details" class="section-design">
+            <h2>Billet simple pour l'Alaska</h2>
+            <h3><?= $detailPost['title']; ?></h3>
             <div>
                 <div>
                     <i class="far fa-calendar-alt"></i>
-                    <p>Publié le <?= date('d/m/Y', strtotime($detailPost['creation_date'])); ?></p>
+                    <p>Publié le <?= utf8_encode(strftime('%d %B %Y', strtotime($detailPost['creation_date']))); ?></p>
                 </div>
                 <div>
                     <i class="fas fa-comment"></i>
@@ -41,7 +42,7 @@
 
                     <article>
                         <h4>Commentaire de <?= $comment['visitor_name'] ?></h4>
-                        <p>Posté le <?= date('d/m/Y', strtotime($comment['creation_date'])); ?></p>
+                        <p>Posté le <?= utf8_encode(strftime('%d %B %Y', strtotime($comment['creation_date']))); ?></p>
                         
                         <?php if($comment['reported_status'] == 'no') { ?>
                             
@@ -59,15 +60,13 @@
 
                     </article>
                 
-                <?php } ?>
-                
+                <?php } ?>        
             </section>
 
         <?php } ?>
 
         <!-- Troisième partie : formulaire de rédaction d'un nouveau commentaire -->
         <section id="section-chapter-sendcomment">
-            
             <h3>Ecrire un commentaire</h3>
             <form method="post" action="index.php?action=send_comment&amp;post_id=<?= $detailPost['id'] ?>">
                 <div>
@@ -88,7 +87,6 @@
             <?php } elseif(isset($_GET['message_comment']) && ($_GET['message_comment'] == 'error')) { ?>
                 <p class="message-error">Une erreur est survenue. Le commentaire n'a pas pu être envoyé. Veuillez réessayer plus tard.</p>
             <?php } ?>
-
         </section>
 
     <?php } ?>

@@ -10,15 +10,17 @@
     <main class="main-admin">
         
         <nav id="admin-menu">
-            <p>Panneau d'administration</p>
             <ul>
                 <li><a href="index.php?action=link_admin_chapters" <?php if(isset($currentActiveAdminPage) && ($currentActiveAdminPage == 'admin-chapters')) { echo 'class="admin-active"'; } ?>>Chapitres</a></li>
                 <li><a href="index.php?action=link_admin_comments" <?php if(isset($currentActiveAdminPage) && ($currentActiveAdminPage == 'admin-comments')) { echo 'class="admin-active"'; } ?>>Commentaires signalés</a></li>
+                <li><a href="index.php?action=link_profile" <?php if(isset($currentActiveAdminPage) && ($currentActiveAdminPage == 'admin-profile')) { echo 'class="admin-active"'; } ?>>Profil</a></li>
+                <li><a href="index.php?action=link_logout">Se déconnecter</a></li>
             </ul>
         </nav>
 
         <div id="admin-content">
-            <?= $adminContent ?>
+            <h2><?= $adminTitle ?></h2>
+            <div><?= $adminContent ?></div>    
         </div>
 
     </main>

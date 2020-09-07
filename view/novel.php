@@ -5,8 +5,10 @@
 <?php ob_start(); ?>
 
 <!-- Cette page présente les différents chapitres du roman. Elle comporte deux principales sections successives -->
-<main class="main">
-        
+<main>
+    
+    <h2>Liste des publications</h2>
+
     <?php if(isset($postsInRange)) { ?>
         
         <!-- Première section : aperçus des articles -->
@@ -15,19 +17,21 @@
             <?php foreach($postsInRange as $post) { ?>
 
                 <article>
-                    <h2 class="post-title"><?= $post['title']; ?></h2>
-                    <div class="post-content">
-                        <div>
-                            <div>
+                    <h3><?= $post['title']; ?></h3>
+                    <div>
+                        <div class="post-infos">
+                            <div class="post-date">
                                 <i class="far fa-calendar-alt"></i>
-                                <p><?= date('d/m/Y', strtotime($post['creation_date'])); ?></p>
+                                <p><?= utf8_encode(strftime('%d %B %Y', strtotime($post['creation_date']))); ?></p>
                             </div>
-                            <div>
+                            <div class="post-comments">
                                 <i class="fas fa-comment"></i>
                                 <p><?= $post['comments_number'] . ' commentaire(s)'; ?></p>
                             </div>
                         </div>
-                        <p><?= preg_replace('/((\w+\W*){'.(30).'}(\w+))(.*)/', '${1}', $post['content']) . '...'; ?></p>
+                        <div><?= preg_replace('/((\w+\W*){'.(30).'}(\w+))(.*)/', '${1}', $post['content']) . '...'; ?></div>
+                    </div>
+                    <div>
                         <a href="index.php?action=link_chapter&amp;post_id=<?= $post['id'] ?>">Lire la suite</a>
                     </div>
                 </article>
@@ -53,7 +57,7 @@
 
     <?php } else { ?>
     
-        <section id="section-novel-nopost">
+        <section id="section-novel-nopost" class="section-design">
             <p>En cours de publication. Revenez bientôt !</p>
         </section>
 

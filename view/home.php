@@ -4,47 +4,44 @@
 
 <?php ob_start(); ?>
 
-<!-- La page d'accueil se découpe en trois sections successives -->
-<main class="main">
+<!-- La page d'accueil se découpe en deux sections successives -->
+<main>
 
-    <!-- Première section : l'écran d'accueil -->
-    <section id="home-title">
-        <img src="public/images/header.jpg" alt="Paysage d'Alaska" />
-        <h1>Billet simple pour l'Alaska</h1>
-    </section>
-
-    <!-- Deuxième section : la présentation du blog -->
+    <!-- Première section : la présentation du blog -->
     <section id="home-book">
-        <div>
-            <img src="public/images/cover-book.png" alt="Couverture du livre" />
-        </div>
-        <div>
+        <h1>Billet simple pour l'Alaska</h1>
+        <div class="section-design">
             <div>
-                <h2>Découvrez ce nouveau projet ...</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <img src="public/images/cover-book.png" alt="Couverture du livre" />
             </div>
             <div>
-                <h2>... et interagissez !</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div>
+                    <h2>Découvrez ce nouveau projet ...</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div>
+                    <h2>... et interagissez !</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Troisième section : les derniers chapitres publiés -->
+    <!-- Deuxième section : les derniers chapitres publiés -->
     <section id="home-last">
-        <h2>Derniers chapitres publiés</h2>
-        <div id="last-posts">
+        <h2>Dernières publications</h2>
+        <div>
 
             <?php if(isset($lastThreePosts)) {
                 foreach($lastThreePosts as $lastPost) { ?>
                         
                         <article>
                             <h3><?= $lastPost['title']; ?></h3>
-                            <p><?= preg_replace('/((\w+\W*){'.(30).'}(\w+))(.*)/', '${1}', $lastPost['content']) . '...'; ?></p>
+                            <div><?= preg_replace('/((\w+\W*){'.(30).'}(\w+))(.*)/', '${1}', $lastPost['content']) . '...'; ?></div>
                             <div class="last-post-infos">
                                 <div class="last-post-date">
                                     <i class="far fa-calendar-alt last-post-icons"></i>
-                                    <p><?= date('d/m/Y', strtotime($lastPost['creation_date'])); ?></p>
+                                    <p><?= utf8_encode(strftime('%d %B %Y', strtotime($lastPost['creation_date']))); ?></p>
                                 </div>
                                 <div class="last-post-comments">
                                     <i class="fas fa-comment last-post-icons"></i>
@@ -57,7 +54,7 @@
                 <?php }
             } else { ?>
 
-                <p>En cours de publication. Revenez bientôt !</p>
+                <p class="section-design">En cours de publication. Revenez bientôt !</p>
                 
             <?php } ?>
 
