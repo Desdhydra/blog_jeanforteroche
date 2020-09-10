@@ -6,8 +6,8 @@
 
         <!-- Balises de métadonnées et définition du titre de la page (dynamique) -->
         <meta charset="utf-8" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <meta name="description" content="Bienvenue sur le blog de Jean Forteroche. Découvrez son nouveau roman &laquo; Billet simple pour l'Alaska &raquo;" />
+        <meta name="keywords" content="Jean, Forteroche, blog, roman, billet, simple, Alaska" />
         <meta name="author" content="Audrey Joachim" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title><?= $title ?></title>
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="public/css/style.css" />
         <link rel="stylesheet" href="public/css/style_responsive.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora&display=swap"> 
         <link rel="icon" href="public/images/favicon.ico" />
         <link rel="apple-touch-icon" href="public/images/favicon57.png" />

@@ -1,3 +1,4 @@
+<!-- Vérification préalable que l'utilisateur est bien authentifié -->
 <?php if(isset($_SESSION['status']) && ($_SESSION['status'] == 'authenticated')) { ?>
 
     <?php $currentActivePage = 'admin' ?>

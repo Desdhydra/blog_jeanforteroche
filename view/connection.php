@@ -4,9 +4,9 @@
 
 <?php ob_start(); ?>
 
+<!-- La page de connexion contient un formulaire pour introduire ses identifiants afin d'accéder à l'interface d'administration -->
 <main>
 
-    <!-- La page de connexion contient un formulaire pour introduire ses identifiants afin d'accéder à l'interface d'administration -->
     <section id="section-connection-form">
         <h2>Connexion au panneau d'administration</h2>
         <div>

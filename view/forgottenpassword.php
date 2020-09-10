@@ -6,7 +6,6 @@
 <main>
 
     <section id="section-forgotten-password">
-        
         <h2>Récupération de mot de passe</h2>
         <div class="section-design">
             <p>Veuillez saisir votre adresse e-mail ci-dessous afin que nous puissions vous envoyer un nouveau mot de passe</p>
@@ -27,7 +26,6 @@
                 <p class="message-error">Une erreur est survenue. Nous n'avons pas pu vous vous envoyer un nouveau mot de passe. Veuillez réessayer plus tard.</p>
             </div>
         <?php } ?>
-
     </section>
 
 </main>

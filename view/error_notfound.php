@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<main class="main">
+<main>
 
     <h2>Erreur 404 - Not found</h2>
     <section class="section-design section-error">

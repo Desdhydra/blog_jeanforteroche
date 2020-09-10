@@ -5,7 +5,7 @@
 <?php ob_start(); ?>
 
 <!-- Tableau qui liste tous les commentaire signalés et sa légende -->
-<section class="section-design">
+<section id="section-admin-comments" class="section-design">
 
     <table>
 

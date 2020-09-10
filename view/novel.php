@@ -4,14 +4,14 @@
 
 <?php ob_start(); ?>
 
-<!-- Cette page présente les différents chapitres du roman. Elle comporte deux principales sections successives -->
+<!-- Cette page présente les différents chapitres du roman -->
 <main>
     
     <h2>Liste des publications</h2>
 
+    <!-- Si des articles ont déjà été publiés, on compte deux principales sections successives : les aperçus des articles et la pagination -->
     <?php if(isset($postsInRange)) { ?>
         
-        <!-- Première section : aperçus des articles -->
         <section id="section-novel-posts">
         
             <?php foreach($postsInRange as $post) { ?>
@@ -40,7 +40,6 @@
 
         </section>
 
-        <!-- Deuxième section : pagination -->
         <section id="section-novel-pagination">
             
             <?php if($numberOfPages > 1) {
@@ -55,6 +54,7 @@
 
         </section>
 
+    <!-- Si aucun chapitre n'a été publié -->
     <?php } else { ?>
     
         <section id="section-novel-nopost" class="section-design">

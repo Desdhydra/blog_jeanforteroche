@@ -4,6 +4,7 @@
 
 <?php ob_start(); ?>
 
+<!-- La page de profil présente deux boutons qui permettent de modifier l'adresse e-mail et le mot de passe -->
 <section id="section-profile" class="section-design">
     <div>
         <p>Modifier mon adresse e-mail</p>

@@ -4,6 +4,7 @@
 
 <?php ob_start(); ?>
 
+<!-- Formulaire d'édition de nouveaux chapitres -->
 <section id="section-adminchapters-edit" class="section-design">
     <form method="post" action="index.php?action=add_chapter<?php if(isset($postContent)){ echo '&post_id=' . $postContent['id']; }?>">
         <div>

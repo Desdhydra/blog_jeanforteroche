@@ -4,10 +4,9 @@
 
 <?php ob_start(); ?>
 
-<!-- La page d'accueil se découpe en deux sections successives -->
+<!-- La page d'accueil se découpe en deux sections successives : la présentation du blog et les dernières publications -->
 <main>
 
-    <!-- Première section : la présentation du blog -->
     <section id="home-book">
         <h1>Billet simple pour l'Alaska</h1>
         <div class="section-design">
@@ -27,7 +26,6 @@
         </div>
     </section>
 
-    <!-- Deuxième section : les derniers chapitres publiés -->
     <section id="home-last">
         <h2>Dernières publications</h2>
         <div>
@@ -60,7 +58,6 @@
 
         </div>
     </section>
-
 
 </main>
 

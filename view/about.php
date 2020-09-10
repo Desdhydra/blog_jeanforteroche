@@ -4,6 +4,7 @@
 
 <?php ob_start(); ?>
 
+<!-- La page de l'auteur présente deux sections : une pour la biographie et l'autre pour la bibliographie -->
 <main>
      
     <section id="section-about">

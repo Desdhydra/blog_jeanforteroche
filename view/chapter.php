@@ -4,12 +4,11 @@
 
 <?php ob_start(); ?>
 
-<!-- Cette page présente le détail d'un chapitre. Elle comporte trois principales sections successives -->
+<!-- Cette page présente le détail d'un chapitre. Elle comporte trois principales sections successives : le contenu du chapitre, les éventuels commentaires liés au chapitre, et le formulaire de rédaction d'un nouveau commentaire -->
 <main>
 
     <?php if(isset($detailPost)) { ?>
 
-        <!-- Première section : détail du chapitre -->
         <section id="section-chapter-details" class="section-design">
             <h2>Billet simple pour l'Alaska</h2>
             <h3><?= $detailPost['title']; ?></h3>
@@ -28,7 +27,6 @@
 
         <?php if($detailPost['comments_number'] != 0) { ?>
 
-            <!-- Deuxième section : commentaires liés au chapitre -->
             <section id="section-chapter-comments">
                 <h3>Commentaires</h3>
 
@@ -65,7 +63,6 @@
 
         <?php } ?>
 
-        <!-- Troisième partie : formulaire de rédaction d'un nouveau commentaire -->
         <section id="section-chapter-sendcomment">
             <h3>Ecrire un commentaire</h3>
             <form method="post" action="index.php?action=send_comment&amp;post_id=<?= $detailPost['id'] ?>">
