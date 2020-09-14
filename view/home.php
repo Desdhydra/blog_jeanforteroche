@@ -30,7 +30,7 @@
         <h2>Dernières publications</h2>
         <div>
 
-            <?php if(isset($lastThreePosts)) {
+            <?php if(!empty($lastThreePosts)) {
                 foreach($lastThreePosts as $lastPost) { ?>
                         
                         <article>
