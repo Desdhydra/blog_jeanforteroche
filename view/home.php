@@ -16,11 +16,11 @@
             <div>
                 <div>
                     <h2>Découvrez ce nouveau projet ...</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Après le succès de ses trois premiers romans, &laquo; Egaré &raquo;, &laquo; La tête dans les étoiles &raquo; et &laquo; Les cimes de la pensée &raquo;, Jean Forteroche souhaite remercier ses lecteurs et leur proposer une nouvelle expérience. C'est une idée qui trottait depuis longtemps dans sa tête, alors... C'est décidé : &laquo; Billet simple pour l'Alaska &raquo;, son nouveau roman, sera publié directement en ligne.</p>
                 </div>
                 <div>
                     <h2>... et interagissez !</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Ce n'est pas tout. Ce blog n'accueillera pas seulement, chapitre par chapitre, ce nouveau récit à suspens. Jean Forteroche apprécie la proximité qu'il entretient avec ses lecteurs. Curieux de connaître leurs réactions, il souhaite leur donner l'opportunité de commenter directement ses écrits. Alors, n'hésitez pas à lui laisser un petit message.</p>
                 </div>
             </div>
         </div>
