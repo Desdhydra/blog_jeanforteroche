@@ -10,7 +10,7 @@
     <h2>Liste des publications</h2>
 
     <!-- Si des articles ont déjà été publiés, on compte deux principales sections successives : les aperçus des articles et la pagination -->
-    <?php if(isset($postsInRange)) { ?>
+    <?php if(empty($postsInRange)) { ?>
         
         <section id="section-novel-posts">
         
