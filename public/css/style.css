@@ -580,6 +580,20 @@ div.books-detail > div:nth-child(2) > a:hover {
     position: relative;
 }
 
+/* Mentions légales */
+#section-legal h3 {
+    margin-top: 2rem;
+}
+#section-legal > div > div:nth-child(1) > h3 {
+    margin-top: 0;
+}
+#section-legal h4 {
+    margin: 1.5rem 0 0.75rem 0;
+}
+#section-legal > div > div:nth-child(1) p {
+    margin: 0;
+}
+
 /* Panneau d'administration */
 #admin-menu {
     width: 19rem;

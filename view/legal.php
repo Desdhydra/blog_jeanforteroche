@@ -4,7 +4,7 @@
 
 <main>
 
-    <section>
+    <section id="section-legal">
         <h2>Mentions légales</h2>
         <div class="section-design">
             <div>
